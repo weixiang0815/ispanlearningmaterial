@@ -1,0 +1,57 @@
+select * from Employee;
+
+delete from Employee where ename = 'fair' and eid=3;
+
+select * from Employee;
+
+
+
+
+select * from Employee;
+
+delete from Employee;
+
+select * from Employee;
+
+insert into Employee(ename, eaddress, ephone, salary, title) values('kate','usa','001-201-2145',42000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('andy','japan','002-201-2145',45000,'sa');
+insert into Employee(ename, eaddress, ephone, salary, title) values('fair','china','001-203-2145',38000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('kitty','korea','001-204-2145',38000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('jane','taiwan','001-202-2155',52000,'manager');
+insert into Employee(ename, eaddress, ephone, salary, title) values('michelle','canada','003-203-3145',36000,'hr');
+
+select * from Employee;
+
+
+
+
+select * from Employee;
+
+truncate table Employee;
+
+select * from Employee;
+
+
+
+insert into Employee(ename, eaddress, ephone, salary, title) values('kate','usa','001-201-2145',42000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('andy','japan','002-201-2145',45000,'sa');
+insert into Employee(ename, eaddress, ephone, salary, title) values('fair','china','001-203-2145',38000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('kitty','korea','001-204-2145',38000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('jane','taiwan','001-202-2155',52000,'manager');
+insert into Employee(ename, eaddress, ephone, salary, title) values('michelle','canada','003-203-3145',36000,'hr');
+
+select * from Employee;
+
+
+
+
+
+delete from Employee where ename = 'fair' and eid=3;
+
+set identity_insert Employee on;
+
+insert into Employee(eid, ename, eaddress, ephone, salary, title) values(3, 'fair','china','001-203-2145',38000,'pg');
+
+set identity_insert Employee off;
+
+select * from Employee;

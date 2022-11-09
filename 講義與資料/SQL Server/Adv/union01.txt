@@ -1,0 +1,25 @@
+use AdventureWorks2019;
+
+select * from Production.ProductModel;
+
+select ProductModelID, Name Into dbo.Gloves
+from Production.ProductModel
+where ProductModelID IN (3,4);
+
+select * from Gloves; 
+
+select ProductModelID, Name from Production.ProductModel
+UNION
+select ProductModelID, Name from dbo.Gloves order by ProductModelID;
+
+select ProductModelID, Name from Production.ProductModel
+UNION ALL
+select ProductModelID, Name from dbo.Gloves order by ProductModelID;
+
+select ProductModelID, Name from Production.ProductModel
+INTERSECT
+select ProductModelID, Name from dbo.Gloves order by ProductModelID;
+
+select ProductModelID, Name from Production.ProductModel
+EXCEPT
+select ProductModelID, Name from dbo.Gloves order by ProductModelID;

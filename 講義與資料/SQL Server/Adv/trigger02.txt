@@ -1,0 +1,41 @@
+use LeonPower;
+
+select * from Customer;
+go
+
+create trigger modifyCus1
+ON Customer
+Instead of Insert
+AS
+begin
+   if exists (select * from Customer where customerid = (select customerid from inserted))
+      begin
+        update Customer set Customer.customername = inserted.customername, 
+	    Customer.shipaddress = inserted.shipaddress
+	    from Customer join inserted 
+	    ON Customer.customerid = inserted.customerid
+		print('update');
+      end
+    Else
+	  begin
+	     insert customer(customername, shipaddress) 
+		 select customername, shipaddress from inserted
+		 print('insert');
+	  end
+end
+insert into Customer(customername, shipaddress) values('eric','china');
+go
+
+
+create trigger inform3
+ON product
+after update
+AS
+if UPDATE(productprice)
+begin
+print 'dml update action';
+end
+
+update product set productprice = 23500 where productname = 'nb';
+
+drop trigger inform3;

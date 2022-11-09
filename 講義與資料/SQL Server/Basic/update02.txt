@@ -1,0 +1,26 @@
+use LeonPower;
+
+insert into Employee(ename, eaddress, ephone, salary, title) values('kate','usa','001-201-2145',42000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('andy','japan','002-201-2145',45000,'sa');
+insert into Employee(ename, eaddress, ephone, salary, title) values('fair','china','001-203-2145',38000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('kitty','korea','001-204-2145',38000,'pg');
+insert into Employee(ename, eaddress, ephone, salary, title) values('jane','taiwan','001-202-2155',52000,'manager');
+insert into Employee(ename, eaddress, ephone, salary, title) values('michelle','canada','003-203-3145',36000,'hr');
+
+select * from Employee;
+
+
+insert into EmpoyeePromote(eid, ename, promoteCredit) values(2,'andy',2500);
+insert into EmpoyeePromote(eid, ename, promoteCredit) values(1,'kate',3000);
+insert into EmpoyeePromote(eid, ename, promoteCredit) values(5,'jane',5000);
+
+select * from EmpoyeePromote;
+
+use LeonPower;
+
+select * from Employee;
+
+update Employee set salary = salary + EmpoyeePromote.promoteCredit from EmpoyeePromote
+where Employee.eid = EmpoyeePromote.eid;
+
+select * from Employee;

@@ -1,0 +1,24 @@
+declare @user as varchar(30)
+declare @level as int, @creationDate date
+
+set @user='poseidon'
+set @level=20
+set @creationDate=GETDATE()
+
+select @user as myuser, @level as level
+select @creationDate as cdate
+
+
+declare @BooStore Table(bookid int primary key, bookname varchar(50), bookprice int);
+
+insert into @BooStore(bookid, bookname, bookprice) values(1,'harry potter',500);
+insert into @BooStore(bookid, bookname, bookprice) values(2,'white whale',250);
+
+select * from @BooStore;
+
+declare @myid int
+set @myid = 1
+if @myid<5
+  begin
+     print '@myid:' + convert(varchar,@myid)
+  end

@@ -1,0 +1,25 @@
+use AdventureWorks2019;
+
+select name, LEFT(Name,3) as shortname, ProductID, ListPrice
+from Production.Product
+order by ProductID;
+
+select str(123.56,5,1) as result1, str(123.56,6,1) as result2;
+select str(123.56,5,1) as result1, str(123.56,2,1) as result2;
+
+select 3.14 as source, CAST(3.14 as int) as result1, CAST(3.14 as decimal(7,5)) as result2;
+
+select 3.14 as source, CONVERT(int, 3.14) as result3, CONVERT(decimal(7,5),3.14) as result4;
+
+select PARSE('28/10/2022' as datetime using 'en-US') as result;
+select PARSE('28/10/2022' as datetime using 'zh-TW') as result;
+
+select TRY_CAST('2022/10/28' as datetime2) as result1;
+select TRY_CAST('2022/10/28' as int) as result2;
+select TRY_CAST('2022-10-28' as datetime) as result3;
+select TRY_CAST('10/28/2022' as datetime) as result4;
+select TRY_CAST('28/10/2022' as datetime) as result5;
+select TRY_CAST('10-28-2022' as datetime) as result6;
+select TRY_CAST('10-2022-28' as datetime) as result7;
+select TRY_Convert(datetime, '20221028') as result8;
+select TRY_Convert(datetime, '10282022') as result9;

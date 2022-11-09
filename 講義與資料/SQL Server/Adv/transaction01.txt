@@ -1,0 +1,17 @@
+print @@trancount
+begin tran
+  print @@trancount
+  begin tran
+    print @@trancount
+  commit
+  print @@trancount
+commit
+print @@trancount
+
+print @@trancount
+begin tran
+  print @@trancount
+  begin tran
+    print @@trancount
+rollback
+print @@trancount

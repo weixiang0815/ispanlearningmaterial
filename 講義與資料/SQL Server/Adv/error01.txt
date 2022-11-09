@@ -1,0 +1,25 @@
+select * from sys.messages;
+
+use LeonPower;
+
+select * from Product;
+
+begin tran
+   insert into product(productname, productprice, productdate) values('lichi', 20, '2022-11-04');
+
+   update Product set productprice = 1000 where productnumber = 9;
+
+   if @@ERROR != 0
+      rollback tran
+   else
+      commit tran
+
+begin try
+   select 6/0 as result;
+end try
+begin catch
+   select ERROR_NUMBER() as err_num, ERROR_LINE() as err_line, ERROR_MESSAGE() as err_msg;
+end catch;
+go
+
+select * from sys.messages where message_id = 8134;

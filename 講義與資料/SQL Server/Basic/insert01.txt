@@ -1,0 +1,10 @@
+use LeonPower;
+
+insert into Product(productname, productprice, productdate) values('grape',110,'2022-11-10');
+
+select * from Product;
+
+insert into Product(productname, productprice,productdate) 
+values('orange',45,'2022-12-5'),('watermelon', 250, '2022-06-18');
+
+select * from Product;

@@ -1,0 +1,19 @@
+create table Staff(
+   staffid int not null primary key identity(1,1),
+   staffname nvarchar(50) not null,
+   department nvarchar(20) not null,
+   salary int not null
+);
+
+insert into Staff(staffname, department, salary) values('mary', 'hr', 28000);
+insert into Staff(staffname, department, salary) values('john', 'hr', 27500);
+insert into Staff(staffname, department, salary) values('judy', 'hr', 30000);
+insert into Staff(staffname, department, salary) values('louis', 'rd', 38000);
+insert into Staff(staffname, department, salary) values('jack', 'rd', 42000);
+insert into Staff(staffname, department, salary) values('karen', 'rd', 42500);
+insert into Staff(staffname, department, salary) values('michelle', 'sales', 75000);
+insert into Staff(staffname, department, salary) values('janet', 'sales', 60000);
+
+select * from Staff;
+
+truncate table Staff;

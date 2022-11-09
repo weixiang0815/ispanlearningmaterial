@@ -1,0 +1,31 @@
+if OBJECT_ID(N'tvf_staff', N'IF') is not null
+drop function tvf_staff;
+go
+
+create function tvf_staff(@department nvarchar(50))
+returns TABLE
+AS
+return(
+   select department, sum(salary) as departSalary from Staff
+   where department = @department
+   group by department
+);
+go
+
+select * from tvf_staff('rd');
+go
+
+create function mtvf_staff(@staffid int)
+returns @mytable TABLE(
+   mystaffid int,
+   mystaffname nvarchar(50)
+)
+AS
+begin 
+   insert @mytable
+      select staffid, staffname from Staff where staffid = @staffid
+	  return
+end
+go
+
+select * from mtvf_staff(2);

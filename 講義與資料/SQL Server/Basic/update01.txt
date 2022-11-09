@@ -1,0 +1,4 @@
+
+update Product set productprice=2000 where productname='watermelon';
+
+select * from Product;

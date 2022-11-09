@@ -1,0 +1,7 @@
+select * from Production.Product;
+
+select * from Production.Product where ProductSubcategoryID = 17;
+
+select name, ListPrice, FIRST_VALUE(name) Over(order by ListPrice) as cheap 
+from Production.Product
+where ProductSubcategoryID = 17;

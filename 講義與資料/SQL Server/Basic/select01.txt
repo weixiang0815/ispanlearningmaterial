@@ -1,0 +1,17 @@
+use AdventureWorksDW2019;
+
+select * from DimEmployee;
+
+select FirstName as name, HireDate, Gender, MaritalStatus, Title From DimEmployee;
+
+select FirstName name1, HireDate, Gender, MaritalStatus, Title From DimEmployee;
+
+select distinct title from DimEmployee;
+
+select FirstName as name, HireDate, Gender, MaritalStatus, Title from DimEmployee where MaritalStatus = 'S';
+
+select FirstName as name, HireDate, Gender, MaritalStatus, Title from DimEmployee where MaritalStatus = 'S' and Gender='F';
+
+select FirstName as name, HireDate, Gender, MaritalStatus, Title From DimEmployee where FirstName like 'R%';
+
+select FirstName as name, HireDate, Gender, MaritalStatus, Title From DimEmployee where FirstName like '%R%';

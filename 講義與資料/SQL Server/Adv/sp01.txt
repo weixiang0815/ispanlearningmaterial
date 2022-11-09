@@ -1,0 +1,11 @@
+exec xp_cmdshell 'dir c:\windows';
+
+use LeonPower;
+go
+
+create procedure LeonProcA
+AS select * from Product;
+go
+
+exec LeonProcA;
+go

@@ -1,0 +1,26 @@
+create view view_vhiredate3
+AS
+select FirstName, LastName, hre.BusinessEntityID, HireDate
+from HumanResources.Employee as hre
+JOIN Person.Person as p
+ON hre.BusinessEntityID = p.BusinessEntityID
+where HireDate>'20091201'
+with check option;
+GO
+
+select * from view_vhiredate3 order by HireDate;
+
+Alter view view_vhiredate3
+AS
+select FirstName, LastName, hre.BusinessEntityID, HireDate
+from HumanResources.Employee as hre
+JOIN Person.Person as p
+ON hre.BusinessEntityID = p.BusinessEntityID
+where HireDate<'20091201'
+with check option;
+GO
+
+select * from view_vhiredate3 order by HireDate;
+GO
+
+drop view view_vhiredate3;

@@ -1,0 +1,45 @@
+use AdventureWorks2019;
+
+select Name, ProductNumber, Weight
+from Production.Product
+where Weight is null;
+
+select Name, ProductNumber, Weight
+from Production.Product
+where Weight is not null;
+
+use AdventureWorksDW2019;
+
+select FirstName, HireDate, Gender, MaritalStatus, Title
+from DimEmployee
+where MaritalStatus = 'S'
+order by FirstName asc, HireDate desc;
+
+select rand(10) as r1, rand() as r2, rand() as r3;
+
+
+
+select rand() as r1, rand() as r2, rand() as r3;
+
+select SYSDATETIME() as d1, SYSDATETIMEOFFSET() as d2, SYSUTCDATETIME() as d3, CURRENT_TIMESTAMP as d4,
+getDate() as d5, getUtcDate() as d6;
+
+select LEN(' firstname') as L1, LEN('firs tname') as L2, LEN('firstname ') as L3;
+
+select FirstName, LEN(FirstName) as fn, HireDate, Gender, MaritalStatus, Title
+from DimEmployee
+where MaritalStatus = 'S'
+order by FirstName asc, HireDate desc;
+
+select FirstName, LEN(FirstName) as fn, DATALENGTH(FirstName) as size, HireDate, Gender, MaritalStatus, Title
+from DimEmployee
+where MaritalStatus = 'S'
+order by FirstName asc, HireDate desc;
+
+select SUBSTRING('abcdefg',2,3) as result;
+
+select FirstName, LEN(FirstName) as fn, DATALENGTH(FirstName) as size, SUBSTRING(FirstName,2,3) as sub1, 
+HireDate, Gender, MaritalStatus, Title
+from DimEmployee
+where MaritalStatus = 'S'
+order by FirstName asc, HireDate desc;

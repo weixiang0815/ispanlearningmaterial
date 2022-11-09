@@ -1,0 +1,27 @@
+use LeonPower;
+go
+
+create trigger inform1
+ON Product
+After Insert
+As
+print 'DML action1';
+go
+
+select * from Product;
+
+insert into product(productname, productprice, productdate) values('nb',26000,'2022-11-10');
+go
+
+create trigger inform2
+ON Product
+After Delete
+AS
+print 'DML delete occured';
+go
+
+delete from Product where  productnumber = 13;
+
+select * from sys.triggers;
+
+select * from sys.trigger_events;

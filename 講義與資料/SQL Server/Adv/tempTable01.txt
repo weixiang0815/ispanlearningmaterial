@@ -1,0 +1,10 @@
+create table #MyOrders(id int, amount int);
+
+create table ##MyCustomers(id int, name varchar(10));
+
+use LeonPower;
+
+with tmpMyOrders
+AS
+(Select keyid, COUNT(*) as record_count from Record2 group by keyid)
+select * from tmpMyOrders;

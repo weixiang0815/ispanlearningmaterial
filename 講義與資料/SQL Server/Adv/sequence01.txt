@@ -1,0 +1,14 @@
+create sequence myseq01
+as int
+start with 1
+increment by 1;
+
+select next value for myseq01 as serialid, customername from Customer;
+
+select * from sys.sequences where name = 'myseq01';
+
+alter sequence myseq01 restart with 1;
+
+select * from sys.sequences where name = 'myseq01';
+
+drop sequence myseq01;

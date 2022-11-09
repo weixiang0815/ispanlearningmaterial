@@ -1,0 +1,49 @@
+use LeonPower;
+
+select *, sum(salary) Over(partition by department) as salaryOfdepart,
+          sum(salary) Over(partition by department order by staffid) as accSalaryOfdepart,
+		  sum(salary) Over(order by staffid) as accSalaryOfcompany,
+		  sum(salary) Over() as tottalSalaryOfcompany
+from Staff;
+
+
+
+use AdventureWorks2019;
+
+select ROW_NUMBER() Over(order by CountryRegionName DESC) as row, CountryRegionName, Firstname, 
+lastname, TerritoryName ,Round(salesYTD,2) as salesYTD
+from Sales.vSalesPerson;
+
+select ROW_NUMBER() Over(order by CountryRegionName DESC) as row, CountryRegionName, Firstname, 
+lastname, TerritoryName ,Round(salesYTD,2) as salesYTD
+from Sales.vSalesPerson 
+where TerritoryName is not null and salesYTD != 0;
+
+select RANK() Over(order by CountryRegionName DESC) as row, CountryRegionName, Firstname, 
+lastname, TerritoryName ,Round(salesYTD,2) as salesYTD
+from Sales.vSalesPerson 
+where TerritoryName is not null and salesYTD != 0;
+
+select DENSE_RANK() Over(order by CountryRegionName DESC) as row, CountryRegionName, Firstname, 
+lastname, TerritoryName ,Round(salesYTD,2) as salesYTD
+from Sales.vSalesPerson 
+where TerritoryName is not null and salesYTD != 0;
+
+use LeonPower;
+
+select NTILE(4) OVER(order by staffname) as rank, *
+from staff;
+
+use AdventureWorks2019;
+
+select * from Sales.SalesPersonQuotaHistory;
+
+select BusinessEntityID, YEAR(QuotaDate) as SalesYear, SalesQuota as ActionSales, 
+LAG(SalesQuota, 1, 0) Over(Order By YEAR(QuotaDate)) as preQuota
+from Sales.SalesPersonQuotaHistory
+where BusinessEntityID=280 and YEAR(QuotaDate) IN ('2012','2013');
+
+select BusinessEntityID, YEAR(QuotaDate) as SalesYear, SalesQuota as ActionSales, 
+LEAD(SalesQuota, 1, 0) Over(Order By YEAR(QuotaDate)) as preQuota
+from Sales.SalesPersonQuotaHistory
+where BusinessEntityID=280 and YEAR(QuotaDate) IN ('2012','2013');

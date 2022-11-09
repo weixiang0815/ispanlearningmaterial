@@ -1,0 +1,38 @@
+use LeonPower;
+go
+
+create procedure LeonProcB
+@pname nvarchar(50), @price int, @pdate date
+AS Insert Into Product(productname, productprice, productdate)
+Values(@pname, @price, @pdate);
+go
+
+exec LeonProcB 'medal of honor', 1280, '2022-11-08';
+go
+
+select * from Product;
+go
+
+create procedure LeonProcB1
+@pname nvarchar(50), @price int, @pdate date with encryption
+AS Insert Into Product(productname, productprice, productdate)
+Values(@pname, @price, @pdate);
+go
+
+exec sp_helptext 'LeonProcB';
+
+select * from sys.sql_modules;
+
+select * from sys.sql_modules where object_id = OBJECT_ID('LeonProcB1');
+
+create procedure LeonProcC
+@total int output
+AS select @total = SUM(productprice) from Product;
+go
+
+declare @sum int
+exec LeonProcC @sum output
+print 'total price:' + convert(nvarchar, @sum);
+go
+
+select * from Product;

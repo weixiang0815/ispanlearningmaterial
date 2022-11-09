@@ -1,0 +1,7 @@
+use AdventureWorks2019;
+
+set ansi_nulls off;
+
+select name, ProductNumber, Weight, ListPrice from Production.Product where Weight = null;
+
+set ansi_nulls on;

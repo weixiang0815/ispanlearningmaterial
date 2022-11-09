@@ -1,0 +1,29 @@
+use AdventureWorksDW2019;
+
+select * from FactInternetSales;
+
+select OrderDateKey, sum(SalesAmount) as total_amount
+from FactInternetSales
+group by OrderDateKey
+order by OrderDateKey;
+
+select OrderDateKey, sum(SalesAmount) as total_amount
+from FactInternetSales
+group by OrderDateKey
+having sum(SalesAmount)<=1000
+order by OrderDateKey;
+
+use AdventureWorks2019;
+
+select BusinessEntityID, FirstName, LastName
+from Person.Person;
+
+select Top(7) BusinessEntityID, FirstName, LastName
+from Person.Person;
+
+select BusinessEntityID, FirstName, LastName
+from Person.Person
+order by FirstName desc
+offset 5 rows
+fetch next 6 rows only;
+

@@ -1,0 +1,35 @@
+use LeonPower;
+
+select * from Orders;
+
+select * from Product;
+
+select ordernumber, customerid, amount, Product.productnumber, productname, productprice
+from Orders join Product
+on Orders.productnumber = Product.productnumber;
+
+select ordernumber, customerid, amount, p.productnumber, productname, productprice
+from Orders as d join Product as p
+on d.productnumber = p.productnumber;
+
+select ordernumber, customerid, amount, d.productnumber, p.productnumber, productname, productprice
+from Orders as d left join Product as p
+on d.productnumber = p.productnumber;
+
+select ordernumber, customerid, amount, d.productnumber, p.productnumber, productname, productprice
+from Orders as d right join Product as p
+on d.productnumber = p.productnumber;
+
+select ordernumber, customerid, amount, d.productnumber, p.productnumber, productname, productprice
+from Orders as d full join Product as p
+on d.productnumber = p.productnumber;
+
+select ordernumber, customerid, amount, d.productnumber, p.productnumber, productname, productprice
+from Orders as d cross join Product as p
+where d.productnumber = p.productnumber;
+
+select * from Employee;
+
+select e1.ename, e2.ename, e1.salary, e2.salary
+from Employee as e1 join Employee as e2
+on e1.salary = e2.salary and e1.eid != e2.eid;

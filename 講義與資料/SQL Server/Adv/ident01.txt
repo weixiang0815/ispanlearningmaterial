@@ -1,0 +1,15 @@
+use AdventureWorks2019;
+
+select * from Person.Address;
+
+select IDENT_CURRENT('Person.Address') as idValue1;
+
+use LeonPower;
+
+select * from House;
+
+insert into House(housename, description) values('great house', 'wonderful');
+
+select SCOPE_IDENTITY() as scope_id;
+
+select @@IDENTITY as ident_id;

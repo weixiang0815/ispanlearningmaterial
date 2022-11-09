@@ -1,0 +1,15 @@
+use AdventureWorks2019;
+go
+
+if OBJECT_ID('dbo.myResults','P') is not null
+drop procedure dbo.myResults;
+go
+
+create procedure dbo.myResults
+as 
+set nocount off
+select top(7) BusinessEntityID, FirstName, LastName, Title  from Person.Person;
+go
+
+exec dbo.myResults;
+go

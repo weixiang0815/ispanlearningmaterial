@@ -1,0 +1,13 @@
+use LeonPower;
+
+create table Car(
+   carid int not null primary key identity(1000,1),
+   carbrand varchar(50) unique,
+   carprice int not null
+);
+
+insert into Car(carbrand,carprice) values('ford',70);
+insert into Car(carbrand,carprice) values('tesla',120);
+insert into Car(carbrand,carprice) values('mercedes-benz',150);
+
+select * from Car;

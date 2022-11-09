@@ -1,0 +1,23 @@
+use AdventureWorks2019;
+
+select CustomerID from sales.Customer where TerritoryID = 6;
+
+select name, BusinessEntityID from sales.Store where BusinessEntityID 
+IN (select CustomerID from sales.Customer where TerritoryID = 6);
+
+
+select ProductSubcategoryID, max(ListPrice) as listprice from Production.Product group by ProductSubcategoryID;
+
+select name, ListPrice from Production.Product where  ListPrice>= 
+ALL (select max(ListPrice) as listprice from Production.Product group by ProductSubcategoryID);
+
+select name, ListPrice from Production.Product where  ListPrice>= 
+ANY (select max(ListPrice) as listprice from Production.Product group by ProductSubcategoryID);
+
+select * from Production.ProductSubcategory, Production.Product 
+where Production.ProductSubcategory.ProductCategoryID = Production.Product.ProductSubcategoryID
+and Production.ProductSubcategory.name = 'wheels';
+
+select name from Production.Product where Exists (select * from Production.ProductSubcategory 
+where Production.ProductSubcategory.ProductCategoryID = Production.Product.ProductSubcategoryID
+and Production.ProductSubcategory.name = 'wheels');

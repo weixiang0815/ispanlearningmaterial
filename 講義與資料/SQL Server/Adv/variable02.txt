@@ -1,0 +1,12 @@
+use LeonPower;
+
+select * from Product;
+
+declare @myid int, @name varchar(50)
+set @myid = 1
+while @myid<5
+  begin
+      select @name = productname from Product where productnumber = @myid;
+	  print @name;
+	  set @myid = @myid + 1;
+  end

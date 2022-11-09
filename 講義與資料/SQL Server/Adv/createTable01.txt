@@ -1,0 +1,34 @@
+use LeonPower;
+
+create table WebSiteResource(
+   LinkId int not null primary key identity(100,1),
+   areaid uniqueidentifier default newid() rowguidcol,
+   filename nvarchar(50) not null,
+   createDate date default convert(date, getDate())
+);
+
+insert into WebSiteResource(filename) values('truck.png');
+
+select * from WebSiteResource;
+
+create table Record1(
+   keyid int not null primary key, value varchar(10), timestamp
+);
+
+insert into Record1(keyid, value) values(1,'mountain');
+insert into Record1(keyid, value) values(2,'river');
+
+select * from Record1;
+
+create table Record2(
+   keyid int not null primary key, value varchar(10), rv rowversion
+);
+
+insert into Record2(keyid, value) values(1,'sky');
+insert into Record2(keyid, value) values(2,'sea');
+
+select * from Record2;
+
+update Record2 set value='cloud' where keyid=2;
+
+select * from Record2;

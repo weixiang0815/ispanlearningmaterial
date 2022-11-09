@@ -1,0 +1,12 @@
+use LeonPower;
+go
+
+create function sf_getDate(@mydate as date)
+returns date
+begin
+   return @mydate
+end
+go
+
+select dbo.sf_getDate(GETDATE()) as result;
+go

@@ -1,0 +1,14 @@
+create database Product
+ON(
+   name=Product,
+   filename='c:\temp\test\Product.mdf'
+);
+
+create database Inventory
+ON(
+  name=Inventory,
+  filename='c:\temp\test\Inventory.mdf',
+  size=5MB,
+  maxsize=100MB,
+  filegrowth=5MB
+);
