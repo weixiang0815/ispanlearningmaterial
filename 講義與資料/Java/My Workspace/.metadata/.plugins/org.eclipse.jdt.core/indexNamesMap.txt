@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-file:/C:/Users/henry/Desktop/課程講義/資展上課資料/講義與資料/Java/My%20Workspace/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
-meta_index
