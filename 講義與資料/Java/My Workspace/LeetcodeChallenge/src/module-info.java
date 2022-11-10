@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Student
- *
- */
-module LeetcodeChallenge {
-}

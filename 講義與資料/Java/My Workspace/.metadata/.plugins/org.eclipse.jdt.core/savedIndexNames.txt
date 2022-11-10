@@ -1,8 +1,6 @@
 INDEX VERSION 1.131+C:\Users\Student\Desktop\資展上課資料\講義與資料\Java\My Workspace\.metadata\.plugins\org.eclipse.jdt.core
-4123239472.index
 2954269831.index
-2590712432.index
-1678852019.index
-1865797976.index
-1799188486.index
 755108591.index
+1678852019.index
+2590712432.index
+4123239472.index
