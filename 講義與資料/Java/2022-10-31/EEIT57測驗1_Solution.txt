@@ -1,0 +1,107 @@
+Java 測驗01   2022/10/31  (時間20分鐘)     
+              
+姓名:_________
+
+座號:_________   
+
+
+
+一. 是非題(20%)
+
+ 1.( X ) 一個Java原始程式檔內可以編寫多個最上層的公用類別(public class)。
+ 
+ 2.( O ) 每個Java原始程式檔可以定義多個類別，編譯此原始程式檔後，每個類別會分別
+         產生一個類別檔。 
+ 
+ 3.( X ) JVM在執行Java程式時，第一個執行的方法為：
+         
+         public static void Main(String[] args)  {
+            //... 
+         }
+ 
+ 4.( O ) 當Java程式使用了套件java.lang內的類別時，我們可以不需要編寫import敘述來
+         匯入這些類別，因為此套件內的類別會由編譯程式自動匯入(auto-import)。 
+ 
+ 5.( O ) 每個類別可包含0或多個『變數』、『方法』與『建構子』。
+ 
+ 6.( X ) Java語言提供的『整數常數』共分為四種。
+ 
+ 7.( O ) 多個型態相同的變數可以定義在同一列，但是要用逗點隔開不同的變數。
+ 
+ 8.( X ) Java原始程式的副檔名可以是JAVA或java。
+ 
+ 9.( X ) 程式師為變數、方法、類別、標籤等所取的名稱，稱為關鍵字。
+ 
+10.( O ) 所有Java關鍵字都是由小寫字母組成。
+
+
+二. 選擇題(20%)
+
+D 1. Java官方文件稱我們編寫的Java程式為
+    (A) 原始程式(Source Program)
+    (B) 目的程式(Objective Program)
+    (C) 原始單元(Source Unit)
+    (D) 編譯單元(Compilation Unit)
+    (E) Java程式(Java Program)
+
+AE 2. Java執行環境(JRE, Java Runtime Environment)是由哪些部分組成(選兩個)?   
+   (A) JVM (Java Virtual Machine)
+   (B) Java 說明文件
+   (C) Java 編譯程式
+   (D) Java 解譯程式
+   (E) Java API
+   
+D 3. int x = 100;
+    x = x - 30;
+	
+	執行上面的程式片段後，x的值為
+   (A) -30
+   (B) 100
+   (C) 130
+   (D) 70
+   (E) 30
+   
+E 4. 下列敘述何者錯誤? 
+   (A) Java語言區分大小寫，亦即大寫與小寫字母視為不同
+   (B) Java程式的類別名稱、方法名稱、變數名稱都不能是關鍵字。
+   (C) 套件java.lang內的類別會由編譯程式自動匯入(auto-import)
+   (D) 套件(package)是Java語言用來區分同名類別的一種分辨機制。
+   (E) 如果原始程式沒有語法錯誤(Syntax error)，則程式可以執行，程式執行的
+       結果也不會有任何問題。
+       
+BCD 5. Java原始程式由下列哪三部分所組成?  (選三個)
+   (A) 程式說明文件
+   (B) 套件敘述(package)
+   (C) 輸入敘述(import)
+   (D) 類別的定義(class)
+   (E) 獨立的變數與函數
+
+ 
+三. 填充題(60%)
+
+ 1. 八個位元(bit)稱為一個 __位元組/byte___。
+
+ 2. 下列的程式片段會在螢幕上顯示___1_____行有符號、可視的資料。(空白行不算在內)
+    System.out.print("OO");
+    System.out.print("XX");
+    System.out.println("TT"); 
+
+ 3. __變數___具有名稱，佔據記憶體，用來存放一個會改變的資料。   
+	
+ 4. Java語言中，識別字的第一個字元必須是___字母___、____$/錢號______或____/底線__。  	
+
+ 5. 下列的程式片段會在螢幕上顯示兩行資料，第一行是__XXYY____，第二行是___ZZ______。
+    System.out.print("XX");
+    System.out.println("YY");
+    System.out.print("ZZ");
+
+ 6. public  class  HelloWorld {
+       public static void main(String[] args) {
+          System.out.println("Hello, World!!!");
+       }
+    }
+    此程式所屬檔案之原始檔的檔名為__HelloWorld.java__。	
+ 
+ 7. Java 基本資料型態的關鍵字有: int,  double, __boolean___, __char_______, ___short___, 
+    __float__, ___long___, ___byte__。
+   	

@@ -1,0 +1,200 @@
+Java 測驗02   2022/11/03  (時間30分鐘)     
+              
+姓名:_________
+
+座號:_________   
+
+
+一. 是非題(20%)
+
+ 1.( O ) 三元運算子由問號(?)與冒號(:)組成，必須有三份資料才能得到運算結果。
+         由左至右，第一份資料必須是能得到真或假的關係或邏輯運算式。    
+     
+ 2.( O ) 每個區塊皆可以定義變數，但是內層區塊所定義的區域變數不能與外層區塊
+         已定義的區域變數同名。
+ 
+ 3.( X ) 當某個運算式(不含指定運算)含有多個運算元時，Java會先將
+          short, byte, char等型態的資料轉換為double。   
+      
+ 4.( X ) long型態的變數佔用四個位元組的記憶體。
+     
+ 5.( O ) int型態的變數可以直接指定給long型態的變數而不需要型別轉換(Cast)。        
+ 
+ 6.( O )  &&，||為作用於boolean資料的『且』與『或』邏輯運算子。它們與
+         &及|的主要差異在&&與||右邊的運算元不一定會計算(evaluated)它的真假
+		 
+ 7.( X ) char ch = 10 ;   
+         short s = ch;   
+         字元型態的變數指定給short型態的變數是正確的。
+         
+ 8.( X ) "123" 與 123 在Java語言中為不同型態的資料，但可以交換使用。
+ 
+ 9.( X ) Java語言提供的『整數常數』共分為四種。
+ 
+10.( X ) do-while敘述會先判斷敘述內的條件才決定是否要執行迴圈的本體。
+
+
+
+二. 填充題(60%)  
+
+ 1. 八個位元(bit)稱為一個位元組。一個位元組的資料如果用16進位來表示，最多
+    會用到___2__個16進位的數字(即0-9、A-F這16個符號)。   
+  
+ 2. int i = 6, j = 8  ;
+    System.out.println("6+8=" + i + j ) ;           // 此敘述的輸出為 _6+8=68__ 
+    System.out.println( i + j + "=6+8") ;           // 此敘述的輸出為 _14=6+8__ 
+  
+ 3. System.out.println( 5 > 0 );                    // 此敘述的輸出為 __true___   
+ 
+ 4. System.out.println(0.0 / 0.0);                  // 此敘述的輸出為 ___NaN__ 
+ 
+ 5. 陣列有__length____屬性，它的值為陣列元素的個數。
+ 
+ 6. class P {
+       public static void main(String[] args)   {
+          String s = "Naive birds" ;
+          System.out.println( s.charAt(3) ) ;         //  此行會印出 __v______
+          System.out.println( s.lastIndexOf('L') ) ;  //  此行會印出 __-1_____
+          System.out.println( s.length() ) ;          //  此行會印出 __11_____
+          System.out.println( s.substring(6) ) ;      //  此行會印出 __birds__
+          System.out.println( s.substring(2, 5) ) ;   //  此行會印出 __ive_____
+       }
+    }   
+  
+ 7.  int prod = 2; 
+     prod  *=  40 + 6; 
+     System.out.println( prod ) ;  
+     此敘述會於螢幕上印出____92________。
+   
+ 8.  int a = 8 ;
+     int x = 6 ;
+     x +=  a ;
+     x的值為____14____。         
+     
+ 9.  int x = 5, y = 11, a = 0 , b = 0  ;
+     a = --x * 3  ; 
+     b = y++ - 4  ;
+    
+     執行上述程式片段後，
+     
+     a = ____12____,  b= ____7______,  x = _____4____。
+
+10. 執行下列程式片段後，螢幕上會印出____BCDE______
+       int x = 10 ;
+       switch(x) {
+          case 20 : 
+             System.out.print("A") ;
+          case 10 : 
+             System.out.print("B") ;       
+          case 30 : 
+             System.out.print("C") ;
+          case 0 : 
+             System.out.print("D") ;       
+          default :
+             System.out.print("E");        
+        }              
+11. int i, sum = 0  ;
+    for (i = 1; i <= 10 ; i++)  {
+        if ( i % 2 == 0 )
+           sum = sum + i ;   
+           sum++;   
+    }
+    System.out.println(sum ) ; // 此行會印出____40______。
+ 
+12. -17 % -4 的運算結果為____-1____。
+
+13. 請完成下列程式, 它會加總陣列ar中所有的元素。
+    public class Q5 {
+       public static void main(String[] args) {
+	     int[] ar = { 1, 2, 14, 7, 12 };
+         int sum = 0;
+   	     for (int i : ar) {
+   	         sum += ___i____;
+   	     }
+   	     System.out.println("sum=" + sum);  
+      }
+   }
+
+
+
+三. 選擇題(20%)
+
+1. ( D ) 下列哪一個敘述不能正確編譯而會產生語法錯誤：
+         (A) double d = 1;  
+         (B) char  c = 'z'; 
+         (C) byte  b1 = 127; 
+         (D) boolean b0 = 1; 
+         (E) char c2 = 50; 		 
+     
+2. ( A ) Java語言哪一個敘述可以立刻結束迴圈之執行而執行迴圈之後的敘述?
+         (A) break 敘述
+         (B) loop 敘述
+         (C) for 敘述
+         (D) continue 敘述
+         (E) end 敘述		 
+
+3. ( C ) 下列敘述，何者為假? 它們都是與陣列有關的敘述。
+         (A) int[] ia = new int[10]; 定義了一個含有10個元素的陣列，元素的
+             型態為int。
+         (B) 在程式內使用一維陣列之元素時，需要一個註標(index)。
+         (C) Java陣列的元素沒有預設的初值。
+         (D) 陣列的最大優點在於只要使用陣列名稱與註標(index)就可以存取其內的
+             元素。          
+         (E) 二維陣列的元素為一維陣列
+
+4. ( C ) System.out.println(25 / 10) ;   
+         上面的敘述會在螢幕上印出
+         (A) 2.5
+         (B) 3
+         (C) 2
+         (D) 3.0
+         (E) 25             
+
+5. ( D ) int a = 8 ;
+         int sum = 6 ;
+         sum += a * 2 + 4 ;
+
+         執行上面的程式片段後，sum 的值為:
+         
+         (A) 14
+         (B) 6
+         (C) 22
+         (D) 26
+         (E) 18
+
+6. ( C ) 您需要利用Java提供的基本資料型態來定義一個變數，它所存放的資料是整數，
+         其值可能高達數百億，您應該使用的Java基本資料型態為： 
+    
+         (A) double
+         (B) float
+         (C) long
+         (D) int
+         (E) BigInteger
+		 
+7. ( D ) char型態的變數可以直接指定給下列哪一種型態的變數而不需要型別轉換(Cast)?
+         (A) byte
+         (B) short
+         (C) String
+         (D) int
+         (E) boolean		 
+
+8. ( B ) java.lang.Math 類別中，用來產生介於大於等於 0.0，小於 1.0 之間隨機亂數的方法為: 
+         (A) round()
+         (B) random()
+         (C) number()
+         (D) pow()
+         (E) valueOf()
+     
+9. ( D ) 下列敘述，何者為真? 它們都是和資料型態有關的敘述。  
+         (A)  Java語言提供的『整數常數』共有四種。
+         (B)  char型態的資料視為整數，可以存放正負數。
+         (C)  "123" 與 123 在Java語言中視為相同的資料，可以交換使用。
+         (D)  "a" 與 'a' 不同，前者為字串，後者為字元。
+         (E)  以上皆真
+		 
+10.( C ) 下列哪一種符號不可以是Java語言的識別字的第一個符號?
+         (A)  字母
+         (B)  $(錢號)
+         (C)  @(小老鼠)
+         (D)  _(底線)
+         (E)  中文字
