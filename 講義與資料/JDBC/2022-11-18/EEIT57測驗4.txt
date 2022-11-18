@@ -189,6 +189,12 @@ Java 測驗04   2022/11/18  (時間25分鐘)
 10. 執行ErrorProneC.java時，螢幕會出現 ____________。
     (不考慮JVM丟出的錯誤訊息)
     public class ErrorProneC {
+
+	static {
+	sysout
+	for
+	static int n = 0;
+		}
        public static void main(String[] args) {
           try {
              Elephant.walk();
@@ -200,6 +206,12 @@ Java 測驗04   2022/11/18  (時間25分鐘)
           }
           System.out.print("4");
        }
+
+static {
+	sysout
+	for
+	static int n = 0;
+		}
     } 
 
     class Elephant {
