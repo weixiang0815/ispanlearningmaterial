@@ -1,0 +1,248 @@
+Java 測驗04   2022/11/18  (時間25分鐘)     
+             
+姓名:____________
+
+座號:____________
+   
+
+一. 是非題(20%)
+
+ 1.(   ) 存放在java.util.Map介面內的資料都是一對、一對的物件，存放在
+         java.util.Collection介面內的資料都是一個、一個的物件。
+         
+ 2.(   ) java.io.InputStream類別提供的int read()方法會由程式外部讀取一個位
+         元組的資料，此位元組會被轉換為介於0–255的整數然後傳回此整數。如果
+         沒有資料可供讀取，此方法會傳回null。         
+ 
+ 3.(   )  一個類別的建構子絕對不能使用private來修飾，否則外界不能使用此類別
+         提供的功能。
+         
+         
+ 4.(   ) Java語言要區分純文字檔與非文字檔的最根本原因是因為程式執行時，程式
+         內部的文字資料都必須是以Unicode來編碼，包括原本寫在程式內的字元與
+         字串，以及程式由外界讀入的文字資料。
+        
+ 5.(   ) final與abstract兩個修飾字可以同時用來修飾一個Java類別。        
+ 
+ 6.(   ) jJava類別的靜態方法m1()可以直接存取該類別的非靜態變數s，如：
+         public class A {
+     	    	int s = 10;
+	    	    public static void m1(){
+		           s++;
+		        }
+	       }
+ 
+ 7.(   ) 在泛型類別的語法中，<T extends Parent> 表示傳入的類別必須是Parent類別
+         或它的子類別，這表示傳入之型態參數受到限制。
+        
+ 8.(   ) 成對(name+value或key+value)的資料所成的集合稱為Map，像亞當與夏娃就是一對資料。
+         
+ 9.(   ) 子代類別的物件(參考)可直接指定給父代類別的變數而不需要型態轉換。   
+         
+10.(   ) 任何屬於java.util.Set介面家族的類別都不允許其內有重複的元素。
+         
+
+二. 選擇題(30%)         
+
+ 1.(   ) File類別的哪一個方法可以判斷此File物件是否為資料夾? 
+         (A) isDirectory()
+         (B) isFile()
+         (C) exists()
+         (D) isDir()
+         (E) file()
+         
+ 2.(   ) File類別的哪一個方法可建立多層資料夾?
+         (A) directorys()
+         (B) mkdir()
+         (C) mkdirs()
+         (D) dirs()
+         (E) files()
+
+ 3.(   ) 能將Unicode字元依照指定的編碼，正確的轉換為位元組的Java類別為: 
+         (A) java.io.FileOutputStream
+         (B) java.io.BufferedOutputStream
+         (C) java.io.OutputStreamWriter
+         (D) java.io.BufferedWriter
+         (E) java.io.OutputStream
+         
+ 4.(   ) 能將輸入的位元組依照指定的編碼，正確的轉換為Unicode字元的Java類別為: 
+         (A) java.io.FileInputStream
+         (B) java.io.BufferedInputStream
+         (C) java.io.InputStreamReader
+         (D) java.io.BufferedReader
+         (E) java.io.InputStream
+         
+ 5.(   ) 下列哪一個Java類別是表示時間上的一個瞬間? 
+         (A) java.lang.System
+         (B) java.lang.Runtime
+         (C) java.util.Time
+         (D) java.util.Date
+         (E) java.io.Now
+         
+ 6.(   ) 抽象類別的名稱前一列應該加上哪一個修飾字?
+         (A) abstract   (B) static   (C) final   (D) public   (E) protected  
+        
+ 7.(   ) 父代方法如果不想讓子代類別Override，父代方法應該加上哪一個修飾字?
+         (A) abstract   (B) static   (C) final   (D) public   (E) protected          
+         
+ 8.(   ) 具備輸出緩衝區的Java類別為
+         (A) java.io.BufferedOutputStream
+         (B) java.io.FileOutputStream
+         (C) java.io.ObjectOutputStream
+         (D) java.io.DataOutputStream
+         (E) java.io.InputStream
+
+ 9.(   ) Java語言規定當某個類別override繼承來的equals()方法時，應該同時
+         override哪一個方法?
+         (A) toString()方法
+         (B) hashCode()方法
+         (C) getClass()方法
+         (D) valueOf() 方法
+         (E) finalize() 方法
+         
+10.(   ) 編譯與執行下列程式會發生:
+         public class MyClass {
+            static {
+               System.out.println("Kitty");
+            }
+            public static void main(String arguments[]) {
+               System.out.println("Micky");
+            }
+            static {
+               System.out.println("Snoopy");
+            }
+         }
+         (A) 螢幕會依序出現: Kitty, Snoopy與Micky三列訊息
+         (B) 螢幕會依序出現: Kitty, Micky與Snoopy三列訊息
+         (C) 螢幕會出現: Kitty與Snoopy兩列訊息
+         (D) 螢幕會出現: Micky
+         (E) 程式無法執行，因為有語法錯誤。  
+      
+
+二、填充題(50%)
+
+ 1.java.io.InputStream家族中的_______________類別可讀取硬碟上的非文字檔；
+   java.io.OutputStream家族中的_______________類別可將非文字資料寫出到硬碟
+   內的檔案。
+         
+ 2. Java 語言中，讀取文字檔的一列文字資料可用 _________ 類別的 readLine()方法，
+    寫出文字檔的一列文字資料可用 _________類別的 println()方法。
+
+
+ 3.在與Java IO有關的類別中，_______________ 家族的類別負責讀取文字資料，
+    ___________________ 家族的類別負責寫出文字資料。 
+    
+ 4. Java的java.util.Enumeration<E>介面定義下列兩個方法:
+         boolean    hasMoreElements()
+         E          nextElement()
+        請完成下列程式片段:
+        Vector<__________> v = new Vector<>();  // 它實作java.util.Enumeration<E>介面
+        v.add(new Integer(25));
+        v.add(new Double(1.6F));
+        v.add(new Long(30L));
+        v.add(27);
+        double sum = 0;
+        Enumeration<Number> e = v.elements();
+        while(e.__________){
+            Number num = e.__________;
+            sum += num.doubleValue();
+        }
+        System.out.println("放在v物件內之元素的總和=" + sum);       
+       
+ 5. 請完成下列程式片段:
+       Map<String, Integer> map = new HashMap<>();  
+       map.put("25",  1);
+       map.put("35", 2);
+       map.put("45",  3);
+       map.put("35",  4);
+       map.put("25", 5);
+       // 下一列敘述會印出_________
+       System.out.println(map.size());          
+       // 下一列敘述會印出_________   
+       System.out.println(map.get("35"));          
+       // Map介面的哪個方法會傳回Set型別的物件?
+       Set<String> set = map._________ ;        
+       // Map介面的哪個方法會傳回Collection型別的物件?
+       Collection<Integer> coll = map._________ ;        
+       
+ 6. 接上題，Java的java.util.Iterator<E>介面定義下列三個方法:
+          boolean  hasNext()
+          E        next()
+          void     remove()
+
+       請完成下列程式片段:    
+
+       // Collection介面的哪個方法會傳回Iterator型別的物件?   
+       Iterator<String> it = set._________ ; 
+       int total = 0 ; 
+       while ( it.________) {
+           String str =  it.________ ; 
+           total += map.________ ; 
+       }
+       // 下一行會印出_________
+       System.out.println(total);      
+ 
+ 7. StringBuffer類別的____________方法可在原物件的尾端加上由參數表示的字串。
+    
+ 8. 如果某變數前面有修飾字 ________________, 表示此變數一但設定初值就不能改變其內容。   
+
+10. 執行ErrorProneC.java時，螢幕會出現 ____________。
+    (不考慮JVM丟出的錯誤訊息)
+    public class ErrorProneC {
+
+	static {
+	sysout
+	for
+	static int n = 0;
+		}
+       public static void main(String[] args) {
+          try {
+             Elephant.walk();
+             System.out.print("1");
+          } catch (ArithmeticException e) {
+             System.out.print("2");
+          } finally {
+             System.out.print("3");
+          }
+          System.out.print("4");
+       }
+
+static {
+	sysout
+	for
+	static int n = 0;
+		}
+    } 
+
+    class Elephant {
+       public static void walk() {
+          try {
+             run();
+             System.out.print("5");
+          } finally {
+             System.out.print("6");
+          }
+          System.out.print("7");
+       }
+       public static void run() {
+          try {
+             int x = 10 / 0;
+             System.out.print("8");
+          } finally {
+             System.out.print("9");
+          }
+          System.out.print("0");
+       }
+    }                     
+    
+11. 區域變數只能使用的修飾字為: ______________     
+
+12. int[][] saa = { 
+                     {11, 55, 66}, 
+                     {17, 15, 16, 85},
+                     {88, 93, 47, 78, 25},
+                     {70, 49},                     
+                 };
+   System.out.println(saa.length);            //此敘述會印出 __________.
+   System.out.println(saa[1].length);        //此敘述會印出 __________.
+   System.out.println(saa[1][2]);            //此敘述會印出 __________.
