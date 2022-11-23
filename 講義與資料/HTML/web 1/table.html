@@ -11,135 +11,144 @@
             border: 3px solid #0072e3;
             border-collapse: collapse;
         }
-        td, th {
+
+        td,
+        th {
             border: 1px solid gray;
         }
-        th {
-            background-color: yellowgreen;
+
+        thead {
+            background-color: #005ab5;
+            color: white;
+            text-transform: capitalize;
         }
-        td {
-            font-weight:bolder;
-            text-align: right;
-            background-color: yellow;
+
+        tbody {
+            background-color: #46a3ff;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <table class="tb1">
-        <tr>
-            <th>collumn1</th>
-            <th>collumn2</th>
-            <th>collumn3</th>
-            <th>collumn4</th>
-        </tr>
-        <tr>
-            <th colspan="2">collumn1</th>
-            <!-- <th>collumn2</th> -->
-            <th colspan="2">collumn3</th>
-            <!-- <th>collumn4</th> -->
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td colspan="3">2</td>
-            <!-- <td>3</td>
+        <thead>
+            <tr>
+                <th>collumn1</th>
+                <th>collumn2</th>
+                <th>collumn3</th>
+                <th>collumn4</th>
+            </tr>
+            <tr>
+                <th colspan="2">collumn1</th>
+                <!-- <th>collumn2</th> -->
+                <th colspan="2">collumn3</th>
+                <!-- <th>collumn4</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td colspan="3">2</td>
+                <!-- <td>3</td>
             <td>4</td> -->
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td rowspan="3">3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <!-- <td>3</td> -->
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <!-- <td>3</td> -->
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td colspan="4">1</td>
-            <!-- <td>2</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td rowspan="3">3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <!-- <td>3</td> -->
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <!-- <td>3</td> -->
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td colspan="4">1</td>
+                <!-- <td>2</td>
             <td>3</td>
             <td>4</td> -->
-        </tr>
-        <tr>
-            <td>1</td>
-            <td rowspan="4">2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <!-- <td>2</td> -->
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <!-- <td>2</td> -->
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <!-- <td>2</td> -->
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-        </tr>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td rowspan="4">2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <!-- <td>2</td> -->
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <!-- <td>2</td> -->
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <!-- <td>2</td> -->
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>
