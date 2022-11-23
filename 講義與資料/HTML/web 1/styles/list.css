@@ -1,0 +1,19 @@
+.list1 {
+    list-style-type: circle;
+}
+
+.list2 {
+    /* list-style-type: upper-roman; */
+    list-style-type: none;
+    list-style-image: url("../images/arror1.png");
+}
+
+.in {
+    background-color: orange;
+    list-style-position: inside;
+}
+
+.out {
+    background-color: orange;
+    list-style-position: outside;
+}
