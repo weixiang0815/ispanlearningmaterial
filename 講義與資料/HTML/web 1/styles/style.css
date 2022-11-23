@@ -36,3 +36,8 @@
         .col1_H2 {
             color: pink;
         }
+
+        p {
+            color: gray;
+            font-size: 2em;
+        }
