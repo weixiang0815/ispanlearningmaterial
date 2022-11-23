@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <style>
+        form {
+            border: 6px solid darkgray;
+            width: fit-content;
+        }
         .st1 {
             width: 450px;
             border-bottom: 3px dashed #adadad;
@@ -44,19 +48,29 @@
             <label class="t1" for="pwd1">密碼：</label></label><input type="text" name="pwd" id="pwd1" maxlength="6">
         </div>
         <div class="st1">
-            <label>興趣</label>
-            <label class="t1">
+            <label for="" class="t1">縣市：</label>
+            <select name="add1" id="" multiple>
+                <option value="TPE">臺北市</option>
+                <option value="TPH" selected>新北市</option>
+                <option value="TYU">桃園市</option>
+                <option value="HSC">新竹市</option>
+            </select>
+        </div>
+        <div class="st1">
+            <label for="" class="t1">興趣：</label>
+            <label>
                 <input type="checkbox" name="hobby" value="music" id="">音樂
             </label>
-            <label class="t1">
+            <label>
                 <input type="checkbox" name="hobby" value="movie" id="">電影
             </label>
-            <label class="t1">
+            <label>
                 <input type="checkbox" name="hobby" value="sport" id="">運動
             </label>
-            <label class="t1">
+            <label>
                 <input type="checkbox" name="hobby" value="travel" id="">旅遊
-            </label></div>
+            </label>
+        </div>
         <div class="st1">
             <label class="t1" for="comment1">意見：</label><textarea name="comment" id="comment1" cols="40"
                 rows="5"></textarea>
