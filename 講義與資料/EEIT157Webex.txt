@@ -1,0 +1,11 @@
+2642 814 4116
+
+EEIT157@iSpan
+
+
+講師端請輸入【檢核碼】開啟：https://service.ispan.com.tw/ispanscore/admin/_score2.php
+
+學員端請輸入【姓名】及【檢核碼】開啟：https://service.ispan.com.tw/ispanscore/stu/check.php
+
+
+14487
