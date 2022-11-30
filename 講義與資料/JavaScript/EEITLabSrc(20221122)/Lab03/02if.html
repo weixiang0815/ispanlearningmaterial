@@ -19,14 +19,12 @@
         //     console.log("a < b");
 
         let age = parseInt(prompt("請輸入年齡："));
-        if (0 < age && age <= 6)
+        if (0 < age && age <= 6 || age >= 65)
             console.log("免票");
         else if (6 < age && age <= 25)
             console.log("學生票");
         else if (25 < age && age <= 65)
             console.log("全票");
-        else if (age > 65)
-            console.log("免票");
 
         // var Transportation = "",
         //     money=parseInt(prompt("請輸入你有多少錢"));
