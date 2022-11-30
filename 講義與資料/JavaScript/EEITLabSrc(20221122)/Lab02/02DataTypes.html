@@ -7,11 +7,24 @@
 <body>   
     <script>
         //數字變數
-
+        let a = 10;
+        console.log(`a = ${a}, typeof a = ${typeof a}`);
+        console.log(typeof a); //number
+        console.log(typeof ("a = "+a));
         //字串變數
+        a = "JavaScritp";
+        console.log(`a = ${a}, typeof a = ${typeof a}`);
 
         //布林變數             
+        let b = true;
+        let c = b + 2;
+        console.log(`b = ${b}, typeof b = ${typeof b}`); // b = true, typeof b = boolean
+        console.log(`c = ${c}, typeof c = ${typeof c}`); // c = 3, typeof c = number
 
+        if("") // 0, NaN, "", null, undefined
+            console.log(true);
+        else
+            console.log(false);
         //null
 
         //如果沒有初始值，JavaScript會自動將變數的值初始化為undefined(預設值 default value)        
