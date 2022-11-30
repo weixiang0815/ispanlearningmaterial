@@ -7,7 +7,23 @@
 <body>
     <script>  
         //算術運算子++
-        
+        let a = 1;
+        a ++;
+        console.log(`a = ${a}`);
+
+        a = 1;
+        ++ a;
+        console.log(`a = ${a}`);
+
+        a = 1;
+        a = a + 1;
+        console.log(`a = ${a}`);
+
+        a = 1;
+        let b = 10 * ++ a;
+        console.log(`a = ${a}, b = {b}`);
+        console.log(a ++); // 先印在加，所以印出來的時候還沒加
+        console.log(a); // 這個時候才加完
         
         //關係運算子
         //值相等== 
