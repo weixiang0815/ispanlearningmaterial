@@ -6,22 +6,34 @@
 </head>
 <body>
     <script>
-        let a = 10, b = 20;
+        // var a = 10, b = 20;
+        // console.log(a);
+        // console.log(window.a);
 
         //使用window.prompt()方法，取得變數値
+        // let a = window.prompt("請輸入a：", 10); // 預設值10其實是指字串"10"
+        // let b = prompt("請輸入b:"); // 輸入2其實是指字串"2"
+        // if (a > b) // 兩個字串比大小是用ascii碼來比較，因此字串"2"大於"10"
+        //     console.log("a > b");
+        // else
+        //     console.log("a < b");
 
-        if (a > b)
-            console.log("a > b");
-        else
-            console.log("a < b");
-
+        let age = parseInt(prompt("請輸入年齡："));
+        if (0 < age && age <= 6)
+            console.log("免票");
+        else if (6 < age && age <= 25)
+            console.log("學生票");
+        else if (25 < age && age <= 65)
+            console.log("全票");
+        else if (age > 65)
+            console.log("免票");
 
         // var Transportation = "",
         //     money=parseInt(prompt("請輸入你有多少錢"));
         // if(money > 2500){
-        //     Transportation = "飛機";    
+        //     Transportation = "飛機";
         // }else if(money > 1500){
-        //     Transportation = "高鐵";    
+        //     Transportation = "高鐵";
         // }else if(money > 1000){
         //     Transportation = "火車";
         // }else if(money > 500){
