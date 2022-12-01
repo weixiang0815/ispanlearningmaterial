@@ -1,6 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(209, 206, 206);
+}
+
+.body {
+    margin: auto;
+    width: 60%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
 table {
     background-color: blue;
     border: 2px solid;
+    margin: auto;
 }
 
 td {
@@ -17,4 +41,5 @@ p {
 p:hover {
     color: yellow;
     background-color: green;
+    border: 2px solid red;
 }
