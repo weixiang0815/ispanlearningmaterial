@@ -1,0 +1,17 @@
+table {
+    background-color: aqua;
+    border: 2px solid;
+    padding: 5px;
+}
+
+td {
+    border: 2px solid gray;
+    background-color: aquamarine;
+    color: red;
+    padding: 5px;
+}
+
+td:hover {
+    color: yellow;
+    background-color: green;
+}
