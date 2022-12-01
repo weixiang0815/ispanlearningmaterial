@@ -9,11 +9,28 @@
         .list {
             overflow: auto;
             background-color: #acd6ff;
+            list-style-type: none;
         }
 
         .list li {
             width: 7em;
             float: left;
+            border-right: 1px solid #5b5b5b;
+            line-height: 2.5em;
+        }
+
+        .list li a {
+            display: block;
+            text-align: center;
+        }
+
+        .list li a:link {
+            text-decoration: none;
+        }
+
+        .list li a:hover {
+            background-color: blue;
+            color: white;
         }
 
         h1 {
