@@ -18,11 +18,11 @@ body {
     box-shadow: 15px 15px 5px gray;
 }
 
-.body:hover {
+/* .body:hover {
     background-color: black;
     color: white;
     box-shadow: -15px 15px 5px gray;
-}
+} */
 
 h2 {
     margin-bottom: 10px;
@@ -45,8 +45,55 @@ p {
     margin: 0px;
 }
 
-p:hover {
+table p:hover {
     color: yellow;
     background-color: green;
     border: 2px solid red;
+}
+
+fieldset {
+    border: 5px solid red;
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
+}
+
+legend {
+    font-size: larger;
+    font-weight: bold;
+    margin-left: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.divform {
+    padding: 10px;
+    border-bottom: 3px dashed lightgray;
+}
+
+label {
+    font-size: large;
+}
+
+fieldset p {
+    color: gray;
+}
+
+/* fieldset span {
+    display: none;
+} */
+
+/* form:hover {
+    color: white;
+} */
+
+.fa-xmark {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: red;
+}
+
+.fa-circle {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: green;
 }
