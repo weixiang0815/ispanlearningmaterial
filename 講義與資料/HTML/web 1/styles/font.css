@@ -1,0 +1,17 @@
+@font-face {
+    font-family: font1;
+    src: url(fonts/JustOldFashion.ttf);
+}
+
+.font1 {
+    font-family: font1;
+}
+
+@font-face {
+    font-family: font2;
+    src: url(fonts/SCRIPTIN.ttf);
+}
+
+.font2 {
+    font-family: font2;
+}
