@@ -1,6 +1,6 @@
 body {
     background-color: #ECF5FF;
-
+    font-size: 75%;
 }
 
 * {
@@ -61,8 +61,8 @@ header {
 }
 
 .article {
-    width: 70%;
-    float: left;
+    width: 100%;
+    /* float: left; */
 }
 
 .section {
@@ -74,8 +74,8 @@ header {
 }
 
 .aside {
-    width: 28%;
-    float: right;
+    width: 100%;
+    /* float: right; */
 
 }
 
