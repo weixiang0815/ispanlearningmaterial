@@ -68,11 +68,11 @@
             </div>
             <div class="st1">
                 <label for="" class="t1">Email：</label>
-                <input type="email" name="email" id="" value="henry940129@gmail.com">
+                <input type="email" name="email" id="" placeholder="henry940129@gmail.com">
             </div>
             <div class="st1">
                 <label for="" class="t1">URL：</label>
-                <input type="url" name="url" id="" value="https://">
+                <input type="url" name="url" id="" placeholder="https://">
             </div>
             <div class="st1">
                 <label for="" class="t1">查詢：</label>
@@ -113,6 +113,24 @@
         </fieldset>
         <fieldset>
             <legend>個人資料二</legend>
+            <div class="st1">
+                <label for="" class="t1">Blog：</label>
+                <input type="url" name="hp" list="urllist">
+                <datalist id="urllist">
+                    <option value="https://www.google.com">Google</option>
+                    <option value="https://www.facebook.com"></option>
+                    <option value="https://www.pchome.com.tw">
+                </datalist>
+            </div>
+            <div class="st1">
+                <label for="" class="t1">水果：</label>
+                <input type="text" name="fruit" list="fruitlist">
+                <datalist id="fruitlist">
+                    <option value="Apple"></option>
+                    <option value="Orange"></option>
+                    <option value="Grape">
+                </datalist>
+            </div>
             <div class="st1">
                 <label for="" class="t1">照片：</label>
                 <input type="file" name="file1" id="" multiple>
