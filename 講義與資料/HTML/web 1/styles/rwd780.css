@@ -40,8 +40,9 @@ header {
 
 .menu li a {
     display: block;
-    text-align: center;
+    text-align: left;
     color: #005AB5;
+    padding-left: 10px;
 }
 
 .menu li a:link {
