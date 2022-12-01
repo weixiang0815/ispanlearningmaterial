@@ -14,3 +14,11 @@ document.write(`</div>`);
 document.write(`<div class="body">`);
 document.write(`<h2>第二題</h2>`);
 document.write(`</div>`);
+
+document.write(`<div class="body">`);
+document.write(`<h2>第三題</h2>`);
+document.write(`</div>`);
+
+document.write(`<div class="body">`);
+document.write(`<h2>第四題</h2>`);
+document.write(`</div>`);
