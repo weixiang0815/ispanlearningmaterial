@@ -62,7 +62,17 @@
         //只有一個參數，()可省略
         let fAdd7 = a => a + 3000;
         console.log(`fAdd7(2000) = ${fAdd7(2000)}`);
+        console.log("========================");
 
+        let a = 100;
+        console.log(a);
+        console.log(`fAdd7 = ${fAdd7}`);
+        console.log(`fAdd1 = ${fAdd1}`);
+        console.log(`fAdd6 = ${fAdd6}`);
+        fAdd7 = fAdd6;
+        console.log(`fAdd7 = ${fAdd7}`);
+        fAdd1 = fAdd6;
+        console.log(`fAdd1 = ${fAdd1}`);
     </script>
 </body>
 </html>
