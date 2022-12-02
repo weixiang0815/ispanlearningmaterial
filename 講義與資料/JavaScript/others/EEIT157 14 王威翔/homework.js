@@ -93,7 +93,7 @@ for (let i = 0; i < 5; i++) {
     document.getElementById(id).addEventListener("mouseover", mouseover(id));
     document.getElementById(id).addEventListener("mouseout", mouseout(id));
     document.getElementById(id).addEventListener("click", click(i));
-    document.getElementById(id).addEventListener("dblclick", dblclick(i));
+    document.getElementById(id).addEventListener("dblclick", dblclick);
 }
 function mouseover(id) {
     document.getElementById(id).src = "chngstar.gif";
@@ -103,11 +103,13 @@ function mouseout(id) {
 };
 function click(num) {
     let id = "img" + num;
-    document.getElementById(id).src = "star.gif";
-};
-function dblclick(num) {
-    let id = "img" + num;
     document.getElementById(id).src = "chngstar.gif";
+};
+function dblclick() {
+    for (let i = 0; i < 5; i++) {
+        let id = "img" + i;
+        document.getElementById(id).src = "star.gif";
+    }
 };
 
 document.write(`</div>`)
