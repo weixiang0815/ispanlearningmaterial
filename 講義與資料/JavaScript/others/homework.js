@@ -25,8 +25,7 @@ document.write(`<p>（1.不可空白 2.至少兩個字以上 3.必須全部為�
 document.write(`</div>`);
 let checkName = () => {
     let myName = document.getElementsByClassName("name")[0];
-    let check = document.getElementById("name");
-    let regex = /^[\u4E00-\u9FFF]{2,}$/gm;
+    let regex = /^[\u4E00-\u9FFF]{2,}$/;
     if (regex.exec(myName.value) == null) {
         document.getElementById("name").innerHTML = '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
     } else {
@@ -42,8 +41,7 @@ document.write(`<p>（1.不可空白 2.至少6個字且必須包含英數字、�
 document.write(`</div>`);
 let checkPW = () => {
     let myPW = document.getElementsByClassName("pw")[0];
-    let check = document.getElementById("pw");
-    let regex = /^[\u4E00-\u9FFF]{2,}$/gm;
+    let regex = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$^&*])[a-zA-Z\d!@#$^&*]{6,}$/;
     if (regex.exec(myPW.value) == null) {
         document.getElementById("pw").innerHTML = '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
     } else {
@@ -59,7 +57,6 @@ document.write(`<p>格式:西元年/月/日（yyyy/mm/dd）</p>`);
 document.write(`</div>`);
 let checkDate = () => {
     let myDate = document.getElementsByClassName("date")[0];
-    let check = document.getElementById("date");
     let regex = /^[\u4E00-\u9FFF]{2,}$/gm;
     if (regex.exec(myDate.value) == null) {
         document.getElementById("date").innerHTML = '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
