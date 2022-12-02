@@ -57,11 +57,21 @@ document.write(`<p>格式:西元年/月/日（yyyy/mm/dd）</p>`);
 document.write(`</div>`);
 let checkDate = () => {
     let myDate = document.getElementsByClassName("date")[0];
-    let regex = /^[\u4E00-\u9FFF]{2,}$/gm;
+    let regex = /^\d{4}\/\d{2}\/\d{2}$/;
     if (regex.exec(myDate.value) == null) {
         document.getElementById("date").innerHTML = '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
     } else {
-        document.getElementById("date").innerHTML = '<i class="fa-regular fa-circle"></i>驗證成功';
+        console.log(myDate.value);
+        // console.log(regex.exec(myDate.value)[0]);
+        let d = new Date(myDate.value);
+        let date = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+        console.log(date);
+        if (date != myDate.value) {
+            document.getElementById("date").innerHTML = '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
+        }
+        else {
+            document.getElementById("date").innerHTML = '<i class="fa-regular fa-circle"></i>驗證成功';
+        }
     }
 };
 
