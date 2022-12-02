@@ -29,9 +29,14 @@
         console.log(`strObj.toUpperCase() = ${strObj.toUpperCase()}`);
 
         let strObj2 = new String("一二三");
-        let ch = strObj2.charAt(0);
-        console.log(ch);
-        console.log(strObj2.charCodeAt(0));
+        let ch = strObj2.charCodeAt(0);
+        console.log(ch); // 19968 0x4e00
+
+        if (ch >= 0x4e00 && ch <= 0x9fff) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
     </script>
 </body>
 </html>
