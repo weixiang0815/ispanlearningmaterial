@@ -86,20 +86,29 @@ document.write(`<div class=\"stars\">`);
 for (i = 1; i <= 5; i++) {
     document.write(`<img id=\"img` + i + `\" src=\"Images/star.gif\" />`);
 }
-document.getElementById("img1").addEventListener("mouseover", () => {
-    document.getElementById("img1").src = "Images/chngstar.gif";
-});
-document.getElementById("img1").addEventListener("mouseout", () => {
-    document.getElementById("img1").src = "Images/star.gif";
-});
-document.getElementById("img1").addEventListener("click", () => {
-    document.getElementById("img1").src = "Images/chngstar.gif";
-});
-document.getElementById("img1").addEventListener("dblclick", () => {
-    for (i = 0; i < 5; i++) {
-        document.getElementsByTagName("img")[i].src = "Images/star.gif";
-    }
-});
+var isChanged = [false, false, false, false, false];
+var ids = ['img1', 'img2', 'img3', 'img4', 'img5'];
+for (i = 0; i < 5; i++) {
+    a = document.getElementById(ids[i]);
+    a.addEventListener("mouseover", () => {
+        a.src = "Images/chngstar.gif";
+    });
+    a.addEventListener("mouseout", () => {
+        if (!isChanged[i]) {
+            a.src = "Images/star.gif";
+        }
+    });
+    a.addEventListener("click", () => {
+        a.src = "Images/chngstar.gif";
+        isChanged[i] = true;
+    });
+    a.addEventListener("dblclick", () => {
+        for (let j = 0; j <= i; j++) {
+            document.getElementsByTagName("img")[j].src = "Images/star.gif";
+            isChanged[j] = false;
+        }
+    });
+}
 document.write(`<h3>點一下星星可評分，點兩下可重置</h3>`);
 document.write(`<h3 id=\"stars\">評分為....</h3>`);
 document.write(`</div>`)
