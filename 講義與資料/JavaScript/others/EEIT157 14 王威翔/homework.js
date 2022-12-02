@@ -92,19 +92,21 @@ for (let i = 0; i < 5; i++) {
     let id = "img" + i;
     document.getElementById(id).addEventListener("mouseover", mouseover(id));
     document.getElementById(id).addEventListener("mouseout", mouseout(id));
-    document.getElementById(id).addEventListener("click", click(id));
-    document.getElementById(id).addEventListener("dblclick", dblclick(id));
+    document.getElementById(id).addEventListener("click", click(i));
+    document.getElementById(id).addEventListener("dblclick", dblclick(i));
 }
 function mouseover(id) {
     document.getElementById(id).src = "chngstar.gif";
 };
 function mouseout(id) {
-    document.getElementById(id).src = "chngstar.gif";
+    document.getElementById(id).src = "star.gif";
 };
-function click(id) {
-    document.getElementById(id).src = "chngstar.gif";
+function click(num) {
+    let id = "img" + num;
+    document.getElementById(id).src = "star.gif";
 };
-function dblclick(id) {
+function dblclick(num) {
+    let id = "img" + num;
     document.getElementById(id).src = "chngstar.gif";
 };
 
