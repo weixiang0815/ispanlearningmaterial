@@ -7,12 +7,18 @@
 <body>
     <script>
             //廣域(全域)變數
-    
+            var a = 100;
     
             //函數宣告定義
-    
+            function f() {
+                var a = 10;
+                console.log(`function in a = ${a}`);
+            }
     
             //呼叫函數
+            console.log(`function out before call function a = ${a}`);
+            f();
+            console.log(`function out before call function a = ${a}`);
 
 
     </script>
