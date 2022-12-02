@@ -82,6 +82,33 @@ document.write(`</div>`);
 // 第三題
 document.write(`<div class="body">`);
 document.write(`<h2>第三題</h2>`);
+document.write(`<div class=\"stars\">`);
+for (let i = 1; i <= 5; i++) {
+    document.write(`<img id=\"img` + i + `\" src=\"star.gif\" />`);
+}
+document.write(`<h3>點一下星星可評分，點兩下可重置</h3>`);
+document.write(`<h3 id=\"stars\">評分為....</h3>`);
+for (let i = 0; i < 5; i++) {
+    let id = "img" + i;
+    document.getElementById(id).addEventListener("mouseover", mouseover(id));
+    document.getElementById(id).addEventListener("mouseout", mouseout(id));
+    document.getElementById(id).addEventListener("click", click(id));
+    document.getElementById(id).addEventListener("dblclick", dblclick(id));
+}
+function mouseover(id) {
+    document.getElementById(id).src = "chngstar.gif";
+};
+function mouseout(id) {
+    document.getElementById(id).src = "chngstar.gif";
+};
+function click(id) {
+    document.getElementById(id).src = "chngstar.gif";
+};
+function dblclick(id) {
+    document.getElementById(id).src = "chngstar.gif";
+};
+
+document.write(`</div>`)
 document.write(`</div>`);
 
 // 第四題

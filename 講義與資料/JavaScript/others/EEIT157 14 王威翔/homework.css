@@ -90,3 +90,11 @@ fieldset p {
     margin-right: 10px;
     color: green;
 }
+
+.stars {
+    text-align: center;
+}
+
+h3 {
+    margin: 15px 0px 15px 0px;
+}
