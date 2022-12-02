@@ -61,11 +61,10 @@ let checkDate = () => {
     if (regex.exec(myDate.value) == null) {
         document.getElementById("date").innerHTML = '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
     } else {
-        console.log(myDate.value);
-        // console.log(regex.exec(myDate.value)[0]);
         let d = new Date(myDate.value);
-        let date = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
-        console.log(date);
+        let month = d.getMonth() + 1 >= 10 ? d.getMonth() + 1 : "0" + (d.getMonth() + 1);
+        let day = d.getDate() >= 10 ? d.getDate() : "0" + d.getDate();
+        let date = d.getFullYear() + "/" + month + "/" + day;
         if (date != myDate.value) {
             document.getElementById("date").innerHTML = '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
         }
