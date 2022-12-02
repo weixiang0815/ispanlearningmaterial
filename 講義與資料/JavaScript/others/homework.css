@@ -18,11 +18,11 @@ body {
     box-shadow: 15px 15px 5px gray;
 }
 
-/* .body:hover {
+.body:hover {
     background-color: black;
     color: white;
     box-shadow: -15px 15px 5px gray;
-} */
+}
 
 h2 {
     margin-bottom: 10px;
@@ -78,13 +78,13 @@ fieldset p {
     color: gray;
 }
 
-/* fieldset span {
+fieldset span {
     display: none;
-} */
+}
 
-/* form:hover {
+form:hover {
     color: white;
-} */
+}
 
 .fa-xmark {
     margin-left: 10px;
