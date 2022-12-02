@@ -2,10 +2,10 @@
 document.write(`<div class="body">`);
 document.write(`<h2>第一題</h2>`);
 document.write(`<table><tr>`);
-for (let i = 1; i <= 9; i++) {
+for (let i = 2; i <= 9; i++) {
     document.write(`<td>`);
-    for (let j = 2; j <= 9; j++) {
-        document.write(`<p>${j} × ${i} = ${i * j}</p>`);
+    for (let j = 1; j <= 9; j++) {
+        document.write(`<p>${i} × ${j} = ${i * j}</p>`);
     }
     document.write(`</td>`);
 }
