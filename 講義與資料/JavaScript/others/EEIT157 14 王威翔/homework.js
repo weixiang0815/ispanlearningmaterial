@@ -2,9 +2,9 @@
 document.write(`<div class="body">`);
 document.write(`<h2>第一題</h2>`);
 document.write(`<table><tr>`);
-for (let i = 2; i <= 9; i++) {
+for (i = 2; i <= 9; i++) {
     document.write(`<td>`);
-    for (let j = 1; j <= 9; j++) {
+    for (j = 1; j <= 9; j++) {
         document.write(`<p>${i} × ${j} = ${i * j}</p>`);
     }
     document.write(`</td>`);
@@ -83,35 +83,25 @@ document.write(`</div>`);
 document.write(`<div class="body">`);
 document.write(`<h2>第三題</h2>`);
 document.write(`<div class=\"stars\">`);
-for (let i = 1; i <= 5; i++) {
-    document.write(`<img id=\"img` + i + `\" src=\"star.gif\" />`);
+for (i = 1; i <= 5; i++) {
+    document.write(`<img id=\"img` + i + `\" src=\"Images/star.gif\" />`);
 }
+document.getElementById("img1").addEventListener("mouseover", () => {
+    document.getElementById("img1").src = "Images/chngstar.gif";
+});
+document.getElementById("img1").addEventListener("mouseout", () => {
+    document.getElementById("img1").src = "Images/star.gif";
+});
+document.getElementById("img1").addEventListener("click", () => {
+    document.getElementById("img1").src = "Images/chngstar.gif";
+});
+document.getElementById("img1").addEventListener("dblclick", () => {
+    for (i = 0; i < 5; i++) {
+        document.getElementsByTagName("img")[i].src = "Images/star.gif";
+    }
+});
 document.write(`<h3>點一下星星可評分，點兩下可重置</h3>`);
 document.write(`<h3 id=\"stars\">評分為....</h3>`);
-for (let i = 0; i < 5; i++) {
-    let id = "img" + i;
-    document.getElementById(id).addEventListener("mouseover", mouseover(id));
-    document.getElementById(id).addEventListener("mouseout", mouseout(id));
-    document.getElementById(id).addEventListener("click", click(i));
-    document.getElementById(id).addEventListener("dblclick", dblclick);
-}
-function mouseover(id) {
-    document.getElementById(id).src = "chngstar.gif";
-};
-function mouseout(id) {
-    document.getElementById(id).src = "star.gif";
-};
-function click(num) {
-    let id = "img" + num;
-    document.getElementById(id).src = "chngstar.gif";
-};
-function dblclick() {
-    for (let i = 0; i < 5; i++) {
-        let id = "img" + i;
-        document.getElementById(id).src = "star.gif";
-    }
-};
-
 document.write(`</div>`)
 document.write(`</div>`);
 
