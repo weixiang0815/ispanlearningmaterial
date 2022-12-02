@@ -75,17 +75,16 @@ document.getElementsByClassName("date")[0].addEventListener("blur", () => {
         }
     }
 });
-
-// 第三題
 document.write(`</fieldset>`);
 document.write(`</form>`);
 document.write(`</div>`);
 
-// 第四題
+// 第三題
 document.write(`<div class="body">`);
 document.write(`<h2>第三題</h2>`);
 document.write(`</div>`);
 
+// 第四題
 document.write(`<div class="body">`);
 document.write(`<h2>第四題</h2>`);
 document.write(`</div>`);
