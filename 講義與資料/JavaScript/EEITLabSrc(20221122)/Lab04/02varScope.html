@@ -6,19 +6,35 @@
 </head>
 <body>
     <script>
-            //廣域(全域)變數
-            var a = 100;
-    
-            //函數宣告定義
-            function f() {
-                var a = 10;
-                console.log(`function in a = ${a}`);
-            }
-    
-            //呼叫函數
-            console.log(`function out before call function a = ${a}`);
-            f();
-            console.log(`function out before call function a = ${a}`);
+        //case 1
+        // //廣域(全域)變數
+        // var a = 100; //global variable
+
+        // //函數宣告定義
+        // function f() {
+        //     var a = 10; //local variable
+        //     console.log(`function in a = ${a}`);
+        // }
+
+        // //呼叫函數
+        // console.log(`function out before call function a = ${a}`);
+        // f();
+        // console.log(`function out before call function a = ${a}`);
+
+        //case 2
+        //廣域(全域)變數
+        var a = 100; //global variable
+
+        //函數宣告定義
+        function f() {
+            a = 10; //global variable 沒設let或var，就往上找最近的類型（var）
+            console.log(`function in a = ${a}`);
+        }
+
+        //呼叫函數
+        console.log(`function out before call function a = ${a}`);
+        f();
+        console.log(`function out before call function a = ${a}`);
 
 
     </script>
