@@ -105,13 +105,30 @@ stars.forEach((starClicked, clickedIndex) => {
         otherStars.classList.add("active");
       }
     });
+    let text = "你給" + (clickedIndex + 1) + "顆星";
+    document.getElementById("stars").innerText = text;
   });
-  //   console.log(`你按了第${clickedIndex + 1}顆星`);
+  starClicked.addEventListener("mouseover", () => {
+    if (
+      document.getElementsByClassName("stars")[0].className != "stars disabled"
+    ) {
+      let text = "評分為...." + (clickedIndex + 1);
+      document.getElementById("stars").innerText = text;
+    }
+  });
+  starClicked.addEventListener("mouseout", () => {
+    if (
+      document.getElementsByClassName("stars")[0].className != "stars disabled"
+    ) {
+      let text = "評分為....";
+      document.getElementById("stars").innerText = text;
+    }
+  });
   starClicked.addEventListener("dblclick", () => {
     starWrapper.classList.remove("disabled");
     stars.forEach((otherStars) => {
-        otherStars.classList.remove("active");
-    })
+      otherStars.classList.remove("active");
+    });
   });
 });
 document.write(`</div>`);
