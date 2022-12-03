@@ -115,3 +115,7 @@ h3 {
 .stars a:hover ~ a {
     opacity: 25%;
 }
+
+.stars a.active {
+    opacity: 100%;
+}
