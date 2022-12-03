@@ -84,11 +84,14 @@ document.write(`<div class="body">`);
 document.write(`<h2>第三題</h2>`);
 document.write(`<div class=\"stars\">`);
 for (i = 1; i <= 5; i++) {
-    document.write(`<img id=\"img` + i + `\" src=\"Images/star.gif\" />`);
+    document.write(`<a><img src=\"Images/chngstar.gif\" /></a>`);
 }
+
+document.write(`</div>`)
+document.write(`<div class=\"text\">`)
 document.write(`<h3>點一下星星可評分，點兩下可重置</h3>`);
 document.write(`<h3 id=\"stars\">評分為....</h3>`);
-document.write(`</div>`)
+document.write(`</div>`);
 document.write(`</div>`);
 
 // 第四題

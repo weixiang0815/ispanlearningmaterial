@@ -91,10 +91,27 @@ fieldset p {
     color: green;
 }
 
+h3 {
+    margin: 15px 0px 15px 0px;
+}
+
+.text {
+    text-align: center;
+}
+
 .stars {
     text-align: center;
 }
 
-h3 {
-    margin: 15px 0px 15px 0px;
+.stars a {
+    opacity: 25%;
+    cursor: pointer;
+}
+
+.stars:hover a {
+    opacity: 100%;
+}
+
+.stars a:hover ~ a {
+    opacity: 25%;
 }
