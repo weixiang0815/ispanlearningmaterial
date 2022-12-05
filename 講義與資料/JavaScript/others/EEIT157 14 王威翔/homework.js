@@ -189,7 +189,7 @@ document.write(`<h2>第四題</h2>`);
 document.write(`<fieldset class=\"carousel\">`);
 document.write(`<legend>廣告輪播</legend>`);
 document.write(`<figure>`);
-document.write(`<img src=\"https://source.unsplash.com/KiQ6wCEDhbs\" alt=\"暫存\" / >`);
+document.write(`<img src=\"https://source.unsplash.com/KiQ6wCEDhbs\" alt=\"暫存\" title=\"暫存\"/ >`);
 document.write(`</figure>`);
 document.write(`<div class=\"nums\">`);
 for (let i = 1; i <= 7; i ++) {

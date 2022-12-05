@@ -128,7 +128,8 @@ figure {
 }
 
 figure > img {
-    width: 100%;
+    max-width: 250px;
+    max-height: 250px;
 }
 
 .nums {
