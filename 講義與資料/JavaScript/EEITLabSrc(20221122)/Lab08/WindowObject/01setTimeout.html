@@ -11,15 +11,21 @@
     <script>
         function stopf() {
             //window.clearTimeout-停止計時器
+            window.clearTimeout(t);
+        }
+
+        function f() { // 函數宣告
+            //window.clearTimeout-停止計時器
             // location.href = "https://www.ispan.com.tw";
         }
 
-        function f() {
-            //window.clearTimeout-停止計時器
-            location.href = "https://www.ispan.com.tw";
-        }
         //轉向連結到 https://www.ispan.com.tw
         //slide105,location.href-轉向連結到其它網址
+        // let t = window.setTimeout(f, 2000);
+        let t = window.setTimeout(() => {
+            //window.clearTimeout-停止計時器
+            location.href = "https://www.ispan.com.tw";
+        }, 2000);
 
         document.getElementById("idbutstop").addEventListener("click", stopf);  //事件繫結
         document.getElementById("idbut").addEventListener("click", f);  //事件繫結
