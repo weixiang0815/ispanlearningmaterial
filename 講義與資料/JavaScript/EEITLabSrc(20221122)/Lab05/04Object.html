@@ -7,12 +7,23 @@
 <body>
     <div id="myDiv"></div>
     <script>
-    
-    
+        function f() {
+            return `${this.brand}, ${this["max speed"]}`;
+        }
+        let cars = {
+            brand: "tesla",
+            "max speed": 250,
+            color: "white",
 
+            disf:f,
+        };
+        console.log(cars);
+        console.log(cars.color);
+        console.log(cars["max speed"]);
+        console.log(cars.disf());
     //for..in
 
-    
-    </script>        
+
+    </script>
 </body>
 </html>
