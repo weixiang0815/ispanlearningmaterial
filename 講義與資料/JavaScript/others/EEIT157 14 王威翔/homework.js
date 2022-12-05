@@ -27,13 +27,23 @@ document.write(`<p>（1.不可空白 2.至少兩個字以上 3.必須全部為�
 document.write(`</div>`);
 document.getElementsByClassName("name")[0].addEventListener("blur", () => {
   let myName = document.getElementsByClassName("name")[0];
-  let regex = /^[\u4E00-\u9FFF]{2,}$/;
-  if (regex.exec(myName.value) == null) {
+  if (myName.value.trim() == "") {
     document.getElementById("name").innerHTML =
-      '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
-  } else {
+      '<i class="fa-solid fa-xmark"></i>不可為空白';
+  }
+  else if (/^.{1}$/.exec(myName.value) != null) {
     document.getElementById("name").innerHTML =
-      '<i class="fa-regular fa-circle"></i>驗證成功';
+      '<i class="fa-solid fa-xmark"></i>需至少兩個字';
+  }
+  else {
+    if (/^[\u4E00-\u9FFF]{2,}$/.exec(myName.value) != null) {
+      document.getElementById("name").innerHTML =
+        '<i class="fa-regular fa-circle"></i>驗證成功';
+    }
+    else {
+      document.getElementById("name").innerHTML =
+        '<i class="fa-solid fa-xmark"></i>需全為中文字';
+    }
   }
 });
 // 密碼
@@ -47,13 +57,31 @@ document.write(
 document.write(`</div>`);
 document.getElementsByClassName("pw")[0].addEventListener("blur", () => {
   let myPW = document.getElementsByClassName("pw")[0];
-  let regex = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$^&*])[a-zA-Z\d!@#$^&*]{6,}$/;
-  if (regex.exec(myPW.value) == null) {
+  if (myPW.value.trim() == "") {
     document.getElementById("pw").innerHTML =
-      '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
-  } else {
+      '<i class="fa-solid fa-xmark"></i>不可空白';
+  }
+  else if (/^.{1,5}$/.exec(myPW.value) != null) {
     document.getElementById("pw").innerHTML =
-      '<i class="fa-regular fa-circle"></i>驗證成功';
+      '<i class="fa-solid fa-xmark"></i>需至少六個字';
+  }
+  else {
+    if (/^\D{6,}$/.exec(myPW.value) != null) {
+      document.getElementById("pw").innerHTML =
+        '<i class="fa-solid fa-xmark"></i>需包含數字';
+    }
+    else if (/^[^a-zA-Z]{6,}$/.exec(myPW.value) != null) {
+      document.getElementById("pw").innerHTML =
+        '<i class="fa-solid fa-xmark"></i>需包含英文';
+    }
+    else if (/^[^!@#$^&*]{6,}$/.exec(myPW.value) != null) {
+      document.getElementById("pw").innerHTML =
+        '<i class="fa-solid fa-xmark"></i>需包含特殊字元[!@#$%^&*]';
+    }
+    else if (/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$^&*])[a-zA-Z\d!@#$^&*]{6,}$/.exec(myPW.value) != null) {
+      document.getElementById("pw").innerHTML =
+        '<i class="fa-regular fa-circle"></i>驗證成功';
+    }
   }
 });
 // 日期
@@ -68,7 +96,7 @@ document.getElementsByClassName("date")[0].addEventListener("blur", () => {
   let regex = /^\d{4}\/\d{2}\/\d{2}$/;
   if (regex.exec(myDate.value) == null) {
     document.getElementById("date").innerHTML =
-      '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
+      '<i class="fa-solid fa-xmark"></i>請依照格式要求輸入';
   } else {
     let d = new Date(myDate.value);
     let month =
@@ -77,7 +105,7 @@ document.getElementsByClassName("date")[0].addEventListener("blur", () => {
     let date = d.getFullYear() + "/" + month + "/" + day;
     if (date != myDate.value) {
       document.getElementById("date").innerHTML =
-        '<i class="fa-solid fa-xmark"></i>驗證失敗，請符合規則';
+        '<i class="fa-solid fa-xmark"></i>日期不存在';
     } else {
       document.getElementById("date").innerHTML =
         '<i class="fa-regular fa-circle"></i>驗證成功';
@@ -137,6 +165,12 @@ document.write(`<h3>點一下星星可評分，點兩下可重置</h3>`);
 document.write(`<h3 id=\"stars\">評分為....</h3>`);
 document.write(`</div>`);
 document.write(`</div>`);
+
+// 第三題改良
+document.write(`<div class="body">`);
+document.write(`<h2>第三題改良</h2>`);
+document.write(`</div>`);
+
 
 // 第四題
 document.write(`<div class="body">`);
