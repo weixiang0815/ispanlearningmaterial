@@ -130,3 +130,25 @@ figure {
 figure > img {
     width: 100%;
 }
+
+.nums {
+    margin: 5px 0px 15px 0px;
+}
+
+.nums > span {
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1px 6px 1px 6px;
+    margin: 0px 6px 0px 6px;
+    color: antiquewhite;
+}
+
+.actions > button {
+    outline-color: darkgreen;
+    border-radius: 3px;
+    background-color: darkgreen;
+    margin: 0px 20px 0px 20px;
+    padding: 5px;
+    color: bisque;
+}
