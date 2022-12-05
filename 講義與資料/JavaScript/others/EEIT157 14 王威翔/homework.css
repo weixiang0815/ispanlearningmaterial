@@ -106,3 +106,27 @@ h3 {
 img {
     cursor: pointer;
 }
+
+.carousel {
+    background-color: lightgreen;
+    border-radius: 10px;
+    text-align: center;
+    border: 1.5px solid darkgreen;
+}
+
+.carousel > legend {
+    margin: 0;
+    padding: 0;
+    color: green;
+    text-shadow: 3px 10px 6px darkgreen;
+    font-size: 1.5em;
+}
+
+figure {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+figure > img {
+    width: 100%;
+}

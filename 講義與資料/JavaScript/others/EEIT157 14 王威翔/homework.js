@@ -186,6 +186,22 @@ document.write(`</div>`);
 // 第四題
 document.write(`<div class="body">`);
 document.write(`<h2>第四題</h2>`);
+document.write(`<fieldset class=\"carousel\">`);
+document.write(`<legend>廣告輪播</legend>`);
+document.write(`<figure>`);
+document.write(`<img src=\"https://source.unsplash.com/KiQ6wCEDhbs\" alt=\"暫存\" / >`);
+document.write(`</figure>`);
+document.write(`<div class=\"nums\">`);
+for (let i = 1; i <= 7; i ++) {
+  document.write(`<span id=\"num${i}\">${i}</span>`);
+}
+document.write(`</div>`);
+document.write(`<div class=\"actions\">`);
+document.write(`<button id=\"prev\">prev</button>`);
+document.write(`<button id=\"play\">play</button>`);
+document.write(`<button id=\"next\">next</button>`);
+document.write(`</div>`);
+document.write(`</fieldset>`);
 document.write(`</div>`);
 
 // 第五題
