@@ -9,7 +9,7 @@
     <script>
         //二維陣列
         myDatas = [["apple", "banana", "grape"], ["pork", "beef"]];
-        console.log(myDatas[1][0]);  //pork
+        // console.log(myDatas[1][0]);  //pork
         // for (let i = 0, maxi = myDatas.length; i < maxi; i++) {
         //     for (let j = 0, maxj = myDatas[i].length; j < maxj; j++) {
         //         console.log(myDatas[i][j]);
@@ -24,7 +24,7 @@
         let obj = { name: "Paul", age: 20 };
         //    alert(obj.name);
         //    alert(obj.age);
-        console.log(obj.name);
+        // console.log(obj.name);
 
         //JSON array + object
         // let emps = [{},{},{}];
@@ -37,17 +37,17 @@
         //emps - array
         //emps[1] - object
         //emps[1].name - Mary
-        console.log(emps);
-        console.log(emps[0]);
-        console.log(emps[0].name);
-        console.log(emps[0].age);
-        console.log("===================");
-        for (let emp of emps) {
-            for (let info in emp) {
-                console.log(emp[info]);
-            }
-            console.log("=====================");
-        }
+        // console.log(emps);
+        // console.log(emps[0]);
+        // console.log(emps[0].name);
+        // console.log(emps[0].age);
+        // console.log("===================");
+        // for (let emp of emps) {
+        //     for (let info in emp) {
+        //         console.log(emp[info]);
+        //     }
+        //     console.log("=====================");
+        // }
 
 
         var data = {
@@ -57,15 +57,41 @@
                 { "name": "Mary", "workYears": 7, "salary": 65000 }
             ]
         };
+        // for (let prop in data) {
+        //     console.log(prop);
+        //     console.log(data[prop]);
+        // }
+        // console.log(data.emps); // array
+
+        let str = `<ul>`;
+        for (let value of data.emps) {
+            console.log(value);
+            let name, workYear, salary;
+            name = value.name;
+            workYear = value.workYears;
+            salary = value.salary;
+            console.log(name, workYear, salary);
+            str += `<li>員工${name}已任職${workYear}，收入${salary}元</li>`;
+        }
+        str += `</ul>`;
+        document.getElementById("div1").innerHTML = str;
 
         //data - object       
-        //data.emps - array             
-        //data.emps[0] - object       
-        //data.emps[0].name - Tom       
-        console.log(data);
-        console.log(data.emps);
-        console.log(data.emps[1]);
-        console.log(data.emps[1].salary);
+        //data.emps - array
+        //data.emps[0] - object
+        //data.emps[0].name - Tom
+        // console.log(data);
+        // console.log(data.emps);
+        // console.log(data.emps[1]);
+        // console.log(data.emps[1].salary);
+
+        console.log(data.emps); // array
+        for (let value of data.emps) {
+            console.log(value); // element object
+            for (let info in value) {
+                console.log(`${info}: ${value[info]}`);
+            }
+        }
     </script>
 </body>
 </html>
