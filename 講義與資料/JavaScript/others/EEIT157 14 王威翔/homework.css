@@ -103,19 +103,6 @@ h3 {
     text-align: center;
 }
 
-/* .stars a {
-    opacity: 25%;
+img {
     cursor: pointer;
 }
-
-.stars:hover a {
-    opacity: 100%;
-}
-
-.stars a:hover ~ a {
-    opacity: 25%;
-}
-
-.stars a.active {
-    opacity: 100%;
-} */

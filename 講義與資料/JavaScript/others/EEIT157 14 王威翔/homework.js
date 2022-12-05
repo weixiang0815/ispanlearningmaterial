@@ -170,13 +170,62 @@ document.write(`</div>`);
 document.write(`<div class="body">`);
 document.write(`<h2>第三題</h2>`);
 document.write(`<div class=\"stars\">`);
-for (i = 1; i <= 5; i++) {
-  let id = "img" + i;
-  document.write(`<img id=\"${id}\" src=\"Images/chngstar.gif\" />`);
-}
 const imgs = ["img1", "img2", "img3", "img4", "img5"];
-let flags = [false, false, false, false, false];
-
+let flags = {};
+for (let img of imgs) {
+  document.write(`<img id=\"${img}\" src=\"Images/star.gif\" />`);
+  flags[img] = false;
+}
+for (let img of imgs) {
+  $(`#${img}`).on({
+    mouseenter: function () {
+      if (Object.values(flags).indexOf(true) == -1) {
+        $("#stars").text("評分為...." + $(this).attr("id").charAt(3));
+      }
+      for (let i of imgs) {
+        if (i <= $(this).attr("id")) {
+          $(`#${i}`).attr("src", "Images/chngstar.gif");
+        }
+      }
+    },
+    mouseleave: function () {
+      if (Object.values(flags).indexOf(true) == -1) {
+        $("#stars").text("評分為....");
+        for (let i of imgs) {
+          $(`#${i}`).attr("src", "Images/star.gif");
+        }
+      }
+      else {
+        for (let i of imgs) {
+          if (!flags[i]) {
+            $(`#${i}`).attr("src", "Images/star.gif");
+          }
+          else {
+            $(`#${i}`).attr("src", "Images/chngstar.gif");
+          }
+        }
+      }
+    },
+    click: function () {
+      if (Object.values(flags).indexOf(true) == -1) {
+        $("#stars").text("你給" + $(this).attr("id").charAt(3) + "顆星");
+        for (let i of imgs) {
+          if (i <= $(this).attr("id")) {
+            $(`#${i}`).attr("src", "Images/chngstar.gif");
+            flags[i] = true;
+          }
+        }
+      }
+    },
+    dblclick: function () {
+      $("#stars").text("評分為....");
+      for (let i of imgs) {
+        $(`#${i}`).attr("src", "Images/star.gif");
+        flags[i] = false;
+      }
+    }
+  })
+}
 document.write(`</div>`);
 document.write(`<div class=\"text\">`);
 document.write(`<h3>點一下星星可評分，點兩下可重置</h3>`);
