@@ -7,7 +7,7 @@
 <body>
     <script>
         //Array 物件
-        // let balls = ["baseball", "basketball", "tennis", 345];
+        let balls = ["baseball", "basketball", "tennis", 345];
         // console.log(balls);
 
         // for (let value of balls) {
@@ -16,22 +16,29 @@
 
         // console.log("================");
         
-        let myfoods = [["apple", "banana", "grape"], ["pork", "beef"]];
+        // let myfoods = [["apple", "banana", "grape"], ["pork", "beef"]];
         // for (let i = 0, maxi = myfoods.length; i < maxi; i++) {
         //     console.log(i+1+".");
         //     for (let j = 0, maxj = myfoods[i].length; j < maxj; j++) {
         //         console.log(myfoods[i][j]);
         //     }
         // }
-        for (let myfood of myfoods) {
-            console.log(myfood);
-            for (let food of myfood) {
-                console.log(food);
-            }
-        }
+        // for (let myfood of myfoods) {
+        //     console.log(myfood);
+        //     for (let food of myfood) {
+        //         console.log(food);
+        //     }
+        // }
 
         //Array 方法
-        
+        let ary = [1, 2, 3];
+        console.log(balls.concat(ary));
+        console.log(balls.join("-"));
+        console.log(balls.reverse().join("-"));
+        console.log(balls.sort().join("-"));
+        // balls.push("itemA", "itemB", "itemC");
+        // console.log(balls.join("\n"));
+        console.log(balls.push("itemA", "itemB", "itemC"));
     </script>
 </body>
 </html>
