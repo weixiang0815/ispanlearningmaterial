@@ -146,12 +146,20 @@ figure > img {
     cursor: pointer;
 }
 
+.nums > span:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .actions > button {
-    outline-color: darkgreen;
+    border: 1.5px solid darkgreen;
     border-radius: 3px;
-    background-color: darkgreen;
+    background-color: rgba(0, 100, 0, 0.5);
     margin: 0px 20px 0px 20px;
     padding: 5px;
     color: bisque;
     cursor: pointer;
+}
+
+.actions > button:hover {
+    background-color: rgba(0, 100, 0, 1);
 }

@@ -196,6 +196,7 @@ for (let i = 1; i <= 7; i++) {
   document.write(`<span id=\"num${i}\">${i}</span>`);
 }
 const images = [
+  {},
   {
     title: "品味，品酒",
     src: "https://source.unsplash.com/KiQ6wCEDhbs",
