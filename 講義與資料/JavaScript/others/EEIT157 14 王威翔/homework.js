@@ -192,9 +192,46 @@ document.write(`<figure>`);
 document.write(`<img src=\"https://source.unsplash.com/KiQ6wCEDhbs\" alt=\"暫存\" title=\"暫存\"/ >`);
 document.write(`</figure>`);
 document.write(`<div class=\"nums\">`);
-for (let i = 1; i <= 7; i ++) {
+for (let i = 1; i <= 7; i++) {
   document.write(`<span id=\"num${i}\">${i}</span>`);
 }
+const images = [
+  {
+    title: "品味，品酒",
+    src: "https://source.unsplash.com/KiQ6wCEDhbs",
+    url: "",
+  },
+  {
+    title: "",
+    src: "",
+    url: "",
+  },
+  {
+    title: "",
+    src: "",
+    url: "",
+  },
+  {
+    title: "",
+    src: "",
+    url: "",
+  },
+  {
+    title: "",
+    src: "",
+    url: "",
+  },
+  {
+    title: "",
+    src: "",
+    url: "",
+  },
+  {
+    title: "",
+    src: "",
+    url: "",
+  }
+];
 document.write(`</div>`);
 document.write(`<div class=\"actions\">`);
 document.write(`<button id=\"prev\">prev</button>`);

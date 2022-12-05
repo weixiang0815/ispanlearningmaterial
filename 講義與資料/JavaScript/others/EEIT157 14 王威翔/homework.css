@@ -143,6 +143,7 @@ figure > img {
     padding: 1px 6px 1px 6px;
     margin: 0px 6px 0px 6px;
     color: antiquewhite;
+    cursor: pointer;
 }
 
 .actions > button {
@@ -152,4 +153,5 @@ figure > img {
     margin: 0px 20px 0px 20px;
     padding: 5px;
     color: bisque;
+    cursor: pointer;
 }
