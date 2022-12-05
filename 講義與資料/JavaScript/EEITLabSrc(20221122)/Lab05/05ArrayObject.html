@@ -7,19 +7,28 @@
 <body>
     <script>
         //Array 物件
-        let balls = ["baseball", "basketball", "tennis", 345];
-        console.log(balls);
+        // let balls = ["baseball", "basketball", "tennis", 345];
+        // console.log(balls);
 
-        for (let value of balls) {
-            console.log(value)
-        }
+        // for (let value of balls) {
+        //     console.log(value)
+        // }
+
+        // console.log("================");
         
-        //let myfoods = [["apple", "banana", "grape"], ["pork", "beef"]];
+        let myfoods = [["apple", "banana", "grape"], ["pork", "beef"]];
         // for (let i = 0, maxi = myfoods.length; i < maxi; i++) {
+        //     console.log(i+1+".");
         //     for (let j = 0, maxj = myfoods[i].length; j < maxj; j++) {
         //         console.log(myfoods[i][j]);
         //     }
         // }
+        for (let myfood of myfoods) {
+            console.log(myfood);
+            for (let food of myfood) {
+                console.log(food);
+            }
+        }
 
         //Array 方法
         
