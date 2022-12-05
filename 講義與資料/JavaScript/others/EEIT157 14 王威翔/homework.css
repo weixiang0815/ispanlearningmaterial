@@ -103,7 +103,7 @@ h3 {
     text-align: center;
 }
 
-.stars a {
+/* .stars a {
     opacity: 25%;
     cursor: pointer;
 }
@@ -118,4 +118,4 @@ h3 {
 
 .stars a.active {
     opacity: 100%;
-}
+} */
