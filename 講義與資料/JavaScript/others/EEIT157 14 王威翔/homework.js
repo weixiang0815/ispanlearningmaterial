@@ -142,3 +142,13 @@ document.write(`</div>`);
 document.write(`<div class="body">`);
 document.write(`<h2>第四題</h2>`);
 document.write(`</div>`);
+
+// 第五題
+document.write(`<div class="body">`);
+document.write(`<h2>第五題</h2>`);
+document.write(`</div>`);
+
+// 第六題
+document.write(`<div class="body">`);
+document.write(`<h2>第六題</h2>`);
+document.write(`</div>`);
