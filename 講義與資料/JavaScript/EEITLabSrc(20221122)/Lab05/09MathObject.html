@@ -5,9 +5,14 @@
     <title>09MathObject.html</title>
 </head>
 <body>
-    <script>        
-        let no = Math.floor(Math.random() * 6 + 1);
-        console.log(no);
+    <script>
+        for (let i = 0; i < Math.floor(Math.random() * 10 + 1); i++) {
+            let no = Math.floor(Math.random() * 10 + 1);
+            document.write(`${no}<br>`);
+            document.write(`====================<br>`);
+            // console.log(no);
+            // console.log("====================");
+        }
     </script>
 </body>
 </html>
