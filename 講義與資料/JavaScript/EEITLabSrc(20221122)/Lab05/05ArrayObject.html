@@ -36,9 +36,14 @@
         console.log(balls.join("-"));
         console.log(balls.reverse().join("-"));
         console.log(balls.sort().join("-"));
-        // balls.push("itemA", "itemB", "itemC");
-        // console.log(balls.join("\n"));
-        console.log(balls.push("itemA", "itemB", "itemC"));
+        balls.push("itemA", "itemB", "itemC");
+        console.log(balls.join("\n"));
+        // console.log(balls.push("itemA", "itemB", "itemC"));
+        balls.pop();
+        console.log(balls.join("\n"));
+        console.log(balls.slice(1, 4).join("\n"));
+        balls.splice(1, 2, "item1", "item2", "item3");
+        console.log(balls.join("\n"));
     </script>
 </body>
 </html>
