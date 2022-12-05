@@ -17,8 +17,8 @@
         let d = new Date();
         //取得秒數，分割為兩位數
         let s = d.getSeconds();
-        let s1 = parseInt(s / 10);
-        let s2 = s % 10;
+        let s1 = parseInt(s / 10); // 秒的十位數
+        let s2 = s % 10; // 秒的個位數
         console.log(s1, s2);
         //顯示圖片，對應秒數
         document.getElementById("picS1").src = "WinImages/" + s1 + ".gif"; // ES5
