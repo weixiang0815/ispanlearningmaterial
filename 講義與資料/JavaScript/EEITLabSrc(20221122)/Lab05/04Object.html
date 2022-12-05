@@ -21,8 +21,14 @@
         console.log(cars.color);
         console.log(cars["max speed"]);
         console.log(cars.disf());
+        console.log("===========");
+        
     //for..in
-
+        let myDiv = document.getElementById("myDiv");
+        for (let prop in cars) {
+            console.log(prop + ": " + cars[prop]);
+            myDiv.innerHTML += `<li>cars["${prop}"] = ${cars[prop]}</li>`;
+        }
 
     </script>
 </body>
