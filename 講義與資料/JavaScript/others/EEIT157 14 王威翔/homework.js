@@ -19,10 +19,10 @@ document.write(`<form>`);
 document.write(`<fieldset>`);
 document.write(`<legend>Form Check</legend>`);
 // 姓名
-document.write(`<div class=\"divform\">`);
+document.write(`<div class="divform">`);
 document.write(`<label>姓名：</label>`);
-document.write(`<input class=\"name\">`);
-document.write(`<span id=\"name\"></span>`);
+document.write(`<input class="name">`);
+document.write(`<span id="name"></span>`);
 document.write(`<p>（1.不可空白 2.至少兩個字以上 3.必須全部為中文字）</p>`);
 document.write(`</div>`);
 document.getElementsByClassName("name")[0].addEventListener("blur", () => {
@@ -47,10 +47,10 @@ document.getElementsByClassName("name")[0].addEventListener("blur", () => {
   }
 });
 // 密碼
-document.write(`<div class=\"divform\">`);
+document.write(`<div class="divform">`);
 document.write(`<label>密碼：</label>`);
-document.write(`<input class=\"pw\">`);
-document.write(`<span id=\"pw\"></span>`);
+document.write(`<input class="pw">`);
+document.write(`<span id="pw"></span>`);
 document.write(
   `<p>（1.不可空白 2.至少6個字且必須包含英數字、特殊字元[!@#$%^&*]）</p>`
 );
@@ -85,10 +85,10 @@ document.getElementsByClassName("pw")[0].addEventListener("blur", () => {
   }
 });
 // 日期
-document.write(`<div class=\"divform\">`);
+document.write(`<div class="divform">`);
 document.write(`<label>日期：</label>`);
-document.write(`<input class=\"date\" onblur=\"checkDate()\">`);
-document.write(`<span id=\"date\"></span>`);
+document.write(`<input class="date" onblur="checkDate()">`);
+document.write(`<span id="date"></span>`);
 document.write(`<p>格式:西元年/月/日（yyyy/mm/dd）</p>`);
 document.write(`</div>`);
 document.getElementsByClassName("date")[0].addEventListener("blur", () => {
@@ -119,11 +119,11 @@ document.write(`</div>`);
 // 第三題
 document.write(`<div class="body">`);
 document.write(`<h2>第三題</h2>`);
-document.write(`<div class=\"stars\">`);
+document.write(`<div class="stars">`);
 const imgs = ["img1", "img2", "img3", "img4", "img5"];
 let flags = {};
 for (let img of imgs) {
-  document.write(`<img id=\"${img}\" src=\"Images/star.gif\" />`);
+  document.write(`<img id="${img}" src="Images/star.gif" />`);
   flags[img] = false;
 }
 for (let img of imgs) {
@@ -177,67 +177,69 @@ for (let img of imgs) {
   })
 }
 document.write(`</div>`);
-document.write(`<div class=\"text\">`);
+document.write(`<div class="text">`);
 document.write(`<h3>點一下星星可評分，點兩下可重置</h3>`);
-document.write(`<h3 id=\"stars\">評分為....</h3>`);
+document.write(`<h3 id="stars">評分為....</h3>`);
 document.write(`</div>`);
 document.write(`</div>`);
 
 // 第四題
 document.write(`<div class="body">`);
 document.write(`<h2>第四題</h2>`);
-document.write(`<fieldset class=\"carousel\">`);
+document.write(`<fieldset class="carousel">`);
 document.write(`<legend>廣告輪播</legend>`);
+document.write(`<a id="imglink" href="https://www.winentaste.com/magazine/tutorial_taste_step">`)
 document.write(`<figure>`);
-document.write(`<img src=\"https://source.unsplash.com/KiQ6wCEDhbs\" alt=\"暫存\" title=\"暫存\"/ >`);
+document.write(`<img src="https://source.unsplash.com/KiQ6wCEDhbs" href="https://www.winentaste.com/magazine/tutorial_taste_step" alt="品味，品酒" title="品味，品酒"/ >`);
 document.write(`</figure>`);
-document.write(`<div class=\"nums\">`);
+document.write(`</a>`);
+document.write(`<div class="nums">`);
 for (let i = 1; i <= 7; i++) {
-  document.write(`<span id=\"num${i}\">${i}</span>`);
+  document.write(`<span id="num${i}">${i}</span>`);
 }
 const images = [
   {},
   {
     title: "品味，品酒",
     src: "https://source.unsplash.com/KiQ6wCEDhbs",
-    url: "",
+    url: "https://www.winentaste.com/magazine/tutorial_taste_step",
   },
   {
-    title: "",
-    src: "",
-    url: "",
+    title: "沙漠之旅",
+    src: "https://source.unsplash.com/pVr6wvUneMk",
+    url: "https://www.skyscanner.com.tw/news/inspiration/the-5-best-desert-safaris-in-the-world",
   },
   {
-    title: "",
-    src: "",
-    url: "",
+    title: "戰爭思辨",
+    src: "https://source.unsplash.com/qwe8TLRnG8k",
+    url: "https://future.org.tw/civicrm/event/info?reset=1&id=113",
   },
   {
-    title: "",
-    src: "",
-    url: "",
+    title: "深愛的大海",
+    src: "https://source.unsplash.com/oQl0eVYd_n8",
+    url: "https://www.greenpeace.org/taiwan/%E6%B5%B7%E6%B4%8B/",
   },
   {
-    title: "",
-    src: "",
-    url: "",
+    title: "排山倒海的塑膠",
+    src: "https://source.unsplash.com/g1xoeXbfuTw",
+    url: "https://www.gvm.com.tw/article/39277",
   },
   {
-    title: "",
-    src: "",
-    url: "",
+    title: "世界最宜居城市",
+    src: "https://source.unsplash.com/VEXIwDcY1gw",
+    url: "https://www.leo-travel.idv.tw/33354/holland-amsterdam-top-10-attractions",
   },
   {
-    title: "",
-    src: "",
-    url: "",
+    title: "環台有拜有保庇",
+    src: "https://source.unsplash.com/TnUG2pWraPE",
+    url: "https://blog.tripbaa.com/taiwan-10-temple-attractions/",
   }
 ];
 document.write(`</div>`);
-document.write(`<div class=\"actions\">`);
-document.write(`<button id=\"prev\">prev</button>`);
-document.write(`<button id=\"play\">play</button>`);
-document.write(`<button id=\"next\">next</button>`);
+document.write(`<div class="actions">`);
+document.write(`<button id="prev" title="上一張"><i class="fa-solid fa-arrow-left"></i></button>`);
+document.write(`<button id="play" title="暫停"><i class="fa-solid fa-play"></i></button>`); // <i class="fa-regular fa-play-pause"></i>
+document.write(`<button id="next" title="下一張"><i class="fa-solid fa-arrow-right"></i></button>`);
 document.write(`</div>`);
 document.write(`</fieldset>`);
 document.write(`</div>`);
