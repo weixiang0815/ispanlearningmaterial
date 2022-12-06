@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>10querySelector.html</title>
     <style>
-        table,td{
-            border:1px solid blue;
-            width:300px
-            }
-    </style>    
+        table,
+        td {
+            border: 1px solid blue;
+            width: 300px
+        }
+    </style>
 </head>
 <body>
     <table>
@@ -25,17 +26,29 @@
     </table>
     <hr>
     <div id="myDiv"></div>
-    
+
     <script>
         //使用document.getElementById()
-        
-
+        let qs = document.getElementById("myDiv");
+        console.log(qs);
         //使用document.querySelector()
-       
+        let qs1 = document.querySelector("td");
+        console.log(qs1);
+        let qs2 = document.querySelector(".myclass");
+        console.log(qs2);
+        let qs3 = document.querySelector("#td1");
+        console.log(qs3);
+        console.log(qs3.innerHTML);
 
-
-        //使用document.querySelectorAll()
-        
+        //使用doA1cument.querySelectorAll()
+        let qsA1 = document.querySelectorAll("td");
+        console.log(qsA1);
+        let qsA2 = document.querySelectorAll(".myclass");
+        console.log(qsA2);
+        let qsA3 = document.querySelectorAll("#td1");
+        console.log(qsA3);
+        console.log(qsA3[0]);
+        console.log(qsA3[0].innerHTML);
     </script>
 </body>
 </html>
