@@ -110,17 +110,20 @@ img {
 .carousel {
     /* background-color: rgba(144, 238, 144, 0.5); */
     background-image: url("https://source.unsplash.com/TEZZzuQTt8g");
+    background-position: center;
     border-radius: 10px;
     text-align: center;
     border: 1.5px solid darkgreen;
 }
 
-.carousel > legend {
+.carousel>legend {
     margin: 0;
-    padding: 0;
-    color: green;
+    padding: 1px 0px 1px 10px;
+    color: white;
     text-shadow: 7px 10px 9px darkgreen;
     font-size: 1.5em;
+    background-color: rgba(0, 100, 0, 0.8);
+    letter-spacing: 10px;
 }
 
 figure {
@@ -131,9 +134,9 @@ figure {
     text-align: center;
 }
 
-figure > img {
-    max-width: 250px;
-    max-height: 250px;
+figure>img {
+    max-width: 350px;
+    max-height: 350px;
     /* width: 100%; */
 }
 
@@ -141,24 +144,24 @@ figure > img {
     margin: 5px 0px 15px 0px;
 }
 
-.nums > span {
+.nums>span {
     font-weight: bold;
     font-size: 1.5em;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 1px 6px 1px 6px;
     margin: 0px 6px 0px 6px;
     color: antiquewhite;
     cursor: pointer;
 }
 
-.nums > span:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+.nums>span:hover {
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
-.actions > button {
+.actions>button {
     border: 1.5px solid darkgreen;
     border-radius: 3px;
-    background-color: rgba(0, 100, 0, 0.4);
+    background-color: rgba(0, 100, 0, 0.5);
     margin: 0px 20px 0px 20px;
     padding: 3px 10px 3px 10px;
     color: bisque;
@@ -166,6 +169,6 @@ figure > img {
     font-size: 1.5em;
 }
 
-.actions > button:hover {
-    background-color: rgba(0, 100, 0, 0.7);
+.actions>button:hover {
+    background-color: rgba(0, 100, 0, 0.75);
 }
