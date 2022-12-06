@@ -190,7 +190,7 @@ document.write(`<fieldset class="carousel">`);
 document.write(`<legend>廣告輪播</legend>`);
 document.write(`<a id="imglink" href="https://www.winentaste.com/magazine/tutorial_taste_step" disabled>`)
 document.write(`<figure>`);
-document.write(`<img src="https://source.unsplash.com/KiQ6wCEDhbs" href="https://www.winentaste.com/magazine/tutorial_taste_step" alt="品味，品酒" title="品味，品酒"/ >`);
+document.write(`<img id="playingimg" src="Images/品味，品酒.jfif" href="https://www.winentaste.com/magazine/tutorial_taste_step" alt="品味，品酒" title="品味，品酒"/ >`);
 document.write(`</figure>`);
 document.write(`</a>`);
 document.write(`<div class="nums">`);
@@ -201,37 +201,37 @@ const images = [
   {},
   {
     title: "品味，品酒",
-    src: "https://source.unsplash.com/KiQ6wCEDhbs",
+    src: "Images/品味，品酒.jfif",
     url: "https://www.winentaste.com/magazine/tutorial_taste_step",
   },
   {
     title: "沙漠之旅",
-    src: "https://source.unsplash.com/pVr6wvUneMk",
+    src: "Images/沙漠之旅.jfif",
     url: "https://www.skyscanner.com.tw/news/inspiration/the-5-best-desert-safaris-in-the-world",
   },
   {
     title: "戰爭思辨",
-    src: "https://source.unsplash.com/qwe8TLRnG8k",
+    src: "Images/戰爭思辨.jfif",
     url: "https://future.org.tw/civicrm/event/info?reset=1&id=113",
   },
   {
     title: "深愛的大海",
-    src: "https://source.unsplash.com/oQl0eVYd_n8",
+    src: "Images/深愛的大海.jfif",
     url: "https://www.greenpeace.org/taiwan/%E6%B5%B7%E6%B4%8B/",
   },
   {
-    title: "排山倒海的塑膠",
-    src: "https://source.unsplash.com/g1xoeXbfuTw",
+    title: "排山倒海的大軍",
+    src: "Images/排山倒海的大軍.jfif",
     url: "https://www.gvm.com.tw/article/39277",
   },
   {
     title: "世界最宜居城市",
-    src: "https://source.unsplash.com/VEXIwDcY1gw",
+    src: "Images/世界最宜居城市.jfif",
     url: "https://www.leo-travel.idv.tw/33354/holland-amsterdam-top-10-attractions",
   },
   {
     title: "環台有拜有保庇",
-    src: "https://source.unsplash.com/TnUG2pWraPE",
+    src: "Images/環台有拜有保庇.jfif",
     url: "https://blog.tripbaa.com/taiwan-10-temple-attractions/",
   }
 ];
@@ -241,6 +241,35 @@ document.write(`<button id="prev" title="上一張"><i class="fa-solid fa-arrow-
 document.write(`<button id="play" title="播放/暫停"><i class="fa-solid fa-play"></i></button>`); // <i class="fa-solid fa-pause"></i>
 document.write(`<button id="next" title="下一張"><i class="fa-solid fa-arrow-right"></i></button>`);
 document.write(`</div>`);
+for (let i = 1; i <= 7; i++) {
+  $(`#num${i}`).click(function(){
+    $(`#playingimg`).attr("src", images[i].src);
+    $(`#playingimg`).attr("href", images[i].href);
+    $(`#playingimg`).attr("title", images[i].title);
+    $(`#playingimg`).attr("alt", images[i].title);
+  });
+}
+$(`#${prev}`).click(function(){
+  for (let j = 1; j <= 7; j++) {
+    if (images[j].title == $(this).attr("src")) {
+      if (j == 1) {
+        $(`#playingimg`).attr("src", images[i].src);
+        $(`#playingimg`).attr("href", images[i].href);
+        $(`#playingimg`).attr("title", images[i].title);
+        $(`#playingimg`).attr("alt", images[i].title);
+      }
+      else {
+        $(`#playingimg`).attr("src", images[i].src);
+        $(`#playingimg`).attr("href", images[i].href);
+        $(`#playingimg`).attr("title", images[i].title);
+        $(`#playingimg`).attr("alt", images[i].title);
+      }
+    }
+  }
+});
+$(`#${play}`).click({
+  
+});
 document.write(`</fieldset>`);
 document.write(`</div>`);
 
