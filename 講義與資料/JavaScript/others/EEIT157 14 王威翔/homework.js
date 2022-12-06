@@ -241,12 +241,12 @@ document.write(`<button id="prev" title="上一張"><i class="fa-solid fa-arrow-
 document.write(`<button id="play" title="播放/暫停"><i class="fa-solid fa-play"></i></button>`); // <i class="fa-solid fa-pause"></i>
 document.write(`<button id="next" title="下一張"><i class="fa-solid fa-arrow-right"></i></button>`);
 document.write(`</div>`);
-$(`#num1`).css("font-size", "1.5em");
+$(`#num1`).css("font-size", "2em");
 for (let i = 1; i <= 7; i++) {
   $(`#num${i}`).click(function () {
     for (let j = 1; j <= 7; j++) {
       if (images[j].title == $(`#playingimg`).attr("title")) {
-        $(`#num${j}`).css("font-size", "1em");
+        $(`#num${j}`).css("font-size", "1.3em");
         break;
       }
     }
@@ -254,7 +254,7 @@ for (let i = 1; i <= 7; i++) {
     $(`#playingimg`).attr("href", images[i].href);
     $(`#playingimg`).attr("title", images[i].title);
     $(`#playingimg`).attr("alt", images[i].title);
-    $(`#num${i}`).css("font-size", "1.5em");
+    $(`#num${i}`).css("font-size", "2em");
   });
 }
 $(`#prev`).click(() => {
@@ -265,13 +265,14 @@ $(`#prev`).click(() => {
       $(`#playingimg`).attr("href", images[dest].href);
       $(`#playingimg`).attr("title", images[dest].title);
       $(`#playingimg`).attr("alt", images[dest].title);
-      $(`#num${i}`).css("font-size", "1em");
-      $(`#num${dest}`).css("font-size", "1.5em");
+      $(`#num${i}`).css("font-size", "1.3em");
+      $(`#num${dest}`).css("font-size", "2em");
       break;
     }
   }
 });
-$(`#next`).click(() => {
+$(`#next`).click(nextImg);
+function nextImg() {
   for (let i = 1; i <= 7; i++) {
     if (images[i].title == $(`#playingimg`).attr("title")) {
       let dest = i == 7 ? 1 : i + 1;
@@ -279,12 +280,12 @@ $(`#next`).click(() => {
       $(`#playingimg`).attr("href", images[dest].href);
       $(`#playingimg`).attr("title", images[dest].title);
       $(`#playingimg`).attr("alt", images[dest].title);
-      $(`#num${i}`).css("font-size", "1em");
-      $(`#num${dest}`).css("font-size", "1.5em");
+      $(`#num${i}`).css("font-size", "1.3em");
+      $(`#num${dest}`).css("font-size", "2em");
       break;
     }
   }
-});
+}
 document.write(`</fieldset>`);
 document.write(`</div>`);
 
