@@ -39,7 +39,13 @@
         }
 
         function submitf() {
-
+            let theName = document.getElementsByName("txtName")[0].value;
+            if(theName == "") {
+                document.getElementById("idsp").innerHTML = "you must enter";
+            }
+            else {
+                document.forms[0].submit();
+            }
         }
     </script>
 </body>
