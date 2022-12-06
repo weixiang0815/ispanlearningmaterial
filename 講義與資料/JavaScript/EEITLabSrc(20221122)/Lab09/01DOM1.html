@@ -20,45 +20,33 @@
         //nodeType 讀取節點類型
         //*****************************************
 
-        // alert(document.nodeType);  //9
-        // alert(document.nodeName);  //#document
-        // alert(document.nodeValue);  //null
+        alert(document.nodeType);  //9
+        alert(document.nodeName);  //#document
+        alert(document.nodeValue);  //null
 
         //取得根元素 documentElement
         let root = document.documentElement;  //HTML
-        // alert(root.nodeType);  //1
-        // alert(root.nodeName);  //HTML
-        // alert(root.nodeValue);  //null
 
 
         let thebody = root.childNodes[1];  //BODY
-        // alert(thebody.nodeType);  //1
-        // alert(thebody.nodeName);  //BODY
-        // alert(thebody.nodeValue);  //null
 
 
         let theNode = root.childNodes[1].childNodes[3].childNodes[3];  //LI
-        // alert(root.childNodes[1].childNodes[3].nodeName); //UL
-        // alert(theNode.nodeName); //LI
-        // alert(theNode.firstChild.nodeValue);  //bbbbb
-        // alert(theNode.previousSibling.previousSibling.firstChild.nodeValue);  //aaaaa
-        // alert(theNode.nextSibling.nextSibling.firstChild.nodeValue);  //ccccc
+        //alert(root.childNodes[1].childNodes[3].nodeName);
+        //alert(theNode.nodeName);
+        //alert(theNode.firstChild.nodeValue);  //bbbbb
+        //alert(theNode.previousSibling.previousSibling.firstChild.nodeValue);  //aaaaa
+        //alert(theNode.nextSibling.nextSibling.firstChild.nodeValue);  //ccccc
 
-        // alert(theNode.parentNode.nodeName);  //UL
-        // alert(theNode.parentNode.lastChild.previousSibling.firstChild.nodeValue);  //fffff
+        //alert(theNode.parentNode.nodeName);  //UL
+        //alert(theNode.parentNode.lastChild.previousSibling.firstChild.nodeValue);  //fffff
 
 
         let lis = document.getElementsByTagName("li");
         for (let i = 0; i < lis.length; i++) {
-            // alert(lis.item(i).firstChild.nodeValue);
-            // alert(lis[i].firstChild.nodeValue);
-        }
+            //alert(lis.item(i).firstChild.nodeValue);
+            //alert(lis[i].firstChild.nodeValue);
 
-        // alert write 印出來都是字串
-        for (let li of lis) {
-            // alert(li);  // [object HTMLLIElement] [datatype class]
-            // console.log(li);    // <li>aaaaa</li>
-            // console.log(li.innerHTML);  // aaaaa
         }
     </script>
 </body>
