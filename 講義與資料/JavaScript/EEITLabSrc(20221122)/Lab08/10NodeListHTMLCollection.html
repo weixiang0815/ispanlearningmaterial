@@ -31,7 +31,7 @@
         document.getElementById("idcheck").addEventListener("click",check);
         
         function check() {
-            /*
+            
             //NodeList
             let theHobbys = document.getElementsByName("hobby");
             //console.log(theHobbys);  //4            
@@ -40,28 +40,24 @@
                 //console.log(theHobbys.item(i).value);
                 console.log(theHobbys[i].value);
             }
-            //let theSelectors = document.querySelectorAll("input");
-            //console.log(theSelectors); //6
-            */
+            let theSelectors = document.querySelectorAll("input");
+            console.log(theSelectors); //6
 
-
-            /*
             //HTMLCollection
-            //let theClass = document.getElementsByClassName("ch");
-            //console.log(theClass);  //2
+            let theClass = document.getElementsByClassName("ch");
+            console.log(theClass);  //2
             
             let theInputs = document.getElementsByTagName("input");
             //console.log(theInputs);  //6            
             let theInputsLen = theInputs.length;
 
             for (let i = 0; i < theInputsLen; i++) {
-                //console.log(theInputs.item(i).value);
-                //console.log(theInputs[i].value);
+                console.log(theInputs.item(i).value);
+                console.log(theInputs[i].value);
             }
-            //console.log(theInputs.namedItem("txtName").value);  //abc
+            console.log(theInputs.namedItem("txtName").value);  //abc
             console.log(theInputs.namedItem("hobby").value);  //reading 傳回第一個
             console.log(theInputs["hobby"].value);
-            */
         }
     </script>   
 </body>
