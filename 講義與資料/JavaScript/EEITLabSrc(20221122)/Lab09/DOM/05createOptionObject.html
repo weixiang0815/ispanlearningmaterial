@@ -5,19 +5,55 @@
     <title>05createOptionObject.html</title>    
 	</head>
 	<body>
+        <select id="idSelectYear"></select>
         <select id="idSelectMonth"></select>
+        <select id="idSelectDay"></select>
         <script>
+            let d=new Date(2022,11,0);   //2022/12/0 12月的第0天就是11月的最後一天
+            let dno=d.getDate();
+            console.log(d);
+            wed=new Date(2022,11,1).getDay();
+            console.log(wed)
+
+            let theYear=document.querySelector("#idSelectYear");
+            let theMonth=document.querySelector("#idSelectMonth");
+            let yy,mm;
+
             let docFrag = document.createDocumentFragment();
+
+            theYear.addEventListener("change",addDay);
+            theMonth.addEventListener("change",addDay);
+
+            function addDay(){
+                yy=theYear.value;
+                mm=theMonth.value;
+                console.log(yy,mm);
+            }
+
+            for (let i = 2010; i <= 2030; i++) {   //新增月 
+                let opt = document.createElement("option");  //<option></option>
+                opt.setAttribute("value", i);  //<option value="1"></option>
+                let optTxt = document.createTextNode(i); //1
+                opt.appendChild(optTxt); //<option value="1">1</option>
+                // opt.value = i;
+                // opt.innerHTML = i;
+                docFrag.appendChild(opt);
+            }
+            document.getElementById('idSelectYear').appendChild(docFrag);
+
+            docFrag = document.createDocumentFragment();
             for (let i = 1; i <= 12; i++) {   //新增月 
-                let opt = document.createElement("option");
-                opt.setAttribute("value", i);
-                let optTxt = document.createTextNode(i);
-                opt.appendChild(optTxt);
-                //opt.value = i;
-                //opt.innerHTML = i;
+                let opt = document.createElement("option");  //<option></option>
+                opt.setAttribute("value", i);  //<option value="1"></option>
+                let optTxt = document.createTextNode(i); //1
+                opt.appendChild(optTxt); //<option value="1">1</option>
+                // opt.value = i;
+                // opt.innerHTML = i;
                 docFrag.appendChild(opt);
             }
             document.getElementById('idSelectMonth').appendChild(docFrag);
+
+            
         </script>
 	</body>
 
