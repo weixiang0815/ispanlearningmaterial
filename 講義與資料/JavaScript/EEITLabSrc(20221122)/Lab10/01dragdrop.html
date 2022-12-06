@@ -58,17 +58,24 @@
         function dropHandler(e) {
             //取消預設動作
             e.preventDefault();
+
             //取出拖放資料
+            let eleID = e.dataTransfer.getData("text/plain");
+            console.log(eleID);
 
             //建立div元素
-
+            let eleDiv = document.createElement("div"); // <div></div>
 
             //設定屬性及外觀
-
-
+            let eleObj = document.getElementById(eleID);
+            eleDiv.innerHTML = eleObj.innerHTML;
+            console.log(eleDiv);
+            eleDiv.setAttribute("class", "dragItemStyle");
+            eleDiv.setAttribute("style", "color: red;");
 
             //新增到dropZone or dropZone1元素後面
-
+            // alert(e.currentTarget.id);
+            e.currentTarget.appendChild(eleDiv);
 
         }
     </script>
