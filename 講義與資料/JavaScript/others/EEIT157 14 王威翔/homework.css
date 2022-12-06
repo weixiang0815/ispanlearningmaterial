@@ -123,6 +123,7 @@ img {
     font-size: 1.5em;
     background-color: rgba(0, 100, 0, 0.8);
     letter-spacing: 10px;
+    border-radius: 5px;
 }
 
 figure {
@@ -146,16 +147,17 @@ figure>img {
 
 .nums>span {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1px 6px 1px 6px;
     margin: 0px 6px 0px 6px;
-    color: antiquewhite;
+    color: rgba(250, 235, 215, 0.7);
     cursor: pointer;
 }
 
 .nums>span:hover {
     background-color: rgba(0, 0, 0, 0.75);
+    color: antiquewhite;
 }
 
 .actions>button {
@@ -164,11 +166,12 @@ figure>img {
     background-color: rgba(0, 100, 0, 0.5);
     margin: 0px 20px 0px 20px;
     padding: 3px 10px 3px 10px;
-    color: bisque;
+    color: rgba(255, 228, 196, 0.7);
     cursor: pointer;
     font-size: 1.5em;
 }
 
 .actions>button:hover {
     background-color: rgba(0, 100, 0, 0.75);
+    color: bisque;
 }

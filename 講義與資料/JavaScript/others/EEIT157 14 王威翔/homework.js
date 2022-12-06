@@ -241,34 +241,49 @@ document.write(`<button id="prev" title="上一張"><i class="fa-solid fa-arrow-
 document.write(`<button id="play" title="播放/暫停"><i class="fa-solid fa-play"></i></button>`); // <i class="fa-solid fa-pause"></i>
 document.write(`<button id="next" title="下一張"><i class="fa-solid fa-arrow-right"></i></button>`);
 document.write(`</div>`);
+$(`#num1`).css("font-size", "1.5em");
 for (let i = 1; i <= 7; i++) {
-  $(`#num${i}`).click(function(){
+  $(`#num${i}`).click(function () {
+    for (let j = 1; j <= 7; j++) {
+      if (images[j].title == $(`#playingimg`).attr("title")) {
+        $(`#num${j}`).css("font-size", "1em");
+        break;
+      }
+    }
     $(`#playingimg`).attr("src", images[i].src);
     $(`#playingimg`).attr("href", images[i].href);
     $(`#playingimg`).attr("title", images[i].title);
     $(`#playingimg`).attr("alt", images[i].title);
+    $(`#num${i}`).css("font-size", "1.5em");
   });
 }
-$(`#${prev}`).click(function(){
-  for (let j = 1; j <= 7; j++) {
-    if (images[j].title == $(this).attr("src")) {
-      if (j == 1) {
-        $(`#playingimg`).attr("src", images[i].src);
-        $(`#playingimg`).attr("href", images[i].href);
-        $(`#playingimg`).attr("title", images[i].title);
-        $(`#playingimg`).attr("alt", images[i].title);
-      }
-      else {
-        $(`#playingimg`).attr("src", images[i].src);
-        $(`#playingimg`).attr("href", images[i].href);
-        $(`#playingimg`).attr("title", images[i].title);
-        $(`#playingimg`).attr("alt", images[i].title);
-      }
+$(`#prev`).click(() => {
+  for (let i = 1; i <= 7; i++) {
+    if (images[i].title == $(`#playingimg`).attr("title")) {
+      let dest = i == 1 ? 7 : i - 1;
+      $(`#playingimg`).attr("src", images[dest].src);
+      $(`#playingimg`).attr("href", images[dest].href);
+      $(`#playingimg`).attr("title", images[dest].title);
+      $(`#playingimg`).attr("alt", images[dest].title);
+      $(`#num${i}`).css("font-size", "1em");
+      $(`#num${dest}`).css("font-size", "1.5em");
+      break;
     }
   }
 });
-$(`#${play}`).click({
-  
+$(`#next`).click(() => {
+  for (let i = 1; i <= 7; i++) {
+    if (images[i].title == $(`#playingimg`).attr("title")) {
+      let dest = i == 7 ? 1 : i + 1;
+      $(`#playingimg`).attr("src", images[dest].src);
+      $(`#playingimg`).attr("href", images[dest].href);
+      $(`#playingimg`).attr("title", images[dest].title);
+      $(`#playingimg`).attr("alt", images[dest].title);
+      $(`#num${i}`).css("font-size", "1em");
+      $(`#num${dest}`).css("font-size", "1.5em");
+      break;
+    }
+  }
 });
 document.write(`</fieldset>`);
 document.write(`</div>`);
