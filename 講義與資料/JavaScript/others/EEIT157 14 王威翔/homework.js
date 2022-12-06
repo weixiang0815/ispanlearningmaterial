@@ -238,7 +238,7 @@ const images = [
 document.write(`</div>`);
 document.write(`<div class="actions">`);
 document.write(`<button id="prev" title="上一張"><i class="fa-solid fa-arrow-left"></i></button>`);
-document.write(`<button id="play" title="暫停"><i class="fa-solid fa-play"></i></button>`); // <i class="fa-regular fa-play-pause"></i>
+document.write(`<button id="play" title="播放/暫停"><i class="fa-solid fa-play"></i></button>`); // <i class="fa-solid fa-pause"></i>
 document.write(`<button id="next" title="下一張"><i class="fa-solid fa-arrow-right"></i></button>`);
 document.write(`</div>`);
 document.write(`</fieldset>`);
