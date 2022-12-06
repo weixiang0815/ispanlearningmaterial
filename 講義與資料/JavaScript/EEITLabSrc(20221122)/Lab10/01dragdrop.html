@@ -45,17 +45,19 @@
 
         function dragStartHandler(e) {
             //儲存要拖放的資料
-            alert(e.target.id); // dragItem
+            // alert(e.target.id); // dragItem
+            e.dataTransfer.setData("text/plain", e.target.id);
         }
 
 
         function dragoverHandler(e) {
             //取消預設動作
+            e.preventDefault();
         }
 
         function dropHandler(e) {
             //取消預設動作
-
+            e.preventDefault();
             //取出拖放資料
 
             //建立div元素
