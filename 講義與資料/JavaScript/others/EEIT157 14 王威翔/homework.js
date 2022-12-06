@@ -238,7 +238,7 @@ const images = [
 document.write(`</div>`);
 document.write(`<div class="actions">`);
 document.write(`<button id="prev" title="上一張"><i class="fa-solid fa-arrow-left"></i></button>`);
-document.write(`<button id="play" title="播放/暫停"><i class="fa-solid fa-play"></i></button>`); // <i class="fa-solid fa-pause"></i>
+document.write(`<button id="play" title="暫停"><i class="fa-solid fa-pause"></i></button>`); // <i class="fa-solid fa-pause"></i>
 document.write(`<button id="next" title="下一張"><i class="fa-solid fa-arrow-right"></i></button>`);
 document.write(`</div>`);
 $(`#num1`).css("font-size", "2em");
@@ -261,10 +261,12 @@ $(`#prev`).click(() => {
   for (let i = 1; i <= 7; i++) {
     if (images[i].title == $(`#playingimg`).attr("title")) {
       let dest = i == 1 ? 7 : i - 1;
-      $(`#playingimg`).attr("src", images[dest].src);
-      $(`#playingimg`).attr("href", images[dest].href);
-      $(`#playingimg`).attr("title", images[dest].title);
-      $(`#playingimg`).attr("alt", images[dest].title);
+      $(`#playingimg`).attr({
+        "src": images[dest].src,
+        "href": images[dest].href,
+        "title": images[dest].title,
+        "alt": images[dest].title
+      });
       $(`#num${i}`).css("font-size", "1.3em");
       $(`#num${dest}`).css("font-size", "2em");
       break;
@@ -276,16 +278,35 @@ function nextImg() {
   for (let i = 1; i <= 7; i++) {
     if (images[i].title == $(`#playingimg`).attr("title")) {
       let dest = i == 7 ? 1 : i + 1;
-      $(`#playingimg`).attr("src", images[dest].src);
-      $(`#playingimg`).attr("href", images[dest].href);
-      $(`#playingimg`).attr("title", images[dest].title);
-      $(`#playingimg`).attr("alt", images[dest].title);
+      $(`#playingimg`).attr({
+        "src": images[dest].src,
+        "href": images[dest].href,
+        "title": images[dest].title,
+        "alt": images[dest].title
+      });
       $(`#num${i}`).css("font-size", "1.3em");
       $(`#num${dest}`).css("font-size", "2em");
       break;
     }
   }
 }
+let intervalID = window.setInterval(nextImg, 2000);
+let isPlaying = true;
+$(`#play`).click(() => {
+  let icon = document.querySelector("#play>i");
+  if (isPlaying) {
+    $(`#play`).attr("title", "播放");
+    icon.className = `fa-solid fa-play`;
+    isPlaying = false;
+    window.clearInterval(intervalID);
+  }
+  else {
+    $(`#play`).attr("title", "暫停");
+    icon.className = `fa-solid fa-pause`;
+    isPlaying = true;
+    intervalID = window.setInterval(nextImg, 2000);
+  }
+});
 document.write(`</fieldset>`);
 document.write(`</div>`);
 
