@@ -35,15 +35,17 @@ for (let img of imgs) {
       }
     },
     click: function () {
-      if (Object.values(flags).indexOf(true) == -1) {
         $("#stars").text("你給" + $(this).attr("id").charAt(3) + "顆星");
         for (let i of imgs) {
           if (i <= $(this).attr("id")) {
             $(`#${i}`).attr("src", "Images/chngstar.gif");
             flags[i] = true;
           }
+          else {
+            $(`#${i}`).attr("src", "Images/star.gif");
+            flags[i] = false;
+          }
         }
-      }
     },
     dblclick: function () {
       $("#stars").text("評分為....");
