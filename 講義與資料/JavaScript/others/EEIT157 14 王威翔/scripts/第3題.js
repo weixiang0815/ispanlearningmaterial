@@ -2,7 +2,7 @@
 document.write(`<div class="body">`);
 document.write(`<h2>第三題</h2>`);
 document.write(`<div class="stars">`);
-const imgs = ["img1", "img2", "img3", "img4", "img5"];
+const imgs = ["img1", "img2", "img3", "img4", "img5", "img6", "img7"];
 let flags = {};
 for (let img of imgs) {
   document.write(`<img id="${img}" src="Images/star.gif" />`);
@@ -29,12 +29,8 @@ for (let img of imgs) {
       }
       else {
         for (let i of imgs) {
-          if (!flags[i]) {
-            $(`#${i}`).attr("src", "Images/star.gif");
-          }
-          else {
-            $(`#${i}`).attr("src", "Images/chngstar.gif");
-          }
+          let filename = !flags[i] ? "star" : "chngstar";
+          $(`#${i}`).attr("src", "Images/" + filename + ".gif");
         }
       }
     },
