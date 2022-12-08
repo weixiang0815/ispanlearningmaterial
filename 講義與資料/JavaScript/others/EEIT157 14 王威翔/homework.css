@@ -175,3 +175,7 @@ figure>img {
     background-color: rgba(0, 100, 0, 0.75);
     color: bisque;
 }
+
+#theDate {
+    font-size: large;
+}
