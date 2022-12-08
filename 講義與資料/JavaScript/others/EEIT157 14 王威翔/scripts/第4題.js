@@ -65,10 +65,12 @@ for (let i = 1; i <= 7; i++) {
         break;
       }
     }
-    $(`#playingimg`).attr("src", images[i].src);
-    $(`#playingimg`).attr("href", images[i].href);
-    $(`#playingimg`).attr("title", images[i].title);
-    $(`#playingimg`).attr("alt", images[i].title);
+    $(`#playingimg`).attr({
+      "src": images[i].src,
+      "href": images[i].href,
+      "title": images[i].title,
+      "alt": images[i].title
+    });
     $(`#num${i}`).css("font-size", "2em");
   });
 }
@@ -109,15 +111,13 @@ let intervalID = window.setInterval(nextImg, 2000);
 let isPlaying = true;
 $(`#play`).click(() => {
   let icon = document.querySelector("#play>i");
+  $(`#play`).attr("title", isPlaying ? "播放" : "暫停");
+  icon.className = isPlaying ? `fa-solid fa-play` : `fa-solid fa-pause`;
   if (isPlaying) {
-    $(`#play`).attr("title", "播放");
-    icon.className = `fa-solid fa-play`;
     isPlaying = false;
     window.clearInterval(intervalID);
   }
   else {
-    $(`#play`).attr("title", "暫停");
-    icon.className = `fa-solid fa-pause`;
     isPlaying = true;
     intervalID = window.setInterval(nextImg, 2000);
   }
