@@ -3,7 +3,6 @@ document.write(`<div class="body">`);
 document.write(`<h2>第四題</h2>`);
 document.write(`<fieldset class="carousel">`);
 document.write(`<legend>廣告輪播</legend>`);
-document.write(`<a id="imglink" href="https://www.winentaste.com/magazine/tutorial_taste_step" disabled>`)
 document.write(`<figure>`);
 document.write(`<img id="playingimg" src="Images/品味，品酒.jfif" href="https://www.winentaste.com/magazine/tutorial_taste_step" alt="品味，品酒" title="品味，品酒"/ >`);
 document.write(`</figure>`);
