@@ -2,7 +2,10 @@
 document.write(`<div class="body">`);
 document.write(`<h2>第三題</h2>`);
 document.write(`<div class="stars">`);
-const imgs = ["img1", "img2", "img3", "img4", "img5", "img6", "img7"];
+let imgs = [];
+for (i = 1; i <= 5; i++){
+  imgs = imgs.concat(`img${i}`);
+}
 let flags = {};
 for (let img of imgs) {
   document.write(`<img id="${img}" src="Images/star.gif" />`);
@@ -12,10 +15,10 @@ for (let img of imgs) {
   $(`#${img}`).on({
     mouseenter: function () {
       if (Object.values(flags).indexOf(true) == -1) {
-        $("#stars").text("評分為...." + $(this).attr("id").charAt(3));
+        $("#stars").text("評分為...." + $(this).attr("id").substring(3));
       }
       for (let i of imgs) {
-        if (i <= $(this).attr("id")) {
+        if (parseInt(i.substring(3)) <= parseInt($(this).attr("id").substring(3))) {
           $(`#${i}`).attr("src", "Images/chngstar.gif");
         }
       }
@@ -35,9 +38,9 @@ for (let img of imgs) {
       }
     },
     click: function () {
-        $("#stars").text("你給" + $(this).attr("id").charAt(3) + "顆星");
+        $("#stars").text("你給" + $(this).attr("id").substring(3) + "顆星");
         for (let i of imgs) {
-          if (i <= $(this).attr("id")) {
+          if (parseInt(i.substring(3)) <= parseInt($(this).attr("id").substring(3))) {
             $(`#${i}`).attr("src", "Images/chngstar.gif");
             flags[i] = true;
           }
