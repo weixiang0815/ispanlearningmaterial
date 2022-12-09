@@ -1,21 +1,20 @@
 // 第五題
-let y = 1900;
-let m = 1;
-let d = 1;
 const weekdays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 document.write(`<div class="body">`);
 document.write(`<h2>第五題</h2>`);
 document.write(`<select id="year">`);
-for (let i = 2000; i <= 2030; i++) {
+for (let i = 2030; i >= 1900; i--) {
     document.write(`<option value="${i}">${i}</option>`);
 }
 document.write(`</select>`);
+let y = document.getElementById("year").value;
 document.write(`<label>年</label>`);
 document.write(`<select id="month">`);
 for (let i = 1; i <= 12; i++) {
     document.write(`<option value="${i}">${i}</option>`);
 }
 document.write(`</select>`);
+let m = document.getElementById("month").value;
 document.write(`<label>月</label>`);
 document.write(`<select id="day">`);
 for (let i = 1; i <= 31; i++) {
@@ -23,6 +22,7 @@ for (let i = 1; i <= 31; i++) {
     $(`#day`).append(opt);
 }
 document.write(`</select>`);
+let d = document.getElementById("day").value;
 document.write(`<label>日</label>`);
 document.write(`<span id="dateinfo"></span>`);
 document.write(`<div id="calendar"></div>`);
@@ -77,8 +77,8 @@ function setDayOption(y, m) {
     }
 }
 function setCalendar(y, m, d) {
-    if (document.querySelector(`#calendar>table`) != null) {
-        document.querySelector(`#calendar>table`).remove();
+    if ($(`#calendar>table`) != null) {
+        $(`#calendar`).empty();
     }
     let cal = `<table><thead><tr>`;
     for (let weekday of weekdays) {
@@ -90,7 +90,7 @@ function setCalendar(y, m, d) {
     }
     let day = new Date(y, m-1, d).getDate();
     for (let i = 1; i <= new Date(y, m, 0).getDate(); i++) {
-        cal = cal.concat(i == day ? `<td>${i}</td>` : `<td id="theDate">${i}</td>`);
+        cal = cal.concat(i != day ? `<td>${i}</td>` : `<td id="theDate">${i}</td>`);
         if (i == new Date(y, m, 0).getDate()) {
             for (let j = new Date(y, m, 0).getDay()+1; j <= 6 ; j++) {
                 cal = cal.concat(`<td></td>`);
