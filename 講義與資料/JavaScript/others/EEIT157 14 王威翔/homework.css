@@ -179,3 +179,9 @@ figure>img {
 #theDate {
     font-size: large;
 }
+
+#theDate {
+    color: yellow;
+    background-color: green;
+    border: 2px solid red;
+}

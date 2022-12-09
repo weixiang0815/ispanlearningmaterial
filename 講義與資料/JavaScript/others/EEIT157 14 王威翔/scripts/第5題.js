@@ -7,14 +7,14 @@ for (let i = 2030; i >= 1900; i--) {
     document.write(`<option value="${i}">${i}</option>`);
 }
 document.write(`</select>`);
-let y = document.getElementById("year").value;
+let y = $(`#year`).val();
 document.write(`<label>年</label>`);
 document.write(`<select id="month">`);
 for (let i = 1; i <= 12; i++) {
     document.write(`<option value="${i}">${i}</option>`);
 }
 document.write(`</select>`);
-let m = document.getElementById("month").value;
+let m = $(`#month`).val();
 document.write(`<label>月</label>`);
 document.write(`<select id="day">`);
 for (let i = 1; i <= 31; i++) {
@@ -22,52 +22,86 @@ for (let i = 1; i <= 31; i++) {
     $(`#day`).append(opt);
 }
 document.write(`</select>`);
-let d = document.getElementById("day").value;
+let d = $(`#day`).val();
 document.write(`<label>日</label>`);
 document.write(`<span id="dateinfo"></span>`);
 document.write(`<div id="calendar"></div>`);
 document.write(`</div>`);
+let openYear = false;
 $(`#year`).on({
     change: () => {
-        y = document.getElementById("year").value;
+        y = $(`#year`).val();
         setDayOption(y, m);
-        d = document.getElementById("day").value;
+        d = $(`#day`).val();
         $(`#dateinfo`).text(`你選擇的日期是${y}年${m}月${d}日`);
         setCalendar(y, m, d);
+        $(`#year`).blur();
     },
     focus: () => {
         $(`#dateinfo`).text(`日期選擇中...`);
     },
     blur: () => {
         $(`#dateinfo`).text(`你選擇的日期是${y}年${m}月${d}日`);
+    },
+    mouseup: () => {
+        if (openYear) {
+            openYear = false;
+            $(`#year`).blur();
+        }
+        else {
+            openYear = true;
+        }
     }
 });
+let openMonth = false;
 $(`#month`).on({
     change: () => {
-        m = document.getElementById("month").value;
+        m = $(`#month`).val();
         setDayOption(y, m);
-        d = document.getElementById("day").value;
+        d = $(`#day`).val();
         $(`#dateinfo`).text(`你選擇的日期是${y}年${m}月${d}日`);
         setCalendar(y, m, d);
+        $(`#month`).blur();
     },
     focus: () => {
         $(`#dateinfo`).text(`日期選擇中...`);
     },
     blur: () => {
         $(`#dateinfo`).text(`你選擇的日期是${y}年${m}月${d}日`);
+    },
+    mouseup: () => {
+        if (openMonth) {
+            openMonth = false;
+            $(`#month`).blur();
+        }
+        else {
+            openMonth = true;
+        }
     }
 });
+let openDay = false;
 $(`#day`).on({
     change: () => {
-        d = document.getElementById("day").value;
+        d = $(`#day`).val();
         $(`#dateinfo`).text(`你選擇的日期是${y}年${m}月${d}日`);
         setCalendar(y, m, d);
+        $(`#day`).blur();
     },
     focus: () => {
         $(`#dateinfo`).text(`日期選擇中...`);
     },
     blur: () => {
         $(`#dateinfo`).text(`你選擇的日期是${y}年${m}月${d}日`);
+        setCalendar(y, m, d);
+    },
+    mouseup: () => {
+        if (openDay) {
+            openDay = false;
+            $(`#day`).blur();
+        }
+        else {
+            openDay = true;
+        }
     }
 });
 function setDayOption(y, m) {
@@ -80,24 +114,24 @@ function setCalendar(y, m, d) {
     if ($(`#calendar>table`) != null) {
         $(`#calendar`).empty();
     }
-    let cal = `<table><thead><tr>`;
+    let cal = `<table><caption>${y}.${m}</caption><thead><tr>`;
     for (let weekday of weekdays) {
         cal = cal.concat(`<th>${weekday}</th>`);
     }
     cal = cal.concat(`</tr></thead><tbody>`);
-    for (let i = 0; i < new Date(y, m-1, 1).getDay(); i++) {
+    for (let i = 0; i < new Date(y, m - 1, 1).getDay(); i++) {
         cal = cal.concat(`<td></td>`);
     }
-    let day = new Date(y, m-1, d).getDate();
+    let day = new Date(y, m - 1, d).getDate();
     for (let i = 1; i <= new Date(y, m, 0).getDate(); i++) {
         cal = cal.concat(i != day ? `<td>${i}</td>` : `<td id="theDate">${i}</td>`);
         if (i == new Date(y, m, 0).getDate()) {
-            for (let j = new Date(y, m, 0).getDay()+1; j <= 6 ; j++) {
+            for (let j = new Date(y, m, 0).getDay() + 1; j <= 6; j++) {
                 cal = cal.concat(`<td></td>`);
             }
             cal = cal.concat(`</tr>`);
         }
-        if (new Date(y, m-1, i).getDay() == 6) {
+        if (new Date(y, m - 1, i).getDay() == 6) {
             cal = cal.concat(`</tr><tr>`);
         }
     }
