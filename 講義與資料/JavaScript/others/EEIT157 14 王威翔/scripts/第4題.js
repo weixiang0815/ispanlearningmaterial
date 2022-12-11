@@ -3,8 +3,9 @@ document.write(`<div class="body">`);
 document.write(`<h2>第四題</h2>`);
 document.write(`<fieldset class="carousel">`);
 document.write(`<legend>廣告輪播</legend>`);
+document.write(`<a href="https://www.winentaste.com/magazine/tutorial_taste_step" target="_blank">`);
 document.write(`<figure>`);
-document.write(`<img id="playingimg" src="Images/品味，品酒.jfif" href="https://www.winentaste.com/magazine/tutorial_taste_step" alt="品味，品酒" title="品味，品酒"/ >`);
+document.write(`<img id="playingimg" src="Images/品味，品酒.jfif" alt="品味，品酒" title="品味，品酒"/ >`);
 document.write(`</figure>`);
 document.write(`</a>`);
 document.write(`<div class="nums">`);
@@ -66,10 +67,10 @@ for (let i = 1; i <= 7; i++) {
     }
     $(`#playingimg`).attr({
       "src": images[i].src,
-      "href": images[i].href,
       "title": images[i].title,
       "alt": images[i].title
     });
+    $(`fieldset>a`).attr("href", images[i].url);
     $(`#num${i}`).css("font-size", "2em");
   });
 }
@@ -79,10 +80,10 @@ $(`#prev`).click(() => {
       let dest = i == 1 ? 7 : i - 1;
       $(`#playingimg`).attr({
         "src": images[dest].src,
-        "href": images[dest].href,
         "title": images[dest].title,
         "alt": images[dest].title
       });
+      $(`fieldset>a`).attr("href", images[dest].url);
       $(`#num${i}`).css("font-size", "1.3em");
       $(`#num${dest}`).css("font-size", "2em");
       break;
@@ -96,10 +97,10 @@ function nextImg() {
       let dest = i == 7 ? 1 : i + 1;
       $(`#playingimg`).attr({
         "src": images[dest].src,
-        "href": images[dest].href,
         "title": images[dest].title,
         "alt": images[dest].title
       });
+      $(`fieldset>a`).attr("href", images[dest].url);
       $(`#num${i}`).css("font-size", "1.3em");
       $(`#num${dest}`).css("font-size", "2em");
       break;
