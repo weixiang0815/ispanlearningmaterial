@@ -3,7 +3,7 @@
 <hr>
 
 ## 正在進行課程
-* JavaScript基礎
+* Servlet與JSP
 
 ## 即將進行專題內容
 ### 第二次期中專題
@@ -14,6 +14,7 @@
 * Java基礎
 * JDBC
 * HTML與CSS基礎
+* JavaScript基礎
 
 ## 已結束專題內容
 ### 第一次期中專題
