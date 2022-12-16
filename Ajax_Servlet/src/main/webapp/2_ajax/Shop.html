@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>麵包商城</title>
+<!-- bootstrap 5.1.3 CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+
+<!-- bootstrap 5.1.3 JS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+
+<!-- jQuery 3.6.0 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+	<main>
+		<div class="row justify-content-center mt-5">
+			<div class="col-6">
+				<div class="input-group mb-3 ">
+					<input type="text" class="form-control" id="keywordInput"
+						placeholder="請輸入商品名稱(模糊搜尋)">
+					<button class="btn btn-primary" type="button" id="searchBTN">搜尋商品(Enter)</button>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="input-group mb-3 ">
+					<button class="btn btn-primary" type="button"
+						data-bs-toggle="modal" data-bs-target="#pCreate">新增商品</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-center">
+			計時器(觀察頁面刷新)：<span id="timer">0</span>
+		</div>
+
+		<div class="album py-5 bg-light">
+			<div class="container">
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+					id="productHome"></div>
+			</div>
+		</div>
+	</main>
+
+
+	<!-- Update -->
+	<div class="modal fade" id="pUpdate" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">修改商品資訊</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<div class="input-group mb-3 align-items-center">
+								<img class="img-thumbnail oldImg"
+									src="https://fakeimg.pl/100/?text=image" style="width: 40%">
+
+								<span class="mx-4 newSpan">>>></span> <img
+									class="img-thumbnail newImg" style="width: 40%"
+									src="https://fakeimg.pl/100/?text=image">
+
+							</div>
+
+							<div class="mb-3">
+								<label for="pID" class="form-label">商品ID</label> <input id="pID"
+									class="form-control" type="text" readonly>
+							</div>
+
+							<div class="mb-3">
+								<label for="pName" class="form-label">商品名稱</label> <input
+									id="pName" type="text" class="form-control">
+							</div>
+
+							<div class="mb-3">
+								<label for="pPrice" class="form-label">商品價格</label> <input
+									id="pPrice" type="number" class="form-control">
+							</div>
+
+							<div class="input-group mb-3">
+								<label for="pPhoto" class="form-label"></label> <input
+									id="pPhoto" class="form-control" type="file" accept="image/*">
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="updateProductBTN">確定修改</button>
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal" id="cancelUpdateBTN">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Create -->
+	<div class="modal fade" id="pCreate" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">新增商品</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col">
+							<div class="input-group mb-3 align-items-center">
+								<img class="img-thumbnail createImg"
+									src="https://fakeimg.pl/100/?text=image" style="width: 40%">
+							</div>
+
+
+							<div class="mb-3">
+								<label for="cpName" class="form-label">商品名稱</label> <input
+									id="cpName" type="text" class="form-control">
+							</div>
+
+							<div class="mb-3">
+								<label for="cpPrice" class="form-label">商品價格</label> <input
+									id="cpPrice" type="number" class="form-control">
+							</div>
+
+							<div class="input-group mb-3">
+								<label for="cpPhoto" class="form-label"></label> <input
+									id="cpPhoto" class="form-control" type="file" accept="image/*">
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="createProductBTN">確定新增</button>
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal" id="cancelCreateBTN">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	/*----- 初始化 -----*/
+	//使用jQuery選取元素
+	//搜尋用
+	const keywordInput = $("#keywordInput");
+	const searchBTN = $("#searchBTN");
+
+	//更新用，彈窗元素
+	const createImg = $(".createImg");
+	const cpName = $("#cpName");
+	const cpPrice = $("#cpPrice");
+	const cpPhoto = $("#cpPhoto");
+	const createProductBTN = $('#createProductBTN');
+
+	//更新用，彈窗元素
+	const newImg = $(".newImg");
+	const newSpan = $(".newSpan");
+	const pID = $("#pID");
+	const pName = $("#pName");
+	const pPrice = $("#pPrice");
+	const pPhoto = $("#pPhoto");
+	const updateProductBTN = $('#updateProductBTN');
+
+	//新增商品按鈕
+
+
+	//資料渲染
+	const productHome = $("#productHome");
+	let pList = [];
+
+	//一進此頁面，使焦點鎖定在keywordInput欄位
+	keywordInput.focus();
+
+	//進入此頁面後，呼叫取得商品資訊的方法
+	getPorducts();
+
+	//初始化更新用的彈跳視窗
+	initUpdate();
+
+	//設定計時器
+	const timer = $("#timer");
+	setInterval(() => {
+		timer.html(parseInt(timer.html()) + 1)
+	}, 1000)
+
+
+
+	/*----- 模糊搜尋 -----*/
+	//點擊按鈕後進行模糊搜尋
+	searchBTN.click(function () {
+		getPorducts(keywordInput.val());
+	});
+
+	//按下Enter鍵後進行模糊搜尋
+	keywordInput.keypress(function (e) {
+		if (e.key === 'Enter') {
+			getPorducts(keywordInput.val());
+		}
+	});
+
+
+
+	/*----- productHome點擊事件(Ajax請求後產生的新元素，無法在頁面初始化時進行事件綁定。這個寫法為點擊事件冒泡到刪除與修改的按鈕) -----*/
+	productHome.click(function (e) {
+		t = e.target;
+
+		//如果點到的不是按鈕，直接終止程式
+		if (t.tagName != "BUTTON") {
+			return;
+		}
+
+		let pID = t.getAttribute("productID"); //取得點擊目標的ID(藏在按鈕裡)
+
+		//如果點到的按鈕有update的class，則執行delete
+		if (t.classList.contains("delete")) {
+			if (confirm("確定刪除?")) {
+				//當使用按下確定後，使用fetch執行Ajax非同步刪除請求
+				fetch('/Ajax_Servlet/Products/' + pID, { method: 'DELETE' }).then(result => result.text()).then(status => {
+					if (status == "true") { //確定刪除成功，則移除掉前端元素
+						$(t).parents(".product").remove();  //使用jQuery選取目標元素t的所有父元素，並過濾出有「.product」class的元素，移除之。
+					}
+				})
+			}
+		}
+
+		//如果點到的按鈕有update的class，則執行update彈跳視窗的渲染
+		if (t.classList.contains("update")) {
+			initUpdate();
+			for (let item of pList) {
+				if (item.id == pID) {
+					$("#pID").val(item.id);
+					$("#pID").attr("placeholder", item.id);
+
+					$("#pName").val(item.name);
+					$("#pName").attr("placeholder", item.name);
+
+					$("#pPrice").val(item.price);
+					$("#pPrice").attr("placeholder", item.price);
+
+					$(".oldImg").attr("src", item.photo);
+
+					return;
+				}
+			}
+		}
+	})
+
+
+
+	/*----- 修改用的彈跳視窗 -----*/
+	pPhoto.change(function (e) {
+		let imgSource = e.target.files[0];
+		newImg.attr("src", URL.createObjectURL(imgSource));
+		newImg.show();
+		newSpan.show();
+	})
+
+	updateProductBTN.click(function () {
+		const formData = new FormData();
+		formData.append('pName', pName.val());
+		formData.append('pPrice', pPrice.val());
+		formData.append('pPhoto', pPhoto[0].files[0]);
+
+
+		fetch("/Ajax_Servlet/Products/" + pID.val(), { method: 'PUT', body: formData }).then(result => result.text()).then(status => {
+			if (status == "true") { //確定更新成功，呼叫取得所有商品的方法，並關閉彈跳視窗
+				document.getElementById("cancelUpdateBTN").click();//模擬點擊取消按鈕
+				getPorducts();
+			}
+		})
+	})
+
+
+
+	/*----- 新增用的彈跳視窗 -----*/
+	cpPhoto.change(function (e) {
+		let imgSource = e.target.files[0];
+		createImg.attr("src", URL.createObjectURL(imgSource));
+	})
+
+
+	createProductBTN.click(function () {
+		const formData = new FormData();
+		formData.append('cpName', cpName.val());
+		formData.append('cpPrice', cpPrice.val());
+		formData.append('cpPhoto', cpPhoto[0].files[0]);
+
+
+		fetch("/Ajax_Servlet/Products/", { method: 'POST', body: formData }).then(result => result.text()).then(status => {
+		 //新增成功後，重置新增視窗、呼叫取得所有商品的方法、關閉新增視窗
+				document.getElementById("cancelCreateBTN").click();//模擬點擊取消按鈕
+
+				cpPhoto.val("");
+				cpName.val("");
+				cpPrice.val("");
+				cpPhoto.val("");
+
+				getPorducts();
+		})
+	})
+
+	/*----- function宣告區(js的方法沒有順序性，寫在哪都行) -----*/
+	//取得商品的Ajax方法
+	function getPorducts(keyword) {
+		//先使用三元運算子判斷請求目標api的地址，左邊為取得全部、右邊為模糊搜尋
+		let apiURL = (keyword == null) ? '/Ajax_Servlet/Products' : '/Ajax_Servlet/Products/' + keyword + "?fuzzy=true"
+
+		fetch(apiURL).then(function (result) {
+			return result.json();
+		}).then(function (pJsonObj) {
+			pList = pJsonObj;  //將最後結果設定給全域變數pList，以供更新比對使用
+
+			let pOuputString = "";
+			for (let item of pList) {
+				pOuputString += '<div class="col product">';
+				pOuputString += '<div class="card">'
+				pOuputString += '<img src="' + item.photo + '" class="card-img-top">'
+				pOuputString += '<div class="card-body text-center fs-4">' + item.name + '</div>'
+				pOuputString += '<div class="card-footer text-center">'
+				pOuputString += '<span class="me-5">' + item.price + '</span>'
+				pOuputString += '<button class="btn btn-primary update" data-bs-toggle="modal" data-bs-target="#pUpdate" productID="' + item.id + '">修改</button>'
+				pOuputString += '<button class="btn btn-danger delete" productID="' + item.id + '">刪除</button>	</div></div></div>'
+			}
+			productHome.html(pOuputString)
+		});
+	}
+
+	//初始化更新的彈跳視窗
+	function initUpdate() {
+		newImg.hide();
+		newSpan.hide();
+		pPhoto.val("");
+	}
+</script>
+
+</html>

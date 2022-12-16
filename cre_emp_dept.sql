@@ -1,4 +1,4 @@
-USE jdbc;
+USE servdb;
 
 CREATE TABLE department (
 	deptno		decimal(3)		PRIMARY KEY,
