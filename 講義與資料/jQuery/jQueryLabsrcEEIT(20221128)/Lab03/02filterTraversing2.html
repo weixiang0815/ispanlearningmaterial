@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>02filterTraversing2.html</title>
     <style>
-        table,th,td{border:1px solid gray;}            
+        table,
+        th,
+        td {
+            border: 1px solid gray;
+        }
     </style>
 </head>
 <body>
@@ -27,7 +31,7 @@
                 <td>Ruby</td>
                 <td>Dynamic</td>
                 <td>1993</td>
-                </tr>
+            </tr>
             <tr>
                 <td>JavaScript</td>
                 <td>Dynamic</td>
@@ -42,42 +46,44 @@
     </table>
     <hr>
 
-    <input type="button" id="btn1" value=":first-child">    
+    <input type="button" id="btn1" value=":first-child">
     <input type="button" id="btn2" value=".first()">
     <input type="button" id="btn3" value=".eq(0)">
-    <input type="button" id="btn4" value=".odd()">    
-    <input type="button" id="btn5" value=".even()">   
+    <input type="button" id="btn4" value=".odd()">
+    <input type="button" id="btn5" value=".even()">
 
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
         //child Selector
-        $("#btn1").click(function(){
+        $("#btn1").click(function () {
             //每個tr的第一個td，背景設yellow(:first-child)                 
-                            
-        });            
+            $("tr td:first-child").css("background-color", "yellow");
+        });
 
         //Traversing--filter
-        $("#btn2").click(function(){
+        $("#btn2").click(function () {
             //tr td的第一個td，背景設lightgreen(.first())
-                                                        
+            $("tr td").first().css("background-color", "lightgreen");
         });
 
-        $("#btn3").click(function(){
+        $("#btn3").click(function () {
             //tr td的第一個td，背景設lightblue(.eq(0))
-                                                        
-        });     
+            $("tr td").eq(0).css("background-color", "lightblue");
+        });
 
-        $("#btn4").click(function(){
+        $("#btn4").click(function () {
             //filtering 的 tbody tr的奇數列綠色 .odd()，index從0開始 
             //child filter 的 tbody tr的偶數列綠色 nth-child(even)，index從1開始
-                       
+            $("tbody tr").odd().css("background-color", "green");
+            $("tbody tr:nth-child(even)").css("background-color", "yellow");
         });
 
-        $("#btn5").click(function(){  
+        $("#btn5").click(function () {
             //filtering 的 tbody tr的偶數列黃色 .even()，index從0開始 
             //child filter 的 tbody tr的奇數列綠色 nth-child(odd)，index從1開始 
-            
+            $("tbody tr").even().css("background-color", "yellow");
+            $("tbody tr:nth-child(odd)").css("background-color", "green");
         });                                                                     
-    </script>    
+    </script>
 </body>
 </html>
