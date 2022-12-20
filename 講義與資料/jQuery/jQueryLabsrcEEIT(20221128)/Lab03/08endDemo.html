@@ -42,7 +42,7 @@
     <script>
         $("figure").on({
             click: function () {
-                $(this).siblings().css("border", "solid 2px transparent").end().css("border", "solid 2px red");
+                $(this).css("border", "solid 2px red").siblings().css("border", "solid 2px transparent");
             },
             dblclick: function () {
                 $("figure").css("border", "solid 2px transparent");
