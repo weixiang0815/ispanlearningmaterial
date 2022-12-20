@@ -40,8 +40,13 @@
 
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
-        $("figure").click(function () {
-
+        $("figure").on({
+            click: function(){
+                $(this).siblings().css("border", "solid 2px transparent").end().css("border", "solid 2px red");
+            },
+            dblclick: function(){
+                $("figure").css("border", "solid 2px transparent");
+            }
         });
     </script>
 </body>
