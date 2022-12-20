@@ -54,8 +54,12 @@
             //text-decoration:none
             //background:url(images/pdf_icon.gif) no-repeat
             //padding-left:20px
-
-
+            $("a[href$='pdf']").css("text-decoration", "none")
+                .css("background", "url(images/pdf_icon.gif) no-repeat")
+                .css("padding-left", "20px");
+            $("a[href$='doc']").css("text-decoration", "none")
+                .css("background", "url(images/word_icon.gif) no-repeat")
+                .css("padding-left", "20px");
         });         
     </script>
 </body>
