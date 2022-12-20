@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>06childSelector.html</title>
     <style>
-        table,th,td{border:1px solid gray;}            
+        table,
+        th,
+        td {
+            border: 1px solid gray;
+        }
     </style>
 </head>
 <body>
@@ -27,7 +31,7 @@
                 <td>Ruby</td>
                 <td>Dynamic</td>
                 <td>1993</td>
-                </tr>
+            </tr>
             <tr>
                 <td>JavaScript</td>
                 <td>Dynamic</td>
@@ -55,49 +59,49 @@
 
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
-        $("#btn1").click(function(){                 
-            $("tr td:first-child").css("background-color","yellow");                
+        $("#btn1").click(function () {
+            $("tr td:first-child").css("background-color", "yellow");
         });
 
-        $("#btn2").click(function(){                
-            $("tr td:last-child").css("background-color","orange");
+        $("#btn2").click(function () {
+            $("tr td:last-child").css("background-color", "orange");
         });
 
-        $("#btn3").click(function(){               
-            $("tr td:nth-child(2)").css("background-color","lime");
+        $("#btn3").click(function () {
+            $("tr td:nth-child(2)").css("background-color", "lime");
         });
 
-        $("#btn4").click(function(){               
-            $("thead tr:only-child").css("background-color","fuchsia");
+        $("#btn4").click(function () {
+            $("thead tr:only-child").css("background-color", "fuchsia");
         });
 
         //child filter selector,選擇器由1開始計數
-        $("#btn5").click(function(){
-            //tbody tr的偶數列綠色 nth-child(even)                 
-                        
+        $("#btn5").click(function () {
+            // tbody tr的偶數列綠色 nth-child(even)
+            $("tbody tr:nth-child(even)").css("background-color", "green");
         });
 
-        $("#btn6").click(function(){  
-            //tbody tr的奇數列黃色 nth-child(odd)               
-            
+        $("#btn6").click(function () {
+            //tbody tr的奇數列黃色 nth-child(odd)
+            $("tbody tr:nth-child(odd)").css("background-color", "yellow");
         });
 
-        $("#btn7").click(function(){                                                        
+        $("#btn7").click(function () {
             //tbody的2n列藍色 :nth-child(2n) 偶數
             //2n的n,n從1開始
-                
-        });  
+            $("tbody tr:nth-child(2n)").css("background-color", "blue");
+        });
 
-        $("#btn8").click(function(){
+        $("#btn8").click(function () {
             //tbody的2n+1列紅色 :nth-child(2n+1) 奇數
             //(2n+1)的n ,n從0開始
-                            
-        }); 
+            $("tbody tr:nth-child(2n+1)").css("background-color", "red");
+        });
 
-        $("#btn9").click(function(){
+        $("#btn9").click(function () {
             //第1,4...列文字顏色設為桃紅色(fuchsia) :nth-child(3n+1)
-
+            $("tbody tr:nth-child(3n+1)").css("background-color", "fuchsia");
         });                         
-    </script>    
+    </script>
 </body>
 </html>
