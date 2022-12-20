@@ -14,18 +14,20 @@
     <script src="../js/jquery-3.6.1.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
     <script>
-        $(document).ready(function () {
-            $("h1").css("color", "green");
-            $("h1").hover(
-                function () {
-                    $(this).css("color", "red")
+        // $(document).ready(function () {
+        //     $("h1").css("color", "green");
+        //     $("h1").hover(
+        //         function () {
+        //             $(this).css("color", "red")
 
-                },
-                function () {
-                    $(this).css("color", "green");
-                }
-            );
-        });
+        //         },
+        //         function () {
+        //             $(this).css("color", "green");
+        //         }
+        //     );
+        // });
+        // $("h1").css("color", "green").hover(function () { $(this).css("color", "red") }, function () { $(this).css("color", "green") });
+        $("h1").css("color", "green").mouseover(function () { $(this).css("color", "red") }).mouseleave(function () { $(this).css("color", "green") });
     </script>
 
 </body>
