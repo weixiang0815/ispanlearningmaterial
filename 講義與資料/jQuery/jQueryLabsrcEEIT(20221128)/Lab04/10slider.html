@@ -122,20 +122,13 @@
         let slideNum = 0;
         let slideCount = $(".slides li").length;
         let lastIndex = slideCount - 1;
-        console.log(slideCount);
-
-        console.log($(".dot li"));
-        // $(".dot li").eq(0).css("background-color", "white");
-        $(".dot li").hover(
-            function () {
-                $(this).css("background-color", "white").siblings().css("background-color", "transparent");
-                slideNum = $(".dot li").index($(this));
-                console.log(slideNum);
-            },
-            function () {
-                $(".dot li").css("background-color", "transparent");
-            }
-        );
+        $(".dot li").eq(0).css("background-color", "white");
+        $(".dot li").mouseenter(function () {
+            $(this).css("background-color", "white").siblings().css("background-color", "transparent");
+            slideNum = $(".dot li").index($(this));
+            let slideMove = 0 - 800 * slideNum;
+            $("ul.slides").css("left", slideMove);
+        });
 
     </script>
 </body>
