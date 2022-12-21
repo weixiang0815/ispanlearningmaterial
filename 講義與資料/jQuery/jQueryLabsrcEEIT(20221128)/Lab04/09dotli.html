@@ -12,38 +12,43 @@
         absolute:基準點會以屬性是Relative的父層為基準，
         所以如果沒有Relative父層的情況下，會直接找到body為基準點
         */
-        .wrapper{
+        .wrapper {
             background: #000;
             position: relative;
-            width:800px;
-            height:300px;
+            width: 800px;
+            height: 300px;
             overflow: hidden;
-            margin:0 auto; 
+            margin: 0 auto;
         }
-        ul{
-            margin:0;
+
+        ul {
+            margin: 0;
             padding: 0;
             position: absolute;
         }
-        li{
-            margin:0;
+
+        li {
+            margin: 0;
             padding: 0;
             list-style: none;
         }
-        .dot{
-            bottom:10px;
-            width:100%;
+
+        .dot {
+            bottom: 10px;
+            width: 100%;
             display: flex;
             justify-content: center;
         }
-        .dot li{
-            border:1px solid #fff;
+
+        .dot li {
+            border: 1px solid #fff;
             /* border-radius: 50%; */
             margin: 0 5px;
-            width:24px;
+            width: 24px;
             height: 10px;
         }
-        .dot li:hover{
+
+        .dot li:hover {
             background: #fff;
         }
     </style>
@@ -55,7 +60,7 @@
             <li></li>
             <li></li>
             <li></li>
-        </ul>             
+        </ul>
     </div>
 </body>
 </html>
