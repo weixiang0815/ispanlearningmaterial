@@ -125,10 +125,13 @@
         console.log(slideCount);
 
         console.log($(".dot li"));
-        $(".dot li").eq(0).css("background-color", "white");
-        $(".dot li").mouseenter(
+        // $(".dot li").eq(0).css("background-color", "white");
+        $(".dot li").hover(
             function () {
                 $(this).css("background-color", "white").siblings().css("background-color", "transparent");
+            },
+            function() {
+                $(".dot li").css("background-color", "transparent");
             }
         );
 
