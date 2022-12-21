@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>06each.html</title>   
+    <title>06each.html</title>
 </head>
 <body>
     <h2>Drinks</h2>
@@ -17,10 +17,15 @@
 
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
-        $("#btn1").click(function(){                             
-            $("li").each(function(index,element){
-                                                            
-            });                  
+        $("#btn1").click(function () {
+            console.log($("li"));
+            $("li").each(function (index, element) {
+                console.log(index);
+                console.log(element);
+                console.log($(this).text());
+                console.log($(element).text());
+                $("#demo").append(`<li>${$(this).text()}</li>`);
+            });
         });
     </script>
 </body>

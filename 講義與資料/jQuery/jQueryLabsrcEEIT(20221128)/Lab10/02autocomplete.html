@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>02autocomplete.html</title>
-    <link rel="stylesheet" href="../css/themes/base/jquery-ui.css">    
+    <link rel="stylesheet" href="../css/themes/base/jquery-ui.css">
     <style>
-        .highlight{
-            background:lightgreen;
-            color:red;
+        .highlight {
+            background: lightgreen;
+            color: red;
         }
-        .focus{
-            background:yellow;
+
+        .focus {
+            background: yellow;
         }
     </style>
 </head>
@@ -46,14 +47,14 @@
             "Ruby",
             "Scala",
             "Scheme"
-            ];
-        $( "#tags" ).autocomplete({
+        ];
+        $("#tags").autocomplete({
             source: availableTags,
             autoFocus: true,
             classes: {
                 "ui-autocomplete": "highlight",
-                "ui-autocomplete-input":"focus"
-                }
+                "ui-autocomplete-input": "focus"
+            }
 
         });
     </script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        div#Q1 {
+            margin: auto;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div id="Q1">
+        <div id="rating">
+            <img src="images/star.gif">
+            <img src="images/star.gif">
+            <img src="images/star.gif">
+            <img src="images/star.gif">
+            <img src="images/star.gif">
+        </div>
+        <p id="star">點擊以評分</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        let isSelected = false;
+        let selectedIndex = 0;
+        $(`div#rating>img`).on({
+            mouseenter: function () {
+                $(this).attr("src", "images/chngstar.gif")
+                    .prevAll().attr("src", "images/chngstar.gif")
+                    .end()
+                    .nextAll().attr("src", "images/star.gif");
+                $("p#star").text(`評分中...... ${$(this).index() + 1}`);
+            },
+            mouseleave: function () {
+                if (isSelected) {
+                    $("div#rating>img").eq(selectedIndex).attr("src", "images/chngstar.gif")
+                        .prevAll().attr("src", "images/chngstar.gif")
+                        .end()
+                        .nextAll().attr("src", "images/star.gif");
+                    $("p#star").text(`你給 ${selectedIndex + 1} 顆星`);
+                } else {
+                    $(this).attr("src", "images/star.gif").prevAll().attr("src", "images/star.gif");
+                    $("p#star").text("點擊以評分");
+                }
+            },
+            click: function () {
+                isSelected = true;
+                selectedIndex = $(this).index();
+                $(this).attr("src", "images/chngstar.gif").prevAll().attr("src", "images/chngstar.gif");
+                $("p#star").text(`你給 ${selectedIndex + 1} 顆星`);
+            },
+            dblclick: function () {
+                isSelected = false;
+                $("div#rating>img").attr("src", "images/star.gif");
+                $("p#star").text("點擊以評分");
+            }
+        });
+    </script>
+</body>
+</html>

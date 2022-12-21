@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "b1c2ec76-9655-4e21-b548-4f3e3f91309e",
+		"name": "springbootday2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Page Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/page?pageNumber=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"page"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JPQL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/name?name=王世堅",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "王世堅"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "透過 name 搜尋",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/name2?name=阿文",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"name2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "阿文"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "透過 name 模糊搜尋",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/namelike?name=<",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"namelike"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "<"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "透過 level 搜尋",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/level?level=6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"level"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用原生 SQL 透過 name 搜尋",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/name_native?name=館長",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"name_native"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "館長"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用原生 SQL 透過 id 刪除",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/delete2?id=6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"delete2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "透過方法名稱模糊搜尋 name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/name3?n=館",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"name3"
+					],
+					"query": [
+						{
+							"key": "n",
+							"value": "館"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "透過方法名稱查詢 level 並排序",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/level_orderby_id?level=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"level_orderby_id"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

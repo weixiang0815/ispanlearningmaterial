@@ -8,56 +8,61 @@
     <link rel="stylesheet" href="../css/styles/rwd.css">
     <link rel="stylesheet" media="screen and  (max-width: 780px)" href="../css/styles/rwd780.css" />
     <style>
-      
+
     </style>
 </head>
 <body>
     <div id="allpage">
         <header>
             <img class="logo-img" src="images/logo.png" title="logo" alt="logo">
-            <nav class="menu transition"> 
-                <div class="menubar" >
-                        <div class="bar bar1 transition"></div>
-                        <div class="bar bar2 transition"></div>
-                        <div class="bar bar3 transition"></div>
-                </div>               
+            <nav class="menu transition">
+                <div class="menubar">
+                    <div class="bar bar1 transition"></div>
+                    <div class="bar bar2 transition"></div>
+                    <div class="bar bar3 transition"></div>
+                </div>
                 <ul class="transition">
                     <li><a class="transition" href="">Home</a></li>
                     <li><a class="transition" href="">Shop</a></li>
                     <li><a class="transition" href="">Gallery</a></li>
                     <li><a class="transition" href="">About</a></li>
                 </ul>
-                
-                
-            </nav>            
+
+
+            </nav>
         </header>
         <div id="content">
             <article class="article">
                 <section class="section">
-                    <h2><a href="http://localhost:8090/Lab08/hamburgerMenu.html">jQuery</a></h2> 
-                    <p>jQuery是一套跨瀏覽器的JavaScript函式庫，用於簡化HTML與JavaScript之間的操作。約翰·雷西格（John Resig）在2006年1月的BarCamp NYC上釋出了第一個版本。目前由Dave Methvin領導的團隊進行開發。全球前10,000個存取最高的網站中，有65%使用了jQuery，是曾經最受歡迎的JavaScript函式庫。</p>                   
-                    <p>jQuery是開源軟體，使用MIT授權條款授權。jQuery的語法設計使得許多操作變得容易，如操作文件（document）、選擇文件物件模型（DOM）元素、建立動畫效果、處理事件、以及開發Ajax程式。jQuery也提供了給開發人員在其上建立外掛程式的能力。這使開發人員可以對底層互動與動畫、進階效果和進階主題化的組件進行抽象化。模組化的方式使jQuery函式庫能夠建立功能強大的動態網頁以及網路應用程式。</p>
-                    <p>微軟和諾基亞已宣布在他們的平台上繫結jQuery。微軟最初在Visual Studio中整合了jQuery[8]以便在微軟自己的ASP.NET AJAX框架和ASP.NET MVC Framework中使用，而諾基亞則在他的Web執行時組件開發平台中整合了jQuery。MediaWiki自從1.16版本後也開始使用jQuery。</p>
-                </section>                
+                    <h2><a href="http://localhost:8090/Lab08/hamburgerMenu.html">jQuery</a></h2>
+                    <p>jQuery是一套跨瀏覽器的JavaScript函式庫，用於簡化HTML與JavaScript之間的操作。約翰·雷西格（John Resig）在2006年1月的BarCamp
+                        NYC上釋出了第一個版本。目前由Dave Methvin領導的團隊進行開發。全球前10,000個存取最高的網站中，有65%使用了jQuery，是曾經最受歡迎的JavaScript函式庫。
+                    </p>
+                    <p>jQuery是開源軟體，使用MIT授權條款授權。jQuery的語法設計使得許多操作變得容易，如操作文件（document）、選擇文件物件模型（DOM）元素、建立動畫效果、處理事件、以及開發Ajax程式。jQuery也提供了給開發人員在其上建立外掛程式的能力。這使開發人員可以對底層互動與動畫、進階效果和進階主題化的組件進行抽象化。模組化的方式使jQuery函式庫能夠建立功能強大的動態網頁以及網路應用程式。
+                    </p>
+                    <p>微軟和諾基亞已宣布在他們的平台上繫結jQuery。微軟最初在Visual Studio中整合了jQuery[8]以便在微軟自己的ASP.NET AJAX框架和ASP.NET MVC
+                        Framework中使用，而諾基亞則在他的Web執行時組件開發平台中整合了jQuery。MediaWiki自從1.16版本後也開始使用jQuery。</p>
+                </section>
             </article>
             <aside class="aside">
-                    <section class="section">
-                            <h2><a href="https://zh.m.wikipedia.org/zh-tw/JavaScript">JavaScript</a></h2>                           
-                            <p>JavaScript（通常縮寫為JS）是一種進階的、直譯的程式語言。JavaScript是一門基於原型、頭等函式的語言。它提供語法來操控文字、陣列、日期以及正規表示式等。它已經由ECMA（歐洲電腦製造商協會）透過ECMAScript實作語言的標準化。它被世界上的絕大多數網站所使用，也被世界主流瀏覽器（Chrome、IE、Firefox、Safari、Opera）支援。</p>
-                    </section>
+                <section class="section">
+                    <h2><a href="https://zh.m.wikipedia.org/zh-tw/JavaScript">JavaScript</a></h2>
+                    <p>JavaScript（通常縮寫為JS）是一種進階的、直譯的程式語言。JavaScript是一門基於原型、頭等函式的語言。它提供語法來操控文字、陣列、日期以及正規表示式等。它已經由ECMA（歐洲電腦製造商協會）透過ECMAScript實作語言的標準化。它被世界上的絕大多數網站所使用，也被世界主流瀏覽器（Chrome、IE、Firefox、Safari、Opera）支援。
+                    </p>
+                </section>
             </aside>
-        </div>  <!--end content-->
+        </div> <!--end content-->
         <footer>
-                <p>2022 All Rights Reserved Quality Art Technology CO. </p>
+            <p>2022 All Rights Reserved Quality Art Technology CO. </p>
         </footer>
-    </div>  <!--end allpage-->
+    </div> <!--end allpage-->
 
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
-        $(".menubar").click(function(){          
+        $(".menubar").click(function () {
             $(".menu").toggleClass("active")
         })
-        
+
     </script>
 </body>
 </html>

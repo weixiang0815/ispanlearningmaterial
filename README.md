@@ -3,10 +3,10 @@
 <hr>
 
 ## 正在進行課程
-* Servlet與JSP
+* Spring Framework
 
 ## 即將進行專題內容
-### 第二次期中專題
+* ### 期末專題
 
 ## 已結束課程
 * SQL與T-SQL基本語法
@@ -15,11 +15,17 @@
 * JDBC
 * HTML與CSS基礎
 * JavaScript基礎
+* Servlet與JSP
+* JQuery
+* Hibernate
 
 ## 已結束專題內容
-### 第一次期中專題
-#### 題目
-* 到[開放政府資料平台](https://data.gov.tw)下載任一份檔案，用Java將檔案內容提取到SQL Server中並建立資料庫與表格，再用Java提取表格內容並秀出來
-#### 加分項
-* 用Java爬蟲下載[開放政府資料平台](https://data.gov.tw)檔案（可使用[Jsoup套件](https://www.javatpoint.com/jsoup-tutorial)，此套件需另外[下載安裝](https://jsoup.org/download)）
+* ### 第一次期中專題
+    #### 題目
+    * 到[開放政府資料平台](https://data.gov.tw)下載任一份檔案，用Java將檔案內容提取到SQL Server中並建立資料庫與表格，再用Java提取表格內容並秀出來
+    #### 加分項
+    * 用Java爬蟲下載[開放政府資料平台](https://data.gov.tw)檔案（可使用[Jsoup套件](https://www.javatpoint.com/jsoup-tutorial)，此套件需另外[下載安裝](https://jsoup.org/download)）
+* ### 第二次期中專題
+    #### 題目
+    #### 加分項
 <hr>

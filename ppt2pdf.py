@@ -2,7 +2,7 @@ import sys
 import os
 import comtypes.client
 
-filename = ["GIT講義", "Servlet&JSP講義"]
+filename = ["EEIT_第二次期中專題"]
 
 for i in filename:
     #設置路徑

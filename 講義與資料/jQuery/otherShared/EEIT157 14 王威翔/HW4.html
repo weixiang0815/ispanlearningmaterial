@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        table {
+            display: inline-table;
+        }
+    </style>
+</head>
+<body>
+    <h1>臺灣行政區郵遞區號</h1>
+    <table></table>
+    <select id="district"></select>
+    <select id="region"></select>
+    <script src="../taiwan_districts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        let table_str = "";
+        let city_str = "";
+        let selected_district_index = 0;
+        let selected_region_index = 0;
+        $.each(data, (index, city) => {
+            if (index == 0) {
+                city_str += `<option selected value="${index}">${city["name"]}</option>`;
+            }
+            else {
+                city_str += `<option value="${index}">${city["name"]}</option>`;
+            }
+            $.each(city["districts"], (index, district) => {
+                table_str += `<tr>`;
+                if (index == 0) {
+                    table_str += `<th rowspan="${city["districts"].length}">${city["name"]}</th>`;
+                }
+                table_str += `<td>${district["zip"]}</td><td>${district["name"]}</td></tr>`;
+            });
+        });
+        $("table").html(table_str);
+        $("select#district").html(city_str);
+        $(window).ready(function () {
+            let region_str = "";
+            $.each(data[selected_district_index]["districts"], function (index, district) {
+                region_str += `<option value="">${district["zip"]}${district["name"]}</option>`;
+            });
+            $("select#region").html(region_str);
+        });
+        $("select#district").on({
+            change: function () {
+                let region_str = "";
+                selected_district_index = $(this).val();
+                $.each(data[selected_district_index]["districts"], function (index, district) {
+                    region_str += `<option value="">${district["zip"]}${district["name"]}</option>`;
+                });
+                $("select#region").html(region_str);
+            }
+        });
+    </script>
+</body>
+</html>
