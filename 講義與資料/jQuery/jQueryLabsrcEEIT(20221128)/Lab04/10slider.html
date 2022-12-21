@@ -127,11 +127,6 @@
             slideNum = $(".dot li").index($(this));
             show();
         });
-        function show() {
-            $(".dot li").eq(slideNum).css("background-color", "white").siblings().css("background-color", "transparent");
-            let slideMove = 0 - 800 * slideNum;
-            $("ul.slides").css("left", slideMove);
-        }
         $("#prevSlide").click(function () {
             slideNum = slideNum - 1 < 0 ? lastIndex : slideNum - 1;
             show();
@@ -140,6 +135,11 @@
             slideNum = slideNum + 1 > lastIndex ? 0 : slideNum + 1;
             show();
         });
+        function show() {
+            $(".dot li").eq(slideNum).css("background-color", "white").siblings().css("background-color", "transparent");
+            let slideMove = 0 - 800 * slideNum;
+            $("ul.slides").css("left", slideMove);
+        }
     </script>
 </body>
 </html>
