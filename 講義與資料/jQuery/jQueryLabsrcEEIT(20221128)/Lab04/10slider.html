@@ -60,9 +60,9 @@
             height: 10px;
         }
 
-        .dot li:hover {
+        /* .dot li:hover {
             background: #fff;
-        }
+        } */
 
         .slide_btn {
             display: flex;
@@ -124,7 +124,13 @@
         let lastIndex = slideCount - 1;
         console.log(slideCount);
 
-
+        console.log($(".dot li"));
+        $(".dot li").eq(0).css("background-color", "white");
+        $(".dot li").mouseenter(
+            function () {
+                $(this).css("background-color", "white").siblings().css("background-color", "transparent");
+            }
+        );
 
     </script>
 </body>
