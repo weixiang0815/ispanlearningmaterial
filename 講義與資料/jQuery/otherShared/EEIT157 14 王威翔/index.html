@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Homework</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <style>
+        .dark {
+            filter: grayscale(100%);
+        }
+    </style>
+</head>
+<body>
+    <h1>第一題</h1>
+    <div id="rating">
+        <img src="images/chngstar.gif" class="dark star">
+        <img src="images/chngstar.gif" class="dark star">
+        <img src="images/chngstar.gif" class="dark star">
+        <img src="images/chngstar.gif" class="dark star">
+        <img src="images/chngstar.gif" class="dark star">
+
+        <p id="star"></p>
+    </div>
+    <!-- <script src="js/hw01.js"></script> -->
+    <script>
+        let flag = false;
+
+        $(".star").mouseenter(function () {
+            if (flag) {
+                return;
+            }
+
+            let sIndex = $(".star").index(this)
+            $(`.star:lt(${sIndex + 1})`).removeClass("dark")
+        })
+
+        $(".star").mouseleave(function () {
+            if (flag) {
+                return;
+            }
+
+            let sIndex = $(".star").index(this)
+            $(`.star:lt(${sIndex + 1})`).addClass("dark")
+        })
+
+        $(".star").click(function () {
+            flag = !flag;
+        })
+
+    </script>
+
+</body>
+</html>
