@@ -39,25 +39,24 @@
         //focus,blur
         $("#idInp").focus(function () {
             console.log("focus");
-
-
+            $(this).css("background-color", "yellow");
         }).blur(function () {
             console.log("blur");
-
+            $(this).css("background-color", "pink");
         })
-
         //change
         $("#idSel").change(function () {
             console.log("change");
             //讀取option的值
-
-
+            console.log($(this).val());
+            //console.log($(this).text());  //error
+            let opt = $("select>option:selected");
+            $("#demo").text(`index=${opt.index()}, value=${opt.val()}, text=${opt.text()}`);
         });
 
         //submit
         $("#idbtn").click(function () {
             console.log("submit");
-
         });
 
         $("#myform").submit(function (event) {
