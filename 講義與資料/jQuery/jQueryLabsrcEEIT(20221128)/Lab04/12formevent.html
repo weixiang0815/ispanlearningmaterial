@@ -53,12 +53,12 @@
             let opt = $("select>option:selected");
             $("#demo").text(`index=${opt.index()}, value=${opt.val()}, text=${opt.text()}`);
         });
-
         //submit
         $("#idbtn").click(function () {
             console.log("submit");
+            if ($("#idInp").val() == "") $("#demo").text("You must enter");
+            else $("form").submit();
         });
-
         $("#myform").submit(function (event) {
             console.log("submit!");
             // console.log(event.type);
