@@ -38,13 +38,18 @@
         $("#buttonOff").click(function () {
             //練習三
             //將buttonOn按鈕的click事件取消掉
-            $("#buttonOn, #idbut1").off("click");
+            $("#buttonOn, #idbut1").off("click mousedown");
         });
 
         //不一定要on繫結才可以用off移除
-        $("#idbut1").click(function () {
-            console.log("click");
-            $('#msg').append("click<br>");
+        // $("#idbut1").click(function () {
+        //     console.log("click");
+        //     $('#msg').append("click<br>");
+        // });
+        
+        $("#idbut1").mousedown(function () {
+            console.log("mousedown");
+            $('#msg').append("mousedown<br>");
         });
 
         $("#idbut2").click(function () {
