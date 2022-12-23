@@ -31,6 +31,20 @@
 
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
+        let docHeight=$("body").height();
+        let windowHeight=$(window).height();
+        console.log("docHeight="+docHeight);
+        console.log("windowHeight="+windowHeight);
+
+        $(window).scroll(function(){
+            let scrollTop=$(this).scrollTop();
+            console.log("scrollTop="+scrollTop);
+
+            let scrollPercent=Math.round(scrollTop/(docHeight-windowHeight)*100)+"%"
+            console.log("scrollPercent="+scrollPercent);
+
+            $("#read_progress_bar").css("width",scrollPercent);
+        })
 
 
     </script>
