@@ -40,7 +40,10 @@
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
         $(".btn").click(function () {
-
+            let size = $(this).data("size");
+            console.log(size);
+            $(this).addClass("active").siblings().removeClass("active");
+            $("html").removeClass().addClass(size);
         });
     </script>
 </body>
