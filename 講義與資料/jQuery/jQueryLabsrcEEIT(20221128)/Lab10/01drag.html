@@ -4,35 +4,38 @@
     <meta charset="UTF-8">
     <title>01drag.html</title>
     <style>
-        *{
-            margin:0;
-            padding:0;
+        * {
+            margin: 0;
+            padding: 0;
         }
-        .picture{
-            margin:20px auto;
-            width:800px;
-            height:540px;
+
+        .picture {
+            margin: 20px auto;
+            width: 800px;
+            height: 540px;
             background: url(images/slide1.jpg);
-            background-size:cover;
+            background-size: cover;
             position: relative;
         }
-        .cover{
+
+        .cover {
             position: absolute;
-            left:0;
-            top:0;
-            bottom:0;
-            width:50%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 50%;
             background: lightseagreen;
             opacity: .5;
         }
-        .drag{
+
+        .drag {
             position: absolute;
-            width:10px;
-            height:100%;
+            width: 10px;
+            height: 100%;
             background: lightseagreen;
             /* background:red; */
-            left:50%;
-            top:0;
+            left: 50%;
+            top: 0;
         }
     </style>
 </head>
@@ -43,16 +46,16 @@
     </div>
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script src="../js/jquery-ui.js"></script>
-        <script>
-            $("#drag").draggable({ 
-                axis: "x",
-                containment: "parent", 
-                scroll: false,
-                drag: function () {
-                    var dragPos=$(this).css("left");
-                   $(".cover").css("width", dragPos);
-                }
-            });
-        </script>
+    <script>
+        $("#drag").draggable({
+            axis: "x",
+            containment: "parent",
+            scroll: false,
+            drag: function () {
+                var dragPos = $(this).css("left");
+                $(".cover").css("width", dragPos);
+            }
+        });
+    </script>
 </body>
 </html>
