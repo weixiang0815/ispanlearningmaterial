@@ -4,75 +4,89 @@
     <meta charset="UTF-8">
     <title>08showhidemenu.html</title>
     <style>
-        body{
+        body {
             background: #ccc;
         }
-        .transition{
+
+        .transition {
             transition: 0.4s;
         }
-        .wrapper{
-            width:800px;
+
+        .wrapper {
+            width: 800px;
             margin: 20px auto;
         }
-        .menu{
+
+        .menu {
             display: inline-block;
             cursor: pointer;
             position: relative;
             padding: 0 0 0 2px;
             /* background:red; */
         }
-        .menu.active{
+
+        .menu.active {
             background: #fff;
-            
+
         }
-        .menu ul{
+
+        .menu ul {
             position: relative;
-            left:0;
-            top:0;
-            background:rgba(255,255,255,.8);
-            width:120px;
-            opacity: 0; /*表示完全透明 */
+            left: 0;
+            top: 0;
+            background: rgba(255, 255, 255, .8);
+            width: 120px;
+            opacity: 0;
+            /*表示完全透明 */
             max-height: 0;
             overflow: hidden;
         }
-        .menu.active ul{
+
+        .menu.active ul {
             opacity: 1;
             max-height: 300px;
         }
-        .menu ul li a{
+
+        .menu ul li a {
             display: block;
-            padding:10px 12px;    
+            padding: 10px 12px;
         }
-        .menu ul li a:hover{
+
+        .menu ul li a:hover {
             background: lightblue;
         }
-        ul,li{
+
+        ul,
+        li {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .bar{
+
+        .bar {
             width: 36px;
             height: 6px;
             background: #666;
             margin: 6px 0;
             border-radius: 2px;
         }
-        .menu.active .bar1{
-            transform: rotate(-45deg) translate(-9px, 7px) ;                 
+
+        .menu.active .bar1 {
+            transform: rotate(-45deg) translate(-9px, 7px);
         }
-        
-        .menu.active .bar2{opacity: 0;}
-        
-        .menu.active .bar3{
-            transform: rotate(45deg) translate(-9px, -8px) ;      
-        } 
-        
-    </style>          
+
+        .menu.active .bar2 {
+            opacity: 0;
+        }
+
+        .menu.active .bar3 {
+            transform: rotate(45deg) translate(-9px, -8px);
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
-        <div class="menu transition" >
+        <div class="menu transition">
             <div class="bar bar1 transition"></div>
             <div class="bar bar2 transition"></div>
             <div class="bar bar3 transition"></div>
@@ -83,11 +97,11 @@
                 <li><a class="transition">About</a></li>
             </ul>
         </div>
-    </div>  
+    </div>
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
-        $(".menu").click(function(){
-            
+        $(".menu").click(function () {
+
         });
     </script>
 </body>
