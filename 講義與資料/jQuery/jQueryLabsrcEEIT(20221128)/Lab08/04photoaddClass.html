@@ -51,8 +51,12 @@
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
         $("figure").click(function () {
+            // console.log(this);
+            // console.log($(this).find("img").attr("src"));
 
-
+            let picsrc = $(this).find("img").attr("src");
+            $("#mainPic").attr("src", picsrc);
+            $(this).addClass("active").siblings().removeClass();
         });
     </script>
 </body>
