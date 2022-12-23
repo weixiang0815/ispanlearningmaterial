@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02chain.html</title>    
+</head>
+<body>
+    <h1>write less, do more1</h1>
+    <h1>write less, do more2</h1>
+    <h1>write less, do more3</h1>
+    <h1>write less, do more4</h1>
+    <h1>write less, do more5</h1>     
+    
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
+    <script>
+        $(document).ready(function(){
+        //    $("h1").css("color","green");
+        //    $("h1").mouseover(function(){
+        //         console.log(this);  //JavaScript this 物件 標籤
+        //         console.log($(this));  //jQuery selector 
+        //        $(this).css("color","red");
+        //    });
+        //    $("h1").mouseout(function(){
+        //        $(this).css("color","green");
+        //    }); 
+           
+        // 2.
+        // let over;
+
+            function over(){
+                $(this).css("color","red");
+            }
+            function out(){
+                $(this).css("color","blue");
+            }
+           $("h1").css("color","blue").mouseover(over).mouseout(out);
+
+        // 1.
+        //   let over=function(){
+        //         $(this).css("color","red");
+        //     }
+
+            
+        //2.
+            // over=function(){
+            //     $(this).css("color","red");
+            // }
+        });
+    </script>
+
+</body>
+</html>
