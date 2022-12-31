@@ -4,54 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery Homework</title>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
+    <title>HW1</title>
     <style>
-        .dark {
-            filter: grayscale(100%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        div#Q1 {
+            margin: auto;
+            width: 60%;
         }
     </style>
 </head>
 <body>
-    <h1>第一題</h1>
-    <div id="rating">
-        <img src="images/chngstar.gif" class="dark star">
-        <img src="images/chngstar.gif" class="dark star">
-        <img src="images/chngstar.gif" class="dark star">
-        <img src="images/chngstar.gif" class="dark star">
-        <img src="images/chngstar.gif" class="dark star">
-
-        <p id="star"></p>
+    <div id="Q1">
+        <h1>第一題</h1>
+        <div id="rating">
+            <img src="images/star.gif">
+            <img src="images/star.gif">
+            <img src="images/star.gif">
+            <img src="images/star.gif">
+            <img src="images/star.gif">
+        </div>
+        <p id="star">點擊以評分</p>
     </div>
-    <!-- <script src="js/hw01.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
-        let flag = false;
+        let isSelected = false;
+        $(`div#rating>img`).on({
+            mouseenter: function () {
 
-        $(".star").mouseenter(function () {
-            if (flag) {
-                return;
+            },
+            mouseleave: function () {
+
+            },
+            click: function () {
+
+            },
+            dblclick: function () {
+
             }
-
-            let sIndex = $(".star").index(this)
-            $(`.star:lt(${sIndex + 1})`).removeClass("dark")
-        })
-
-        $(".star").mouseleave(function () {
-            if (flag) {
-                return;
-            }
-
-            let sIndex = $(".star").index(this)
-            $(`.star:lt(${sIndex + 1})`).addClass("dark")
-        })
-
-        $(".star").click(function () {
-            flag = !flag;
-        })
-
+        });
     </script>
-
 </body>
 </html>
