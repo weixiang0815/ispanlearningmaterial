@@ -38,18 +38,37 @@
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
         let isSelected = false;
+        let selectedIndex = 0;
         $(`div#rating>img`).on({
             mouseenter: function () {
-
+                $(this).attr("src", "images/chngstar.gif")
+                    .prevAll().attr("src", "images/chngstar.gif")
+                    .end()
+                    .nextAll().attr("src", "images/star.gif");
+                $("p#star").text(`你給 ${$(this).index() + 1} 顆星`);
             },
             mouseleave: function () {
-
+                if (isSelected) {
+                    $("div#rating>img").eq(selectedIndex).attr("src", "images/chngstar.gif")
+                        .prevAll().attr("src", "images/chngstar.gif")
+                        .end()
+                        .nextAll().attr("src", "images/star.gif");
+                    $("p#star").text(`你給 ${selectedIndex + 1} 顆星`);
+                } else {
+                    $(this).attr("src", "images/star.gif").prevAll().attr("src", "images/star.gif");
+                    $("p#star").text("點擊以評分");
+                }
             },
             click: function () {
-
+                isSelected = true;
+                selectedIndex = $(this).index();
+                $(this).attr("src", "images/chngstar.gif").prevAll().attr("src", "images/chngstar.gif");
+                $("p#star").text(`你給 ${selectedIndex + 1} 顆星`);
             },
             dblclick: function () {
-
+                isSelected = false;
+                $("div#rating>img").attr("src", "images/star.gif");
+                $("p#star").text("點擊以評分");
             }
         });
     </script>
