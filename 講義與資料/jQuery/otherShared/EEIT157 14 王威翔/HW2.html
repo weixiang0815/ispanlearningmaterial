@@ -45,7 +45,7 @@
                     .prevAll().attr("src", "images/chngstar.gif")
                     .end()
                     .nextAll().attr("src", "images/star.gif");
-                $("p#star").text(`評分中...... ${$(this).index() + 1}`);
+                $("p#star").text(`你給 ${$(this).index() + 1} 顆星`);
             },
             mouseleave: function () {
                 if (isSelected) {
