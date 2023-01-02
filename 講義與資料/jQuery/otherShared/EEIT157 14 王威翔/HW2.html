@@ -9,10 +9,6 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
-            text-align: center;
-        }
-
         .wrapper {
             position: relative;
             width: 800px;
@@ -97,7 +93,6 @@
     </style>
 </head>
 <body>
-    <h1>第二題</h1>
     <div class="wrapper">
         <ul class="slides">
             <li><img src="images/世界最宜居城市.jfif" title="世界最宜居城市"></li>
@@ -142,6 +137,7 @@
         $("#nextSlide").click(function () {
             nextImg();
         });
+        
         let intervalID = setInterval(nextImg, 2000);
         $("div.wrapper").on({
             mouseenter: function () {
