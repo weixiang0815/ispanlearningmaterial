@@ -16,13 +16,18 @@
 </head>
 <body>
     <h1>臺灣行政區郵遞區號</h1>
+    <div></div>
     <table></table>
     <select id="district"></select>
     <select id="region"></select>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
-        
+        $(function () {
+            $.getJSON("taiwan_districts.js", function (data) {
+                $(div).text(data);
+            })
+        });
     </script>
 </body>
 </html>
