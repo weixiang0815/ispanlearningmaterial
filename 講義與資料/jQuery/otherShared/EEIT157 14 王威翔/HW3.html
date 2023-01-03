@@ -32,13 +32,9 @@
         move_div();
         $(window).resize(move_div);
         function move_div() {
-            let window_width = $(window).width();
-            let window_height = $(window).height();
-            let obj_width = $("div").width();
-            let obj_height = $("div").height();
             $("div").css({
-                "top": (window_height / 2) - (obj_height / 2),
-                "left": (window_width / 2) - (obj_width / 2),
+                "top": ($(window).height() / 2) - ($("div").height() / 2),
+                "left": ($(window).width() / 2) - ($("div").width() / 2),
             });
         }
     </script>
