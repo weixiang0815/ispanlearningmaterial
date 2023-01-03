@@ -9,8 +9,15 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
         table {
-            display: inline-block;
+            display: inline-table;
         }
     </style>
 </head>
@@ -23,7 +30,37 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
-        console.log(data);
+        let table_str = "";
+        let city_str = "";
+        let selected_district_index = 0;
+        let selected_region_index = 0;
+        $.each(data, (index, city) => {
+            if (index == 0) {
+                city_str += `<option selected value="${index}">${city["name"]}</option>`;
+            }
+            else {
+                city_str += `<option value="${index}">${city["name"]}</option>`;
+            }
+            $.each(city["districts"], (index, district) => {
+                table_str += `<tr>`;
+                if (index == 0) {
+                    table_str += `<th rowspan="${city["districts"].length}">${city["name"]}</th>`;
+                }
+                table_str += `<td>${district["zip"]}</td><td>${district["name"]}</td></tr>`;
+            });
+        });
+        $("table").html(table_str);
+        $("select#district").html(city_str);
+        $("select#district").on({
+            change: function () {
+                let region_str = "";
+                selected_district_index = $(this).val();
+                $.each(data[selected_district_index]["districts"], function (index, district) {
+                    region_str += `<option value="">${district["zip"]}${district["name"]}</option>`;
+                });
+                $("select#region").html(region_str);
+            }
+        });
     </script>
 </body>
 </html>
