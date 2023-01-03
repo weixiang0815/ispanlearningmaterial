@@ -51,6 +51,13 @@
         });
         $("table").html(table_str);
         $("select#district").html(city_str);
+        $(window).ready(function () {
+            let region_str = "";
+            $.each(data[selected_district_index]["districts"], function (index, district) {
+                region_str += `<option value="">${district["zip"]}${district["name"]}</option>`;
+            });
+            $("select#region").html(region_str);
+        });
         $("select#district").on({
             change: function () {
                 let region_str = "";
