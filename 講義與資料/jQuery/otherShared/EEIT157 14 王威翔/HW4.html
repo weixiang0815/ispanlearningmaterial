@@ -16,7 +16,6 @@
 </head>
 <body>
     <h1>臺灣行政區郵遞區號</h1>
-    <div></div>
     <table></table>
     <select id="district"></select>
     <select id="region"></select>
@@ -1641,7 +1640,12 @@
                 "name": "花蓮縣"
             }
         ]
-        console.log(data);
+        let table = "";
+        $.each(data, (index, name) => {
+            $.each(name["districts"], (index, region) => {
+                console.log("zip" + "：" + region["zip"]);
+            });
+        });
     </script>
 </body>
 </html>
