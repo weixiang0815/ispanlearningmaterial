@@ -1,11 +1,8 @@
-2642 814 4116
-
-EEIT157@iSpan
-
-
-講師端請輸入【檢核碼】開啟：https://service.ispan.com.tw/ispanscore/admin/_score2.php
+Webex會議室網址：https://ispantw.webex.com/ispantw-tc/j.php?MTID=mc4e462d837c301ccef99a69039d2c8a3
+Webex會議室號碼：2642 814 4116
+Webex會議室密碼：EEIT157@iSpan
 
 學員端請輸入【姓名】及【檢核碼】開啟：https://service.ispan.com.tw/ispanscore/stu/check.php
+講師端請輸入【檢核碼】開啟：https://service.ispan.com.tw/ispanscore/admin/_score2.php
 
-
-14487
+天恩老師的Dropbox：https://www.dropbox.com/sh/dpe0n2w9ol6kuqs/AACvmn9uNPmxQNE8N0uKvNGGa?dl=0
