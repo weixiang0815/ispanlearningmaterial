@@ -5,7 +5,9 @@ Webex會議室密碼：EEIT157@iSpan
 學員端請輸入【姓名】及【檢核碼】開啟：https://service.ispan.com.tw/ispanscore/stu/check.php
 講師端請輸入【檢核碼】開啟：https://service.ispan.com.tw/ispanscore/admin/_score2.php
 
-天恩老師的Dropbox：https://www.dropbox.com/sh/dpe0n2w9ol6kuqs/AACvmn9uNPmxQNE8N0uKvNGGa?dl=0
+天恩老師的Dropbox：
+Hibernate：https://www.dropbox.com/sh/dpe0n2w9ol6kuqs/AACvmn9uNPmxQNE8N0uKvNGGa?dl=0
+Spring：https://www.dropbox.com/sh/6muvnzwu2aghdcz/AAAtxkWfo85W3jMGxszuTZ29a?dl=0
 
 excalidraw.com
 app.diagrams.net
