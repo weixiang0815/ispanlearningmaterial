@@ -1,3 +1,6 @@
+use master;
+create database Survival;
+
 use Survival;
 
 drop table if exists SignUp;
