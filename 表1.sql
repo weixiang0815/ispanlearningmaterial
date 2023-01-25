@@ -56,7 +56,7 @@ create table Player(
 create table SignUp(
 	id int primary key identity(1, 1) not null,
 	fk_competition_id int foreign key references Competition(id),
-	fk_player_id int  foreign key references Player(id),
+	fk_player_id int foreign key references Player(id),
 );
 
 select * from Competition;
