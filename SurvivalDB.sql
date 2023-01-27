@@ -176,3 +176,40 @@ create table SignUp(
 	fk_competition_id int foreign key references Competition(id),
 	fk_player_id int foreign key references Users(id),
 );
+
+-- 貼文
+create table Posts(
+	id int primary key identity(1, 1) not null,
+	name nvarchar(50) not null,
+	classify nvarchar(50) not null,
+	essay nvarchar(max) not null,
+	Player_id int foreign key references Users(id),
+);
+
+-- 書籤
+create table Bookmarklet(
+	id int primary key identity(1, 1) not null,
+	Player_id int foreign key references Users(id),
+	Posts_id int foreign key references Posts(id),
+);
+
+-- 留言
+create table Msg(
+	id int primary key identity(1, 1) not null,
+	Player_id int foreign key references Users(id),
+	Posts_id int foreign key references Posts(id), 
+);
+
+-- 按讚
+create table ThumbUp(
+	id int primary key identity(1, 1) not null,
+	Player_id int foreign key references Users(id),
+	Msg_id int  foreign key references Msg(id),
+);
+
+-- 圖片
+create table Images(
+	id int primary key identity(1, 1) not null,
+	Posts_id int foreign key references Posts(id),
+	Msg_id int  foreign key references Msg(id),
+);
