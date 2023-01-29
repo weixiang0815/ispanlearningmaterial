@@ -10,7 +10,6 @@ create table Site(
 create table Crew(
 	id int primary key identity(1, 1) not null,
 	name nvarchar(50) not null,
-	fk_manager_id int foreign key references Player(id)
 );
 
 -- 會員（玩家）獨立資料
@@ -20,6 +19,8 @@ create table Player(
 	joined_date date not null,
 	-- 感覺還能再加很多東西，但一時想不到😥
 );
+
+alter table Crew add fk_manager_id int foreign key references Player(id);
 
 -- 營長（管理員）獨立資料
 create table Boss(
@@ -41,6 +42,8 @@ create table Employee(
 create table Users(
 	id int primary key identity(1, 1) not null,
 	name nvarchar(50) not null,
+	account nvarchar(50) not null,
+	password nvarchar(50) not null,
 	nickname nvarchar(50),
 	sex char(1) not null,
 	address nvarchar(50) not null,
