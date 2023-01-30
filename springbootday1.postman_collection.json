@@ -107,6 +107,36 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "透過 id 更新 level",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/update?id=2&level=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						},
+						{
+							"key": "level",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
