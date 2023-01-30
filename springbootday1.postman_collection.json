@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "f7462ebb-381a-4181-8a83-934ac18a90e1",
+		"name": "springbootday1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post 加資料測試",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"+<><\",\r\n        \"level\": 5\r\n    },\r\n    {\r\n        \"name\": \"建仁\",\r\n        \"level\": 4\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/my-app/addd",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"addd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get id 測試",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/my-app/customer/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"my-app",
+						"customer",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
