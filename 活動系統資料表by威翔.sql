@@ -99,6 +99,7 @@ create table SignUp(
 	id int primary key identity(1, 1) not null,
 	fk_competition_id int foreign key references Competition(id),
 	fk_player_id int foreign key references Users(id),
+	status nvarchar(50)
 );
 
 -- 查詢各資料表
