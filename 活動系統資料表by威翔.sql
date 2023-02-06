@@ -37,17 +37,38 @@ create table Competition(
 	id int primary key identity(1, 1) not null,
 	name_mandarin nvarchar(50) not null,
 	name_english nvarchar(50) not null,
-	held_datetime datetime2 not null,
+	start_date date not null,
+	start_timespan nvarchar(5) not null,
+	end_date date not null,
+	end_timespan nvarchar(5) not null,
 	announced_datetime datetime2 not null,
-	fk_site_id int foreign key references Site(id),
+	fk_place_id int foreign key references Site(id),
 	content nvarchar(max) not null,
 	rules nvarchar(max) not null,
 	budget int not null,
 	fee int not null,
-	fk_prize_id int foreign key references Product(id),
 	single_or_crew char(1) not null,
 	capacity int not null,
-	participation int not null,
+);
+
+create table Schedule(
+	id int primary key identity(1, 1) not null,
+);
+
+create table Competition_Schedule(
+	fk_competition_id int foreign key references Competition(id),
+	fk_schedule_id int foreign key references Schedule(id)
+);
+
+-- 活動獎品
+create table Competition_Prize(
+	fk_competition_id int foreign key references Competition(id) not null,
+	fk_1ts_prize_id int foreign key references Product(id),
+	fk_2nd_prize_id int foreign key references Product(id),
+	fk_3rd_prize_id int foreign key references Product(id),
+	fk_single_prize_id int foreign key references Product(id),
+	fk_crew_prize_id int foreign key references Product(id),
+	fk_comfort_prize_id int foreign key references Product(id),
 );
 
 -- 戰隊
@@ -76,6 +97,14 @@ create table Player(
 	crew_id int foreign key references Crew(id),
 	joined_date date not null
 	-- 感覺還能再加很多東西，但一時想不到😥
+);
+
+-- 報名情況
+create table Participation(
+	fk_competition_id int foreign key references Competition(id),
+	fk_player_id int foreign key references Player(id),
+	fk_crew_id int foreign key references Crew(id),
+	asignee_count int not null, 
 );
 
 -- 營長（管理員）獨立資料
