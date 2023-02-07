@@ -10,6 +10,8 @@ create table empPermission(
 create table Employee(
 	id int primary key identity(1, 1) not null,
 	name nvarchar(50) not null,
+	account nvarchar(50) not null,
+	password nvarchar(50)not null,
 	age int not null,	--不太可能給使用者自己填？
 	region nvarchar(3) not null,
 	address nvarchar(50) not null,
@@ -22,6 +24,7 @@ create table Employee(
 	status nvarchar(10) not null,
 	fk_permission int foreign key references empPermission(id) not null,
 	fk_boss_id int foreign key references Employee(id) not null,
+	fk_workplace_id int foreign key references Place(id) not null 
 );
 
 create table playerPermission(
@@ -44,6 +47,8 @@ create table crewPermission(
 create table Player(
 	id int primary key identity(1, 1) not null,
 	name nvarchar(50) not null,
+	account nvarchar(50) not null,
+	password nvarchar(50)not null,
 	nickname nvarchar(50),
 	region nvarchar(3) not null,
 	address nvarchar(50) not null,
@@ -66,6 +71,7 @@ create table Crew(
 	name nvarchar(50) not null,
 	founder int foreign key references Player(id),
 	manager int foreign key references Player(id),
+
 );
 
 create table Badge(
@@ -80,8 +86,8 @@ create table Badge_Player(
 	fk_badge_id int foreign key references Badge(id) not null,
 );
 
-create table Friend(
-	fk_player1_id int foreign key references Player(id) not null,
-	fk_player2_id int foreign key references Player(id) not null,
-	friend_status nvarchar(5) not null,
+create table Crew_Member(
+fk_group_id int foreign key references Crew(id) not null,
+fk_player_id int foreign key references Player(id)not null
+,primary key(fk_group_id,fk_player_id)
 );

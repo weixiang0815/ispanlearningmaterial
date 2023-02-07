@@ -4,152 +4,181 @@ create database Survival;
 */
 use Survival;
 
--- 活動場地
-create table Site(
-	id int primary key identity(1, 1) not null,
+-- 商品表
+create table Product(
+	id int primary key identity(1,1) not null,
 	name nvarchar(50) not null,
-	address nvarchar(100) not null,
-	capacity int not null
+	img varbinary(max),
+	class nvarchar(50) not null,
+	context nvarchar(255) not null,
+	rent_fee int not null,
+	price int not null,
 );
 
--- 戰隊
-create table Crew(
+-- 員工權限表
+create table empPermission(
 	id int primary key identity(1, 1) not null,
-	name nvarchar(50) not null,
+	schedule char(1) not null,
+	player_management char(1) not null,
+	arrange_competition char(1) not null,
+	human_resource char(1) not null,
+	inventory char(1) not null
 );
 
--- 會員（玩家）獨立資料
-create table Player(
-	id int primary key identity(1, 1) not null,
-	fk_crew_id int foreign key references Crew(id),
-	joined_date date not null,
-	-- 感覺還能再加很多東西，但一時想不到😥
-);
-
-alter table Crew add fk_manager_id int foreign key references Player(id);
-
--- 營長（管理員）獨立資料
-create table Boss(
-	id int primary key identity(1, 1) not null,
-	fk_workplace_id int foreign key references Site(id)
-);
-
--- 員工獨立資料
+-- 員工資料表
 create table Employee(
-	id int primary key identity(1, 1) not null,
-	title nvarchar(50) not null,
-	hired_date date not null,
-	salary int not null,
-	fk_workplace_id int foreign key references Site(id),
-	fk_supervisor_id int foreign key references Boss(id)
-);
-
--- 使用者基本資料（包含管理員、玩家、員工）
-create table Users(
 	id int primary key identity(1, 1) not null,
 	name nvarchar(50) not null,
 	account nvarchar(50) not null,
-	password nvarchar(50) not null,
-	nickname nvarchar(50),
-	sex char(1) not null,
+	password nvarchar(50)not null,
+	age int not null,	--不太可能給使用者自己填？
+	region nvarchar(3) not null,
 	address nvarchar(50) not null,
-	email nvarchar(50) not null,
-	age int not null,
+	salary int not null,
 	thumbnail varbinary(max),
+	sex char(1) not null,
+	birthday date not null,
+	title nvarchar(50) not null,
+	hire_date date not null,
+	status nvarchar(10) not null,
+	fk_permission int foreign key references empPermission(id) not null,
+	fk_boss_id int foreign key references Employee(id) not null,
 );
 
--- 權限
-create table Permission(
-	id int primary key foreign key references Users(id),
-	fk_player_id int foreign key references Player(id),
-	fk_boss_id int foreign key references Boss(id),
-	fk_employee_id int foreign key references Employee(id),
+-- 會員權限表
+create table playerPermission(
+	id int primary key identity(1, 1) not null,
+	join_single_competition char(1) not null,
+	shopping char(1) not null,
+	rent char(1) not null,
+	join_crew char(1) not null,
 );
 
--- 榮譽頭銜種類
+-- 戰隊權限表
+create table crewPermission(
+	id int primary key identity(1, 1) not null,
+	join_crew_competition char(1) not null,
+	kickout char(1) not null,
+	modify_member_permission char(1) not null,
+	on_behalf_of_crew char(1) not null,
+	disband char(1) not null,
+);
+
+-- 會員資料表
+create table Player(
+	id int primary key identity(1, 1) not null,
+	name nvarchar(50) not null,
+	account nvarchar(50) not null,
+	password nvarchar(50)not null,
+	nickname nvarchar(50),
+	region nvarchar(3) not null,
+	address nvarchar(50) not null,
+	thumbnail varbinary(max),
+	sex char(1) not null,
+	birthday date not null,
+	age int not null,
+	join_date date not null,
+	info nvarchar(200),
+	cellphone varchar(10) not null,
+	fk_player_permission int foreign key references playerPermission(id) not null,
+	fk_crew_permission int foreign key references crewPermission(id) not null,
+	banned char(1) not null,
+	banned_reason nvarchar(50),
+);
+
+-- 戰隊資料表
+create table Crew(
+	id int primary key identity(1, 1) not null,
+	name nvarchar(50) not null,
+	founder int foreign key references Player(id),
+	manager int foreign key references Player(id),
+);
+
+alter table Crew add fk_crew_id int foreign key references Crew(id);
+
+-- 徽章（頭銜）資料表
 create table Badge(
 	id int primary key identity(1, 1) not null,
 	name nvarchar(50) not null,
-	thumbnail varbinary(max) not null,
+	level int not null,
+	condition nvarchar(50) not null
 );
 
--- 頭銜與會員歸屬
-create table Badge_To_Player(
-	id int primary key identity(1, 1) not null,
+-- 徽章會員中介表
+create table Badge_Player(
+	fk_user_id int foreign key references Player(id) not null,
 	fk_badge_id int foreign key references Badge(id) not null,
-	fk_player_id int foreign key references Player(id) not null,
 );
 
--- 場地
+-- 戰隊會員中介表
+create table Crew_Member(
+	fk_group_id int foreign key references Crew(id) not null,
+	fk_player_id int foreign key references Player(id)not null,
+	primary key(fk_group_id, fk_player_id)
+);
+
+-- 場地登記表
+create table PlaceOrder(
+	id int primary key identity(1,1) not null,
+	use_timespan nvarchar(50) not null,
+	order_status nvarchar(50),
+	fk_employee_id int foreign key references Employee(id),
+	fk_player_id int foreign key references Player(id),
+);
+
+-- 場地資料表
 create table Place(
-	id int primary key not null identity(1,1),
+	id int primary key identity(1,1) not null,
 	place_name nvarchar(50) not null,
 	place_address nvarchar(50) not null,
 	place_photo varbinary(max),
 	place_fee int not null,
 	place_capacity int not null,
-	fk_manager_id int references Boss(id)
+	fk_employee_id int foreign key references Employee(id),
+	fk_product_id int foreign key references Product(id),
+	fk_placeorder_id int foreign key references PlaceOrder(id),
 );
 
--- 場地登記
-create table PlaceOrder(
-	id int primary key not null identity(1,1),
-	fk_place_id int references place(id),
-	order_date datetime2 default getDate() not null,
-	use_date date not null,
-	use_timespan nvarchar(10), -- '早上'、'下午'、'晚上'、'半夜'; 
-	fk_player_id int references Player(id),
-	order_status nvarchar(50) not null,
+alter table Employee add fk_workplace_id int foreign key references Place(id) not null;
+
+-- 倉庫資料表
+create table Warehouse(
+	id int primary key identity(1,1) not null,
+	warehouse_name nvarchar(50) not null,
+	fk_place_id int foreign key references Place(id),
 );
 
---新品庫存
-create table ProductInventory(
-	id int primary key identity(1, 1) not null,
-	amount int not null,
-	price nvarchar(50) not null,
+alter table Place add fk_warehouse_id int foreign key references Warehouse(id);
+
+-- 倉儲資料表
+create table Inventory(
+	id int primary key identity(1,1) not null,
+	inventory_sellamount int ,
+	inventory_rentamount int ,
+	fk_warehouse_id int foreign key references Warehouse(id)
 );
 
---租借庫存
-create table BorrowInventory (
-	id int primary key identity(1, 1) not null,
-	amount int not null,
-	fee nvarchar(50) not null,
+alter table Warehouse add fk_inventory_id int foreign key references Inventory(id);
+
+-- 場地時程表
+create table Schedule(
+	id int primary key identity(1,1) not null,
+	schedule_name nvarchar(50) not null,
+	schedule_timespan nvarchar(50) not null,
+	schedule_status nvarchar(10) not null,
+	schedule_datetime date not null,
+	fk_place_id int foreign key references Place(id),
 );
 
---新品租借分類
-create table ProductClass(
-	id int primary key identity(1, 1) not null,
-	fk_product_inventory_id int references ProductInventory(id),
-	fk_borrow_id int references BorrowInventory(id),
-);
+alter table Place add fk_schedule_id int foreign key references Schedule(id);
 
---商品
-create table Product(
+-- 貼文表
+create table Posts(
 	id int primary key identity(1, 1) not null,
 	name nvarchar(50) not null,
-	img varbinary(max) not null,
-	context nvarchar(50) not null,
-	local nvarchar(50) not null,
-	fk_product_class_id int references ProductClass (id),
-);
-
---訂單
-create table OrderItem(	
-	id int primary key identity(1, 1) not null,
-	create_date date default convert(date,getDate()),
-	fk_user_id int references Users(id),
-	fk_product_id int references product (id),
-	amount nvarchar(50) not null,
-	total_price nvarchar(50) not null,
-);
-
---物流(庫存) 配送時間都14:00到貨 到貨後改變庫存數量
-create table Logistics(
-	id int primary key identity(1, 1) not null,
-	fk_product_id int references product (id),
-	price nvarchar(50) not null,
-	state nvarchar(20) not null,
-	time date not null,
+	classify nvarchar(50) not null,
+	essay nvarchar(max) not null,
+	Player_id int foreign key references Player(id),
 );
 
 -- 活動
@@ -157,57 +186,72 @@ create table Competition(
 	id int primary key identity(1, 1) not null,
 	name_mandarin nvarchar(50) not null,
 	name_english nvarchar(50) not null,
-	held_datetime datetime2 not null,
+	start_date date not null,
+	start_timespan nvarchar(5) not null,
+	end_date date not null,
+	end_timespan nvarchar(5) not null,
 	announced_datetime datetime2 not null,
-	fk_site_id int foreign key references Site(id),
+	fk_place_id int foreign key references Place(id),
 	content nvarchar(max) not null,
 	rules nvarchar(max) not null,
 	budget int not null,
 	fee int not null,
-	fk_prize_id int foreign key references Product(id),
 	single_or_crew char(1) not null,
 	capacity int not null,
-	participation int not null,
+	fk_post_id int foreign key references Posts(id)
+);
+
+alter table Schedule add fk_competition_id int foreign key references Competition(id);
+
+-- 活動獎品
+create table Competition_Prize(
+	fk_competition_id int foreign key references Competition(id) not null,
+	fk_1ts_prize_id int foreign key references Product(id),
+	fk_2nd_prize_id int foreign key references Product(id),
+	fk_3rd_prize_id int foreign key references Product(id),
+	fk_single_prize_id int foreign key references Product(id),
+	fk_crew_prize_id int foreign key references Product(id),
+	fk_comfort_prize_id int foreign key references Product(id),
+);
+
+-- 報名情況
+create table Participation(
+	fk_competition_id int foreign key references Competition(id),
+	fk_player_id int foreign key references Player(id),
+	fk_crew_id int foreign key references Crew(id),
 );
 
 -- 活動報名表
 create table SignUp(
 	id int primary key identity(1, 1) not null,
 	fk_competition_id int foreign key references Competition(id),
-	fk_player_id int foreign key references Users(id),
+	fk_player_id int foreign key references Player(id),
+	signup_date date not null,
+	status nvarchar(50) not null
 );
 
--- 貼文
-create table Posts(
-	id int primary key identity(1, 1) not null,
-	name nvarchar(50) not null,
-	classify nvarchar(50) not null,
-	essay nvarchar(max) not null,
-	Player_id int foreign key references Users(id),
-);
-
--- 書籤
+-- 書籤表
 create table Bookmarklet(
 	id int primary key identity(1, 1) not null,
-	Player_id int foreign key references Users(id),
+	Player_id int foreign key references Player(id),
 	Posts_id int foreign key references Posts(id),
 );
 
--- 留言
+-- 留言表
 create table Msg(
 	id int primary key identity(1, 1) not null,
-	Player_id int foreign key references Users(id),
+	Player_id int foreign key references Player(id),
 	Posts_id int foreign key references Posts(id), 
 );
 
--- 按讚
+-- 按讚表
 create table ThumbUp(
 	id int primary key identity(1, 1) not null,
-	Player_id int foreign key references Users(id),
+	Player_id int foreign key references Player(id),
 	Msg_id int  foreign key references Msg(id),
 );
 
--- 圖片
+-- 圖片表
 create table Images(
 	id int primary key identity(1, 1) not null,
 	Posts_id int foreign key references Posts(id),

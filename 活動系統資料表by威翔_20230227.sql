@@ -49,6 +49,7 @@ create table Competition(
 	fee int not null,
 	single_or_crew char(1) not null,
 	capacity int not null,
+	fk_post_id int foreign key references Post(id)
 );
 
 create table Schedule(
@@ -104,7 +105,6 @@ create table Participation(
 	fk_competition_id int foreign key references Competition(id),
 	fk_player_id int foreign key references Player(id),
 	fk_crew_id int foreign key references Crew(id),
-	asignee_count int not null, 
 );
 
 -- 營長（管理員）獨立資料
@@ -128,7 +128,8 @@ create table SignUp(
 	id int primary key identity(1, 1) not null,
 	fk_competition_id int foreign key references Competition(id),
 	fk_player_id int foreign key references Users(id),
-	status nvarchar(50)
+	signup_date date not null,
+	status nvarchar(50) not null
 );
 
 -- 查詢各資料表
