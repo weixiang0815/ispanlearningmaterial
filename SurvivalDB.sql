@@ -173,13 +173,24 @@ create table Schedule(
 alter table Place add fk_schedule_id int foreign key references Schedule(id);
 
 -- 貼文表
-create table Posts(
-	id int primary key identity(1, 1) not null,
-	name nvarchar(50) not null,
-	classify nvarchar(50) not null,
-	essay nvarchar(max) not null,
-	Player_id int foreign key references Player(id),
+create table Posts (
+	id int identity not null,
+	added datetime2,
+	classify varchar(255),
+	essay varchar(255),
+	final_added datetime2,
+	name varchar(255),
+	primary key (id)
 );
+
+-- 評分表
+create table Score (
+	id int identity not null,
+	added datetime2,
+	how_much_stars int,
+	fk_posts_id int,
+	primary key (id)
+)
 
 -- 活動
 create table Competition(
@@ -232,28 +243,45 @@ create table SignUp(
 
 -- 書籤表
 create table Bookmarklet(
-	id int primary key identity(1, 1) not null,
-	Player_id int foreign key references Player(id),
-	Posts_id int foreign key references Posts(id),
+    id int identity not null,
+    fk_posts_id int,
+    primary key (id)
 );
 
 -- 留言表
-create table Msg(
-	id int primary key identity(1, 1) not null,
-	Player_id int foreign key references Player(id),
-	Posts_id int foreign key references Posts(id), 
+create table Msgs(
+    id int identity not null,
+    added datetime2,
+    essay varchar(255),
+    final_added datetime2,
+    fk_posts_id int,
+    primary key (id)
 );
 
 -- 按讚表
 create table ThumbUp(
-	id int primary key identity(1, 1) not null,
-	Player_id int foreign key references Player(id),
-	Msg_id int  foreign key references Msg(id),
+	id int identity not null,
+	added datetime2,
+	fk_posts_id int,
+	primary key (id)
 );
 
--- 圖片表
-create table Images(
-	id int primary key identity(1, 1) not null,
-	Posts_id int foreign key references Posts(id),
-	Msg_id int  foreign key references Msg(id),
-);
+alter table Bookmarklet 
+    add constraint FKgqau7qyhv2lj35sbiqfhw8ix3 
+    foreign key (fk_posts_id) 
+    references posts;
+
+alter table msgs 
+    add constraint FK304o6jqg85sw41pqqprv3msge 
+    foreign key (fk_posts_id) 
+    references posts;
+    
+alter table score 
+    add constraint FK28hwgqxw4rbnj7k4p9wm11krc 
+    foreign key (fk_posts_id) 
+    references posts;
+    
+alter table thumbUp 
+    add constraint FK863cxe6sgv79rm2dl7f2l7gmk 
+    foreign key (fk_posts_id) 
+    references posts;
