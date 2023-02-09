@@ -49,7 +49,8 @@ create table Competition(
 	fee int not null,
 	single_or_crew char(1) not null,
 	capacity int not null,
-	fk_post_id int foreign key references Post(id)
+	fk_post_id int foreign key references Post(id),
+	status nvarchar(10) not null,
 );
 
 create table Schedule(
