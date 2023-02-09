@@ -1,0 +1,18 @@
+欄位說明
+■ duration: 合約期間
+■ wage-increase-first-year: 首年增加的工資
+■ wage-increase-second-year: 第二年增加的工資
+■ wage-increase-third-year: 第三年增加的工資
+■ cost-of-living-adjustment: 生活津貼調整
+■ working-hours: 每週工作時數
+■ pension，退休金規劃
+■ stand by-pay: 待命薪資
+■ shift-differential: 工作轉換的補助
+■ education-allowance: 教育津貼
+■ statutory-holidays: 法定假日
+■ vacation: 帶薪休假的天數
+■ longterm-disability-assistance: 僱主對長期工作失能的補助
+■ contribution-to-dental-plan: 僱主提供的牙醫就診補助
+■ bereavement-assistance: 僱主對於喪親的補助
+■ contribution-to-health-plan: 僱主補助員工健康的規劃
+■ class：可接受或不可接受
