@@ -217,7 +217,7 @@ alter table Schedule add fk_competition_id int foreign key references Competitio
 
 -- 活動獎品
 create table Competition_Prize(
-	fk_competition_id int foreign key references Competition(id) not null,
+	fk_competition_id int primary key foreign key references Competition(id) not null,
 	fk_1ts_prize_id int foreign key references Product(id),
 	fk_2nd_prize_id int foreign key references Product(id),
 	fk_3rd_prize_id int foreign key references Product(id),
@@ -225,6 +225,8 @@ create table Competition_Prize(
 	fk_crew_prize_id int foreign key references Product(id),
 	fk_comfort_prize_id int foreign key references Product(id),
 );
+
+alter table Competition add fk_competition_prize_id int foreign key references Competition(id);
 
 -- 報名情況
 create table Participation(

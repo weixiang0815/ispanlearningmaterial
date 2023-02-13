@@ -51,6 +51,7 @@ create table Competition(
 	capacity int not null,
 	fk_post_id int foreign key references Post(id),
 	status nvarchar(10) not null,
+	fk_competition_prize_id int foreign key references Competition(id)
 );
 
 create table Schedule(
@@ -64,7 +65,7 @@ create table Competition_Schedule(
 
 -- 活動獎品
 create table Competition_Prize(
-	fk_competition_id int foreign key references Competition(id) not null,
+	fk_competition_id int primary key foreign key references Competition(id) not null,
 	fk_1ts_prize_id int foreign key references Product(id),
 	fk_2nd_prize_id int foreign key references Product(id),
 	fk_3rd_prize_id int foreign key references Product(id),
