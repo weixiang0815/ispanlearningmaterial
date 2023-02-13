@@ -1,0 +1,119 @@
+=== Model information ===
+
+Filename:     classify.model
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     zoo_training
+Attributes:   18
+              animal
+              hair
+              feathers
+              eggs
+              milk
+              airborne
+              aquatic
+              predator
+              toothed
+              backbone
+              breathes
+              venomous
+              fins
+              legs
+              tail
+              domestic
+              catsize
+              type
+
+=== Classifier model ===
+
+J48 pruned tree
+------------------
+
+feathers = FALSE
+|   milk = TRUE: mammal (34.0)
+|   milk = FALSE
+|   |   toothed = TRUE
+|   |   |   breathes = TRUE: amphibian (4.0/1.0)
+|   |   |   breathes = FALSE: fish (9.0)
+|   |   toothed = FALSE
+|   |   |   breathes = TRUE: insect (6.0)
+|   |   |   breathes = FALSE: invertebrate (5.0)
+feathers = TRUE: bird (13.0)
+
+Number of Leaves  : 	6
+
+Size of the tree : 	11
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     zoo_test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   18
+
+=== Predictions on user test set ===
+
+inst#,actual,predicted,error,distribution,,,,,,
+1,3:bird,3:bird,,0,0,*1,0,0,0,0
+2,4:invertebrate,5:insect,+,0,0,0,0,*1,0,0
+3,2:fish,2:fish,,0,*1,0,0,0,0,0
+4,1:mammal,1:mammal,,*1,0,0,0,0,0,0
+5,1:mammal,1:mammal,,*1,0,0,0,0,0,0
+6,7:reptile,2:fish,+,0,*1,0,0,0,0,0
+7,4:invertebrate,4:invertebrate,,0,0,0,*1,0,0,0
+8,3:bird,3:bird,,0,0,*1,0,0,0,0
+9,3:bird,3:bird,,0,0,*1,0,0,0,0
+10,7:reptile,6:amphibian,+,0,0,0,0,0,*0.75,0.25
+11,4:invertebrate,5:insect,+,0,0,0,0,*1,0,0
+12,2:fish,2:fish,,0,*1,0,0,0,0,0
+13,3:bird,3:bird,,0,0,*1,0,0,0,0
+14,1:mammal,1:mammal,,*1,0,0,0,0,0,0
+15,4:invertebrate,4:invertebrate,,0,0,0,*1,0,0,0
+16,2:fish,2:fish,,0,*1,0,0,0,0,0
+17,3:bird,3:bird,,0,0,*1,0,0,0,0
+18,5:insect,5:insect,,0,0,0,0,*1,0,0
+19,6:amphibian,6:amphibian,,0,0,0,0,0,*0.75,0.25
+20,7:reptile,5:insect,+,0,0,0,0,*1,0,0
+21,7:reptile,6:amphibian,+,0,0,0,0,0,*0.75,0.25
+22,2:fish,2:fish,,0,*1,0,0,0,0,0
+23,1:mammal,1:mammal,,*1,0,0,0,0,0,0
+24,1:mammal,1:mammal,,*1,0,0,0,0,0,0
+25,3:bird,3:bird,,0,0,*1,0,0,0,0
+26,1:mammal,1:mammal,,*1,0,0,0,0,0,0
+27,5:insect,5:insect,,0,0,0,0,*1,0,0
+28,1:mammal,1:mammal,,*1,0,0,0,0,0,0
+29,4:invertebrate,5:insect,+,0,0,0,0,*1,0,0
+30,3:bird,3:bird,,0,0,*1,0,0,0,0
+
+=== Summary ===
+
+Correctly Classified Instances          23               76.6667 %
+Incorrectly Classified Instances         7               23.3333 %
+Kappa statistic                          0.7226
+Mean absolute error                      0.0643
+Root mean squared error                  0.2428
+Total Number of Instances               30     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     mammal
+                 1.000    0.038    0.800      1.000    0.889      0.877    0.981     0.800     fish
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     bird
+                 0.400    0.000    1.000      0.400    0.571      0.598    0.700     0.500     invertebrate
+                 1.000    0.143    0.333      1.000    0.500      0.535    0.929     0.333     insect
+                 1.000    0.069    0.333      1.000    0.500      0.557    0.966     0.333     amphibian
+                 0.000    0.000    ?          0.000    ?          ?        0.731     0.400     reptile
+Weighted Avg.    0.767    0.017    ?          0.767    ?          ?        0.906     0.743     
+
+=== Confusion Matrix ===
+
+ a b c d e f g   <-- classified as
+ 7 0 0 0 0 0 0 | a = mammal
+ 0 4 0 0 0 0 0 | b = fish
+ 0 0 7 0 0 0 0 | c = bird
+ 0 0 0 2 3 0 0 | d = invertebrate
+ 0 0 0 0 2 0 0 | e = insect
+ 0 0 0 0 0 1 0 | f = amphibian
+ 0 1 0 0 1 2 0 | g = reptile
+
