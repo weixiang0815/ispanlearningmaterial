@@ -1,6 +1,9 @@
 -- 活動
 create table Competition(
 	id int primary key identity(1, 1),
+	public_or_private char(1),
+	founder_player int foreign key references Player(id),
+	founder_employee int foreign key references Employee(id),
 	name_mandarin nvarchar(50),
 	name_english nvarchar(50),
 	start_date date,

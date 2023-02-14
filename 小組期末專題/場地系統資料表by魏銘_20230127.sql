@@ -35,11 +35,8 @@ fk_player_id int foreign key references Player(id),
 );
 
 create table Schedule(
-id int primary key identity(1,1) not null,
-schedule_name nvarchar(50) not null,
-schedule_timespan nvarchar(50) not null,
-schedule_status nvarchar(10) not null,
-schedule_datetime date not null,
+id int primary key identity(1,1),
+schedule_timespan int,
+schedule_datetime date,
 fk_place_id int foreign key references Place(id),
-fk_competition_id int foreign key references Competition(id)
 );
