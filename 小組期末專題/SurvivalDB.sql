@@ -33,6 +33,8 @@ create table Employee(
 	password nvarchar(50)not null,
 	age int,	--不太可能給使用者自己填？
 	region nvarchar(3),
+	identity_number nvarchar(50),
+	email nvarchar(50),
 	address nvarchar(50),
 	salary int,
 	thumbnail varbinary(max),
@@ -42,7 +44,7 @@ create table Employee(
 	hire_date date,
 	status nvarchar(10),
 	fk_permission int foreign key references empPermission(id),
-	fk_boss_id int foreign key references Employee(id),
+	fk_boss_id int foreign key references Employee(id)
 );
 
 -- 會員權限表
@@ -70,6 +72,8 @@ create table Player(
 	name nvarchar(50),
 	account nvarchar(50),
 	password nvarchar(50)not null,
+	identity_number nvarchar(50)　not null,
+	email nvarchar(50),
 	nickname nvarchar(50),
 	region nvarchar(3),
 	address nvarchar(50),
@@ -78,7 +82,7 @@ create table Player(
 	birthday date,
 	age int,
 	join_date date,
-	info nvarchar(200),
+	info nvarchar(max),
 	cellphone varchar(10),
 	fk_player_permission int foreign key references playerPermission(id),
 	fk_crew_permission int foreign key references crewPermission(id),
@@ -163,9 +167,7 @@ alter table Warehouse add fk_inventory_id int foreign key references Inventory(i
 -- 場地時程表
 create table Schedule(
 	id int primary key identity(1,1),
-	schedule_name nvarchar(50),
-	schedule_timespan nvarchar(50),
-	schedule_status nvarchar(10),
+	schedule_timespan int,
 	schedule_datetime date,
 	fk_place_id int foreign key references Place(id),
 );
@@ -195,16 +197,18 @@ create table Score (
 -- 活動
 create table Competition(
 	id int primary key identity(1, 1),
+	public_or_private char(1),
+	founder_player int foreign key references Player(id),
+	founder_employee int foreign key references Employee(id),
 	name_mandarin nvarchar(50),
 	name_english nvarchar(50),
 	start_date date,
-	start_timespan nvarchar(5),
+	start_timespan int,
 	end_date date,
-	end_timespan nvarchar(5),
+	end_timespan int,
 	announced_datetime datetime2,
 	fk_place_id int foreign key references Place(id),
 	content nvarchar(max),
-	rules nvarchar(max),
 	budget int,
 	fee int,
 	single_or_crew char(1),
@@ -213,7 +217,12 @@ create table Competition(
 	status nvarchar(10),
 );
 
-alter table Schedule add fk_competition_id int foreign key references Competition(id);
+--	活動排程查詢表
+create table Competition_To_Schedule(
+	id int primary key identity(1, 1),
+	fk_schedule_id int foreign key references Schedule(id),
+	fk_competition_id int foreign key references Competition(id),
+);
 
 -- 活動照片表
 create table Competition_Picture(
@@ -224,7 +233,7 @@ create table Competition_Picture(
 
 -- 活動獎品
 create table Competition_Prize(
-	fk_competition_id int foreign key references Competition(id),
+	fk_competition_id int primary key foreign key references Competition(id),
 	fk_1ts_prize_id int foreign key references Product(id),
 	fk_2nd_prize_id int foreign key references Product(id),
 	fk_3rd_prize_id int foreign key references Product(id),
@@ -247,6 +256,38 @@ create table SignUp(
 	fk_player_id int foreign key references Player(id),
 	signup_date date,
 	status nvarchar(50)
+);
+
+-- 競賽紀錄表
+create table Competition_History(
+	fk_competition_id int primary key foreign key references Competition(id),
+	single_or_crew char(1),
+	top_1 int,
+	top_2 int,
+	top_3 int,
+	top_4 int,
+	top_5 int,
+	top_6 int,
+	top_7 int,
+	top_8 int,
+	top_9 int,
+	top_10 int,
+	top_11 int,
+	top_12 int,
+	top_13 int,
+	top_14 int,
+	top_15 int,
+	top_16 int,
+);
+
+create table Competition_Rule(
+	id int primary key identity(1, 1),
+	context nvarchar(10),
+);
+
+create table Competition_To_Rule(
+	fk_competition_id int foreign key references Competition(id),
+	fk_rule_id int foreign key references Competition_Rule(id),
 );
 
 -- 書籤表
