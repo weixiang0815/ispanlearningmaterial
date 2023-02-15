@@ -312,16 +312,6 @@ create table Competition_History(
 	top_16 int,
 );
 
-create table Competition_Rule(
-	id int primary key identity(1, 1),
-	context nvarchar(10),
-);
-
-create table Competition_To_Rule(
-	fk_competition_id int foreign key references Competition(id),
-	fk_rule_id int foreign key references Competition_Rule(id),
-);
-
 -- 書籤表
 create table Bookmarklet(
     id int identity,
