@@ -15,6 +15,34 @@ create table Product(
 	price int,
 );
 
+--	訂單
+create table OrderItem(
+	id int primary key identity(1,1),
+	order_create_date date,
+	status nvarchar(10),
+);
+
+--	訂單與商品 多對多
+create table OrderItemDetail(
+	fk_orderitem_id int foreign key references OrderItem(id),
+	fk_product_id int foreign key references Product(id),
+);
+
+--	物流（一台卡車）
+create table Logistics(
+	id int primary key identity(1,1),
+	start_date date,
+	arrive_date date,
+	status nvarchar(10),
+	fk_orderitem_id int foreign key references orderitem(id),
+);
+
+--	卡車與訂單 一對多
+create table logisticsdetail(
+	fk_logistics_id int foreign key references Logistics(id) ,
+	fk_orderitem_id int foreign key references OrderItem(id) ,
+);
+
 -- 員工權限表
 create table empPermission(
 	id int primary key identity(1, 1),
@@ -30,7 +58,7 @@ create table Employee(
 	id int primary key identity(1, 1),
 	name nvarchar(50),
 	account nvarchar(50),
-	password nvarchar(50)not null,
+	password nvarchar(50),
 	age int,	--不太可能給使用者自己填？
 	region nvarchar(3),
 	identity_number nvarchar(50),
@@ -71,8 +99,8 @@ create table Player(
 	id int primary key identity(1, 1),
 	name nvarchar(50),
 	account nvarchar(50),
-	password nvarchar(50)not null,
-	identity_number nvarchar(50)　not null,
+	password nvarchar(50),
+	identity_number nvarchar(50),
 	email nvarchar(50),
 	nickname nvarchar(50),
 	region nvarchar(3),
@@ -89,6 +117,9 @@ create table Player(
 	banned char(1),
 	banned_reason nvarchar(50),
 );
+
+alter table OrderItem add fk_player_id int foreign key references Player(id);
+alter table Logistics add fk_receiver_id int foreign key references Player(id);
 
 -- 戰隊資料表
 create table Crew(
@@ -162,6 +193,7 @@ create table Inventory(
 	fk_warehouse_id int foreign key references Warehouse(id)
 );
 
+alter table Logistics add fk_inventory_id int foreign key references Inventory(id);
 alter table Warehouse add fk_inventory_id int foreign key references Inventory(id);
 
 -- 場地時程表
