@@ -1,0 +1,113 @@
+P039
+www.microsoftazurepass.com
+
+P039
+eeit15700@outlook.com   	  
+
+P037
+Do!ng123
+
+p065	
+portal.azure.com
+
+p083
+資源群組: EEITResourceGroup
+
+p084
+資料庫名稱: memberDB
+
+訂用帳戶: Azure Pass / Azure Pass 贊助
+資源群組: 輸入EEITResourceGroup  
+
+p088
+伺服器名稱：dbservereeit15700
+
+p089
+伺服器管理員登入: memberuser
+密碼1：Do!ng123
+密碼2：Do!ng123
+
+p104
+定序: Chinese_Taiwan_Stroke_CI_AS
+
+p117
+jdbc:sqlserver://dbservereeit15700.database.windows.net:1433;database=memberDB;user=membememberuser@dbservereeit15700;
+
+p128
+資料庫伺服器的完整名稱為: dbservereeit15700.database.windows.net
+資料庫伺服器管理員帳號: memberuser@dbservereeit15700
+密碼1：Do!ng123
+
+
+p141
+CREATE TABLE Member(
+	pk   int NOT NULL IDENTITY PRIMARY KEY,
+	id    varchar(32) NULL,
+	pswd  varchar(64) NULL,
+	name  varchar(50) NULL,
+);
+
+INSERT INTO Member VALUES 
+('kitty', 'k123', '凱蒂貓'), 
+('mickey', 'm456', '米小薯'), 
+('snoopy', 's789', '史努比');
+
+--------------------------------------------------
+page157
+EEITDemoVM
+
+page160
+memberuser
+Do!ng1231234
+
+
+page 197
+虛擬機器的DNS: eeitdemo15700.japaneast.cloudapp.azure.com
+
+page 223
+javaee
+
+page 229
+JDK1.8 
+下載網址: https://github.com/ojdkbuild/ojdkbuild
+
+page 230
+Tomcat(64bit) : apache-tomcat-9.0.NN-windows-x64.zip
+下載網址: https://tomcat.apache.org/download-90.cgi
+
+page 232
+SQL Server JDBC Driver : 9.4.0.jre11.jar	  
+下載網址: https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc/9.4.0.jre11
+
+page 233
+WinRAR : winrar-x64-602tc.exe  
+下載網址: http://www.win-rar.com/download.html
+
+page 235
+Notepad++	 : npp.8.n.m.Installer.exe   
+下載網址: https://notepad-plus-plus.org/download
+
+page 274 修改server.xml    
+<Resource name="jdbc/memberDB" auth="Container"
+    type="javax.sql.DataSource"
+    driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+    url="jdbc:sqlserver://dbservereeit15700.database.windows.net:1433;database=memberDB"
+    username="memberuser@dbservereeit15700"
+    password= "Do!ng123"  />
+
+page 277 修改context.xml 
+<ResourceLink 
+	global="jdbc/memberDB"
+	name="jdbc/memberDB"
+	type="javax.sql.DataSource"  />
+
+page 289
+http://localhost:8080/MemberWebApp/
+
+page 293
+http://eeitdemo15700.japaneast.cloudapp.azure.com:8080/MemberWebApp
+
+page 314
+http://eeitdemo15700.japaneast.cloudapp.azure.com:8080/MemberWebApp
+       
+
