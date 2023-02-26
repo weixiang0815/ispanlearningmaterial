@@ -25,7 +25,7 @@ create table New_Competition_Form_Part_2(
 );
 create table New_Competition_Form_Part_3(
 	id int primary key identity(1, 1) not null,
-	content nvarchar(max),
+	content_file_location nvarchar(max),
 );
 create table New_Competition_Form(
 	id int primary key identity(1, 1) not null,
@@ -41,3 +41,5 @@ select * from New_Competition_Form;
 select * from New_Competition_Form_Part_1;
 select * from New_Competition_Form_Part_2;
 select * from New_Competition_Form_Part_3;
+
+update New_Competition_Form_Part_3 set content_file_location = 'C:\Survival\Competition\Competition\temp_content\temp_1.txt';

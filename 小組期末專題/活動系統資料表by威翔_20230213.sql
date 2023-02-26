@@ -12,13 +12,13 @@ create table Competition(
 	end_timespan nvarchar(5),
 	announced_datetime datetime2,
 	fk_place_id int foreign key references Place(id),
-	content nvarchar(max),
+	content_file_location nvarchar(max),
 	budget int,
 	fee int,
 	single_or_crew char(1),
 	capacity int,
-	fk_post_id int foreign key references Posts(id),
 	status nvarchar(10),
+	fk_competition_prize_id int foreign key references Competition_Prize(fk_competition_id)
 );
 
 -- 活動獎品
