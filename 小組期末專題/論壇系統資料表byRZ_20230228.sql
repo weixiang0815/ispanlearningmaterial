@@ -12,7 +12,7 @@ create table Posts (
      id int not null primary key identity(1,1),
      added datetime2(7),
 	 classify varchar(255),
-	 essay nvarchar(MAX),
+	 essay_file_location nvarchar(MAX),
 	 final_added datetime2(7),
 	 name varchar(255),
      fk_player_id int foreign key references Player(id),
