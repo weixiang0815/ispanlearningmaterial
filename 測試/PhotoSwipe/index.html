@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoSwipe</title>
+    <!-- Include the necessary CSS and JavaScript files -->
+    <link rel="stylesheet" href="path/to/photoswipe.css">
+    <link rel="stylesheet" href="path/to/default-skin/default-skin.css">
+</head>
+<body>
+    <!-- Create the HTML markup for your image gallery -->
+    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="path/to/image-1.jpg" itemprop="contentUrl" data-size="1200x800">
+                <img src="path/to/thumb-1.jpg" itemprop="thumbnail" alt="Image 1">
+            </a>
+            <figcaption itemprop="caption description">Image 1</figcaption>
+        </figure>
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="path/to/image-2.jpg" itemprop="contentUrl" data-size="1200x800">
+                <img src="path/to/thumb-2.jpg" itemprop="thumbnail" alt="Image 2">
+            </a>
+            <figcaption itemprop="caption description">Image 2</figcaption>
+        </figure>
+        <!-- Add more images as needed -->
+    </div>
+
+    <script src="path/to/photoswipe.min.js"></script>
+    <script src="path/to/photoswipe-ui-default.min.js"></script>
+    <!-- Initialize the image gallery using the PhotoSwipe API -->
+    <script>
+        // Define your gallery options
+        var pswpElement = document.querySelectorAll('.my-gallery')[0];
+        var items = [
+            {
+                src: 'path/to/image-1.jpg',
+                w: 1200,
+                h: 800,
+                title: 'Image 1'
+            },
+            {
+                src: 'path/to/image-2.jpg',
+                w: 1200,
+                h: 800,
+                title: 'Image 2'
+            },
+            // Add more images as needed
+        ];
+        var options = {
+            index: 0
+        };
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+    </script>
+
+</body>
+</html>
